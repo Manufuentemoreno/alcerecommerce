@@ -1,0 +1,67 @@
+@media (min-width: 768px) {
+
+  .alcer-logo{
+    top: 10%;
+  }
+  
+  .productPrincipalImage {
+    width: 60%;
+  }
+  
+  .categorias{
+      margin-top: 4%;
+  }
+  
+  .productPrincipalImage {
+    width: 50%;
+  }
+  
+  .addCart{
+    width: 70%;
+  }
+
+  .relatedProductsScroll {
+    flex-direction: ROW;
+    width: 80%;
+    margin: auto;
+  }
+
+  .space-topbar{
+    height: 100px;
+  }
+
+  .search-container{
+    padding: 0px;
+    margin: 15px 20px;
+  }
+
+  /* FORMULARIOS */
+
+  .formulario {
+    max-width: 500px;
+    margin: auto;
+    padding: 32px 32px;
+    background-color: #fff;
+  }
+
+  .main-header-top-bar{
+    padding: 2%;
+  }
+
+  .main-header-top-bar i{
+    font-size: 24px;
+  }
+
+  .products{
+    width: auto;
+    margin: 0px 120px;
+  }
+
+  .botones-formulario {
+    max-width: 150px;
+  }
+
+  .boton-enviar {
+    max-width: 150px;
+  }
+}

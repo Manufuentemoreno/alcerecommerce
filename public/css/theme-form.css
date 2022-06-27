@@ -1,0 +1,139 @@
+/*
+*** ESTILOS PARA FORMULARIOS ***
+*/
+
+/*GENERALES*/
+
+
+
+/*ESPECÍFICOS*/
+
+.formulario {
+    max-width: 300px;
+    border-radius: 32px;
+    margin: auto;
+    padding: 32px 32px;
+    background-color: #FFF;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.grupo-titulo-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.titulo-form-fondo {
+    width: 180px;
+    background: #1259c3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+}
+
+.titulo-form-texto {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+
+.input-general {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 3px #666;
+}
+
+.input-icon-container {
+    align-items: center;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 3px #666;
+}
+
+.input-icon-container i {
+    margin: 10px;
+    color: #1259c3;
+}
+
+.input-with-icon {
+    width: 100%;
+    height: auto;
+    margin-right: 5px;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+}
+
+.input-icon-container {
+    display: flex;
+}
+
+.input-icons i {
+    position: absolute;
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 6px;
+    color: #1259c3;
+}
+
+.input-file {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: none;
+}
+
+.mensaje-error {
+    color: red;
+    font-style: italic;
+    margin-top: 0px;
+}
+
+.botones-formulario {
+    width: 47.5%;
+    height: 36px;
+    padding: 5px;
+    background-color: #1259c3;
+    color: #FFF;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.boton-enviar {
+    width: 47.5%;
+    height: 36px;
+    padding: 5px;
+    background-color: green;
+    color: #FFF;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.grupo-botones-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.boton-login {
+    width: 100%;
+    height: 36px;
+    padding: 5px;
+    background-color: #1259c3;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+}
