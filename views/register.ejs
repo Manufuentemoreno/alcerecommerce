@@ -7,7 +7,7 @@
 </head>
 <body>
     <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
-        <form action="" class="formulario">
+        <form action="/register" class="formulario" method="POST">
             <div class="grupo-titulo-form">
                 <div class="titulo-form-fondo mb-15 ml">
                     <h1 class="titulo-form-texto">Registro</h1>
@@ -16,42 +16,42 @@
             <h2>Datos de la cuenta</h2>
             <div class="input-icon-container">
                 <i class="fa-solid fa-envelope"></i>
-                <input class="input-with-icon" type="email" name="usuario" placeholder="Ingrese su email">
+                <input class="input-with-icon" type="email" name="email" placeholder="Ingrese su email">
             </div>
             <div class="input-icon-container">
                 <i class="fa-solid fa-lock"></i>
-                <input class="input-with-icon" type="password" name="contrasena" placeholder="Contraseña nueva">
+                <input class="input-with-icon" type="password" name="password" placeholder="Contraseña nueva">
             </div>
             <div class="input-icon-container">
                 <i class="fa-solid fa-lock"></i>
-                    <input class="input-with-icon" type="password" name="confirmaContrasena" placeholder="Confirmar contraseña">
+                    <input class="input-with-icon" type="password" name="confirmPassword" placeholder="Confirmar contraseña">
             </div>
             <div>
-                <label for="Categoria">Categoría:</label>
-                <select class="input-general mt-10" name="Categoria" id="">
+                <label for="category">Categoría:</label>
+                <select class="input-general mt-10" name="category">
                     <option value="normalUser">Soy comprador</option>
                     <option value="adminUser">Soy administrador</option>
                 </select>
             </div>
             <h2>Datos personales</h2>
             <div class="">
-                <label for="nombres">
-                    <input class="input-general" type="text" name="nombres" placeholder="Ingrese su nombre">
+                <label for="name">
+                    <input class="input-general" type="text" name="name" placeholder="Ingrese su nombre">
                 </label>
             </div>
             <div class="">
-                <label for="apellidos">
-                    <input class="input-general" type="text" name="apellidos" placeholder="Ingrese su apellido">
+                <label for="lastName">
+                    <input class="input-general" type="text" name="lastName" placeholder="Ingrese su apellido">
                 </label>
             </div>
             <div class="">
-                <label for="fechaNacimiento">Seleccione su fecha de nacimiento:
-                    <input class="input-general mt-10" type="date" name="fechaNacimiento">
+                <label for="birthDate">Seleccione su fecha de nacimiento:
+                    <input class="input-general mt-10" type="date" name="birthDate">
                 </label>
             </div>
             <div>
-                <label for="fotoPerfil">Seleccione una foto de perfil:
-                    <input class="input-general mt-10" type="file" name="fotoPerfil" id="">
+                <label for="profilePhoto">Seleccione una foto de perfil:
+                    <input class="input-general mt-10" type="file" name="profilePhoto" id="">
                 </label>
             </div>
             <div class="grupo-botones-formulario mt-15">
