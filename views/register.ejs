@@ -26,6 +26,13 @@
                 <i class="fa-solid fa-lock"></i>
                     <input class="input-with-icon" type="password" name="confirmaContrasena" placeholder="Confirmar contraseña">
             </div>
+            <div>
+                <label for="Categoria">Categoría:</label>
+                <select class="input-general mt-10" name="Categoria" id="">
+                    <option value="normalUser">Soy comprador</option>
+                    <option value="adminUser">Soy administrador</option>
+                </select>
+            </div>
             <h2>Datos personales</h2>
             <div class="">
                 <label for="nombres">
@@ -42,7 +49,12 @@
                     <input class="input-general mt-10" type="date" name="fechaNacimiento">
                 </label>
             </div>
-            <div class="grupo-botones-formulario">
+            <div>
+                <label for="fotoPerfil">Seleccione una foto de perfil:
+                    <input class="input-general mt-10" type="file" name="fotoPerfil" id="">
+                </label>
+            </div>
+            <div class="grupo-botones-formulario mt-15">
                 <button class="boton-enviar" type="submit">Enviar</button>
                 <button class="botones-formulario" type="reset">Borrar</button>
             </div>
