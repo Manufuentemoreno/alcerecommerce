@@ -13,5 +13,5 @@ const PORT = 3000;
 app.listen(PORT, () => console.log("Servidor ejecutándose en el puerto ",PORT));
 
 
-app.use("/",routes);
+app.use("/", routes);
 

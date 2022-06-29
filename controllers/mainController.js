@@ -12,13 +12,5 @@ module.exports = {
 
     cart : (req,res) =>{
         res.render("productCart",{"carrito":carrito});
-    },
-
-    register: (req, res) => {
-        res.render("register");
-    },
-
-    login: (req, res) => {
-        res.render("login");
     }
 };
