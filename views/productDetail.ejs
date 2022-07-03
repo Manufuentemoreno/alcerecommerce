@@ -1,81 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!--Para dar medidas "responsive"-->
-    <title>product-name</title><!--Titulo que se vera en la pestaña del navegador-->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com"><!--font stuff-->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><!--font stuff-->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"><!--font stuff-->
-
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" /> <!--iconos-->
-    <link rel="stylesheet" href="/css/normalize.css" /><!--conecta el archivo normalize.css con el home-->
-    <link rel="stylesheet" href="/css/utils.css" /><!--conecta el archivo utils.css con el home-->
-    <link rel="stylesheet" href="/css/theme.css" /><!--conecta el archivo theme.css con el home-->
-    <link rel="stylesheet" href="/css/colors.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300&family=Roboto&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/css/styles-movil.css" />
-    <link rel="stylesheet" href="/css/styles-tablet.css" />
-    <link rel="stylesheet" href="/css/styles-laptop.css" />
-    <title>Detalle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <%- include("partials/head")  %> 
+    <title>Productos</title>
   </head>
   <body>
     <header>
       <%- include("partials/topBar")  %> 
-      <ul class="categorias"> 
-        <li>Carnes</li>
-        <li>Quesos y fiambres</li>
-        <li>Pescados y mariscos</li>
-        <li>Verduras y frutas</li>
-        <li>Limpieza</li>
-      </ul>
     </header>
     <main>
-      <section class="productCard">
-        <section class="product"> 
-          <div>
-            <h1 class="firstProductTitle">Agua baja en sodio con gas 1,5 L</h1>
-            <img class="productPrincipalImage" src=\images\productDetail\Agua-Baja-En-Sodio-Glaciar-Con-Gas-15-L-1-240110.webp  alt="product-name" >
-          </div>
-          <div>
-            <h1 class="secondProductTitle">Agua baja en sodio con gas 1,5 L</h1>
-          <section class="price-discount">
-            <p class="price">$ 139,99</p>
-            <p class="discount">10% off</p>
-          </section>
-          <button class="addCart">Agregar al carrito</button>
-          </div>
-        </section>
-      </section>
-      <section class="relatedProducts">
-        <h2>Productos relacionados</h2>
-        <div class="relatedProductsScroll">
-          <button><i class="fas fa-long-arrow-alt-left"></i></button>
-          <div class="relatedProductCard">
-            <div class="relatedProductImageConteiner">
-              <img class="relatedProductImage" src=\images\productDetail\Gaseosa-Coca-Cola-Sin-Azucar-1-75lt-1-367450.webp  alt="product-name" >
-            </div>
-            <div class="relatedProductContent">
-              <p>Gaseosa Coca Cola Sin azucar 1,75 Lts</p>
-            </div>
-          </div>
-          <div class="relatedProductCard">
-            <div class="relatedProductImageConteiner">
-              <img class="relatedProductImage" src=\images\productDetail\Gaseosa-Coca-Cola-Sin-Azucar-1-75lt-1-367450.webp  alt="product-name" >
-            </div>
-            <div class="relatedProductContent">
-              <p>Gaseosa Coca Cola Sin azucar 1,75 Lts</p>
-            </div>
-          </div> 
-          <button><i class="fas fa-long-arrow-alt-right"></i></button>
-        </div>
-      </section>
+      <section class="box">
+        <h1><%= product.productName %></h1>
+        <div class="description">
+      <img class="detail-image" src="/images/productDetail/<%= product.img  %>" alt="<%=product.productName%>">
+      <div class="details">
+      <article>
+        <div><%= product.description %> </div>
+        <div class="price">$<%= product.price  %> </div>
+      </article>
+      
+        <a href="/product"><button type="submit" class="button">Comprar</button></a>
+    
+      <form action="/product/edit/<%= product.id %> " method="get">
+        <button type="submit" class="button edit-button">Editar</button>
+      </form>
+      <form action="/product/delete/<%= product.id %> " method="get">
+        <button type="submit" class="button delete-button">Eliminar</button>
+      </form>
+      </div></div>
+      </section>  
     </main>
     <%- include("partials/footer")  %> 
   </body>

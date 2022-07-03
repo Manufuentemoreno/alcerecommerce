@@ -1,13 +1,10 @@
-const productos = require("../dataBaseProduct");
+const Productos = require("../models/Products");
 const carrito = require("../dataCarrito");
+const allProduct = Productos.getData();
 
 module.exports = {
     home : (req, res)=>{
-        res.render("home",{"productos":productos});
-    },
-
-    product : (req,res) =>{
-        res.render("productDetail");
+        res.render("home",{"productos": allProduct});
     },
 
     cart : (req,res) =>{

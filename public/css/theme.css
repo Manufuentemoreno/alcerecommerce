@@ -398,3 +398,93 @@ section h2{
 .precio-total{
     align-self: flex-end;
 }
+
+/* PRODUCT DETAIL */
+.box{
+    margin: 20px;
+    border: 1px solid #0003;
+    border-radius: 20px;
+    padding: 20px;
+    background: white;
+  }
+
+  .description{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+
+  .detail-image{
+    width: 40%;
+  }
+
+  .button {
+    background-color: #1259c3;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    padding: 8%;
+    font-size: 25px;
+    width: 100%;
+    margin: 5px;
+  }
+
+  .button:hover{
+    background-color: #0a3069;
+  }
+
+  .edit-button{
+    background-color: rgb(220, 186, 37);
+  }
+
+  .edit-button:hover{
+    transition-duration: 100ms;
+    background-color: rgb(122, 104, 22);
+  }
+
+  .delete-button{
+    background-color: red;
+  }
+
+  .delete-button:hover{
+    background-color: rgb(135, 6, 6);
+  }
+
+  /* formulario de creacion */
+
+  .form{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form button {
+    background-color: #1259c3;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    padding: 5px;
+    max-width: 400px;
+    font-size: 15px;
+    margin: 5px;
+  }
+
+  .form button:hover{
+    background-color: #0a3069;
+  }
+
+  .input-stle{
+    margin: 10px;
+    border: solid 1px #9fb1ff;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .danger{
+    border: solid 2px rgb(154, 2, 2);
+  }

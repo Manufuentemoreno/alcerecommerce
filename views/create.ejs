@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <%- include("partials/head")  %> 
+    <title>Productos</title>
+  </head>
+  <body>
+    <header>
+      <%- include("partials/topBar")  %> 
+    </header>
+    <main>
+      <section class="box">
+        <h1>Producto Nuevo</h1>
+
+        <form class="form" action="/product/crear" method="POST" enctype="multipart/form-data">
+            
+            <input class="input-stle <%= locals.errors && errors.name ? "danger" : null %>"
+
+        type="text" name="productName" id="productName" placeholder="Nombre del Producto">
+        <% if (locals.errors && errors.name) { %>
+            <div class="danger">
+            <p><%= errors.name.msg %></p>
+            </div> 
+        <% } %>
+
+            <input class="input-stle" type="number" name="price" id="price" placeholder="Precio">
+
+            <select class="input-stle" name="category" id="category">
+                <option value="Bebidas" selected>Elegí una Categoría</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Golosinas">Golosinas</option>
+                <option value="Limpieza">Limpieza</option>
+                <option value="Lacteos">Lacteos</option>
+                <option value="Carnicería">Carnicería</option>
+            </select>
+
+            <div style="margin:10px; padding:10px;">
+            <label for="preciosCuidados">Este producto se encuentra en Precios Cuidados</label>
+            <input type="checkbox" name="preciosCuidados" id="preciosCuidados">
+            </div>
+            
+            <textarea class="input-stle" type="text" name="description" id="description" placeholder="Descripción"cols="30" rows="10"></textarea>
+
+            <div style="margin:10px; padding:10px;">
+            <label for="img" class="form-label">Imagen del Producto: </label>
+            <input type="file"
+                    id="img"
+                    name="img"
+                    style="margin-left: 20px"
+            /></div>
+        <div>
+        <button 
+        type="submit">Cargar Producto</button>
+        <button type="reset">Eliminar</button>
+    </div></form>
+      </section>  
+    </main>
+    <%- include("partials/footer")  %> 
+  </body>
+</html>

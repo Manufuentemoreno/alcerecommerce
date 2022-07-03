@@ -3,7 +3,7 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <%- include("partials/head")  %> 
-    <title>Productos</title>
+    <title>Alcer</title>
 </head>
 <body>
     <header>
@@ -17,17 +17,16 @@
         </div>
     </header>
     <main>
-        <%- include("partials/carousel")  %> 
         <section>
-            <h2>Productos Destacados</h2>
+            <h2>Todos Nuestros Productos:</h2>
             <div class="products">
             
-            <% productos.forEach(producto => { %>
+            <% products.forEach(producto => { %>
                 
                 <a href="/product/<%= producto.id %> " style=text-decoration:none><article class="product-card">
                     <img src="images/productDetail/<%= producto.img  %>" alt="Producto 1">
                     <div class="product-text">
-                        <h3 class="product-name"><%= producto.productName %> </h3>
+                        <h3 class="product-name"><%= producto.productName %></h3>
                         <p class="product-description"><%= producto.description  %> </p>
                         <p class="product-price">$<%= producto.price  %> </p>
                     </div>

@@ -9,9 +9,11 @@ const routes = require("./routes/main");
 app.use(express.static(publicPath));  //usamos la funcion static de express, que recibe como parametro la ruta a la carpeta public
 app.set("view engine", "ejs");
 
-const PORT = 3000;
-app.listen(PORT, () => console.log("Servidor ejecutándose en el puerto ", PORT));
-
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 
 app.use("/", routes);
+
+const PORT = 3000;
+app.listen(PORT, () => console.log("Servidor ejecutándose en el puerto ", PORT));
 

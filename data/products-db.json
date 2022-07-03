@@ -1,0 +1,50 @@
+[
+    {
+        "productName": "Agua con gas",
+        "description": "Agua con gas Baja en Sodio Glaciar 1.5 L",
+        "price": 139.99,
+        "img": "Agua-Baja-En-Sodio-Glaciar-Con-Gas-15-L-1-240110.webp",
+        "id": 75,
+        "preciosCuidados": true
+    },
+    {
+        "productName": "Chocolate Milka",
+        "description": "Chocolate con leche Milka 150 grs",
+        "price": 120,
+        "img": "Chocolate-Milka-Con-Leche-150-Gr-1-26505.webp",
+        "id": 6,
+        "preciosCuidados": false
+    },
+    {
+        "productName": "Limpiavidrios Mr Musculo",
+        "description": "Repuesto Mr Musculo Limpiavirios 900ml",
+        "price": "88.99",
+        "img": "Limpiador-Vidrios-Y-Multiuso-Doy-Pack-Mr-Musculo-900-Ml-1-249086.webp",
+        "id": 7,
+        "preciosCuidados": false
+    },
+    {
+        "productName": "Leche La Serenisima ZERO",
+        "description": "Leche larga vida zero lactosa La Serenísima 1L ",
+        "price": 114,
+        "img": "Leche-Ls-Uat-Pa-Desc-Zero-Lact-For-Vit-1-859051.webp",
+        "id": 14,
+        "preciosCuidados": false
+    },
+    {
+        "productName": "Paso de los Toros Pomelo",
+        "description": "Gaseosa Paso de los toros Pomelo 1.5Lts",
+        "price": 135.5,
+        "img": "Gaseosa-Paso-De-Los-Toros-Pomelo-15l-1-248189.webp",
+        "id": 15,
+        "preciosCuidados": true
+    },
+    {
+        "productName": "Carne Picada",
+        "description": "Carne Picada Especial ALCER",
+        "price": 223,
+        "img": "Picada-Especial-1-861724.webp",
+        "id": 17,
+        "preciosCuidados": false
+    }
+]

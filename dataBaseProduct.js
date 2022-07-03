@@ -3,7 +3,7 @@ const productos = [
         nombre: "Agua con gas",
         descripcion:"Agua con gas Baja en Sodio Glaciar 1.5 L",
         precio: 139.99,
-        imagen:"Agua-Baja-En-Sodio-Glaciar-Con-Gas-15-L-1-240110.webp",
+        imagen:"",
         id: 75
     },
     {
