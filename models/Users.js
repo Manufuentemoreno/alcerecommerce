@@ -5,7 +5,7 @@ const { all } = require('../routes/products-router');
 
 const User = {
     
-    fileName: '../data/users-db.json',
+    fileName: './data/users-db.json',
 
     getData: function () {
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
@@ -55,4 +55,4 @@ const User = {
     }
 }
 
-module.exports = Users;
+module.exports = User;

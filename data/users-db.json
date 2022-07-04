@@ -1,13 +1,46 @@
 [
- {
-  "id": 1,
-  "email": "prueba@prueba.com",
-  "password": "prueba",
-  "confirmPassword": "prueba",
-  "category": "normalUser",
-  "name": "prueba",
-  "lastName": "prueba",
-  "birthDate": "",
-  "profilePhoto": ""
- }
+    {
+        "id": 1,
+        "email": "prueba@prueba.com",
+        "password": "prueba",
+        "confirmPassword": "prueba",
+        "category": "normalUser",
+        "name": "prueba",
+        "lastName": "prueba",
+        "birthDate": "",
+        "profilePhoto": ""
+    },
+    {
+        "id": 2,
+        "email": "js.urquiza@gmail.com",
+        "password": "prueba",
+        "confirmPassword": "prueba",
+        "category": "normalUser",
+        "name": "Juan",
+        "lastName": "Urquiza",
+        "birthDate": "1990-10-30",
+        "profilePhoto": ""
+    },
+    {
+        "id": 3,
+        "email": "js.urquiza@gmail.com",
+        "password": "prueba",
+        "confirmPassword": "prueba",
+        "category": "normalUser",
+        "name": "Juan",
+        "lastName": "Urquiza",
+        "birthDate": "1990-10-30",
+        "profilePhoto": ""
+    },
+    {
+        "id": 4,
+        "email": "prueba@gmail.com",
+        "password": "",
+        "confirmPassword": "",
+        "category": "normalUser",
+        "name": "",
+        "lastName": "",
+        "birthDate": "",
+        "profilePhoto": "Guybrush400x400.jpg"
+    }
 ]
