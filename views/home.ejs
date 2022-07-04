@@ -22,18 +22,22 @@
             <h2>Productos Destacados</h2>
             <div class="products">
             
-            <% productos.forEach(producto => { %>
-                
-                <a href="/product/<%= producto.id %> " style=text-decoration:none><article class="product-card">
-                    <img src="images/productDetail/<%= producto.img  %>" alt="Producto 1">
+            <% for (let i = 0; i < 6; i++) { %> 
+
+                <a href="/products/<%= productos[i].id %> " style=text-decoration:none><article class="product-card">
+                    <img src="images/productDetail/<%= productos[i].img  %>" alt="Producto 1">
                     <div class="product-text">
-                        <h3 class="product-name"><%= producto.productName %> </h3>
-                        <p class="product-description"><%= producto.description  %> </p>
-                        <p class="product-price">$<%= producto.price  %> </p>
+                        <h3 class="product-name"><%= productos[i].productName %> </h3>
+                        <p class="product-description"><%= productos[i].description  %> </p>
+                        <p class="product-price">$<%= productos[i].price  %> </p>
                     </div>
                 </article></a>
 
-            <% }) %>
+            <% } %>
+
+            <article>
+                <a href="/products/">Todos Nuestros Productos</a>
+            </article>
 
             </div>
         </section>

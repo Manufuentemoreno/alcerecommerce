@@ -13,7 +13,7 @@
       <section class="box">
         <h1>Editar producto: <%= product.productName %> </h1>
 
-        <form action="/product/edit/<%= product.id %>" method="post" class="form">
+        <form action="/products/edit/<%= product.id %>" method="post" class="form">
             
             <input class="input-stle <%= locals.errors && errors.productName ? "danger" : null %>"
             type="text" name="productName" id="productName" placeholder="Nombre del Producto"
@@ -72,7 +72,7 @@
         type="submit">Guardar Producto</button>
         
     </div></form>
-    <a href="/product/"><button class="button edit-button">Volver</button></a>
+    <a href="/products/"><button class="button edit-button">Volver</button></a>
       </section>  
     </main>
     <%- include("partials/footer")  %> 

@@ -7,7 +7,7 @@ const authRouter = require('./auth');
 
 router.get("/", mainController.home);
 
-router.use("/product", productsRouter);
+router.use("/products", productsRouter);
 
 router.get("/carrito", mainController.cart);
 

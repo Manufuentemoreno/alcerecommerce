@@ -13,7 +13,7 @@
       <section class="box">
         <h1>Producto Nuevo</h1>
 
-        <form class="form" action="/product/crear" method="POST" enctype="multipart/form-data">
+        <form class="form" action="/products/crear" method="POST" enctype="multipart/form-data">
             
             <input class="input-stle <%= locals.errors && errors.productName ? "danger" : null %>"
             type="text" name="productName" id="productName" placeholder="Nombre del Producto"

@@ -41,7 +41,7 @@ const controller = {
 
             Products.saveData(newProduct);
 
-            res.redirect("/product");
+            res.redirect("/products");
         }
     },
 
@@ -80,15 +80,17 @@ const controller = {
         productsList =  JSON.stringify(db, null, 4);
         fs.writeFileSync( Products.fileName, productsList );
         
-        res.redirect("/product")
+        res.redirect("/products")
     },
 
     destroy: (req, res) => {
-        Products.delete(req.params.id);
+        if ( req.body.sure ) {
+            Products.delete(req.params.id);
 
-        res.redirect("/product")
+            res.redirect("/products");
+        }
 
-
+        res.redirect("/products");
     }
 };
 

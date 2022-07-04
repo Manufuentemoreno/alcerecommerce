@@ -23,7 +23,7 @@
             
             <% products.forEach(producto => { %>
                 
-                <a href="/product/<%= producto.id %> " style=text-decoration:none><article class="product-card">
+                <a href="/products/<%= producto.id %> " style=text-decoration:none><article class="product-card">
                     <img src="/images/productDetail/<%= producto.img  %>" alt="Producto 1">
                     <div class="product-text">
                         <h3 class="product-name"><%= producto.productName %></h3>
@@ -35,7 +35,7 @@
             <% }) %>
 
             </div>
-            <a href="/product/crear"><button class="button">Cargar Nuevo Producto</button></a>
+            <a href="/products/crear"><button class="button">Cargar Nuevo Producto</button></a>
         </section>
     </main>
     <%- include("partials/footer")  %> 

@@ -18,6 +18,15 @@
         "preciosCuidados": false
     },
     {
+        "productName": "Limpiavidrios Mr Musculo",
+        "description": "Repuesto Mr Musculo Limpiavirios 900ml",
+        "price": "88.99",
+        "img": "Limpiador-Vidrios-Y-Multiuso-Doy-Pack-Mr-Musculo-900-Ml-1-249086.webp",
+        "id": 7,
+        "category": "Limpieza",
+        "preciosCuidados": false
+    },
+    {
         "productName": "Leche La Serenisima Zero",
         "description": "Leche larga vida zero lactosa La Serenísima 1L ",
         "price": "240",
@@ -34,15 +43,6 @@
         "id": 15,
         "category": "Bebidas",
         "preciosCuidados": true
-    },
-    {
-        "productName": "Limpiavidrios Mr Musculo",
-        "description": "Repuesto Mr Musculo Limpiavirios 900ml",
-        "price": "88.99",
-        "img": "Limpiador-Vidrios-Y-Multiuso-Doy-Pack-Mr-Musculo-900-Ml-1-249086.webp",
-        "id": 7,
-        "category": "Limpieza",
-        "preciosCuidados": false
     },
     {
         "productName": "Carne Picada",

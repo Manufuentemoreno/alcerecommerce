@@ -10,6 +10,7 @@
       <%- include("partials/topBar")  %> 
     </header>
     <main>
+
       <section class="box">
         <h1><%= product.productName %></h1>
         <div class="description">
@@ -20,14 +21,19 @@
         <div class="price">$<%= product.price  %> </div>
       </article>
       
-        <a href="/product"><button type="submit" class="button">Comprar</button></a>
+        <a href="/products"><button type="submit" class="button">Comprar</button></a>
     
-      <form action="/product/edit/<%= product.id %> " method="get">
+      <form action="/products/edit/<%= product.id %> " method="get">
         <button type="submit" class="button edit-button">Editar</button>
       </form>
-      <form action="/product/delete/<%= product.id %> " method="get">
+
+      <form action="/products/delete/<%=product.id%>" method="post">
         <button type="submit" class="button delete-button">Eliminar</button>
+        <label for="sure">Quiero eliminar este producto</label>
+      <input type="checkbox" name="sure" id="sure">
+
       </form>
+
       </div></div>
       </section>  
     </main>
