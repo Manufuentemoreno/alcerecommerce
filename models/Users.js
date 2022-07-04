@@ -43,14 +43,14 @@ const User = {
             ...userData
         }
         allUsers.push(newUser);
-        fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '));
+        fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, 4));
         return true;
     },
 
     delete: function (id) {
         let allUsers = this.findAll();
         let finalUsers = allUsers.filter(elemento => elemento.id != id); // Devuelve todos los usuarios que son distintos al que se pasó por id. Todos menos ese.
-        fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ' '));
+        fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, 4));
         return true;
     }
 }
