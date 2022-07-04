@@ -1,13 +1,13 @@
 [
-    {
-        "id": "1",
-        "email":"prueba@prueba.com",
-        "password": "prueba",
-        "confirmPassword": "prueba",
-        "category": "normalUser",
-        "name": "prueba",
-        "lastName": "prueba",
-        "birthDate": "",
-        "profilePhoto": ""
-    }
+ {
+  "id": 1,
+  "email": "prueba@prueba.com",
+  "password": "prueba",
+  "confirmPassword": "prueba",
+  "category": "normalUser",
+  "name": "prueba",
+  "lastName": "prueba",
+  "birthDate": "",
+  "profilePhoto": ""
+ }
 ]
