@@ -11,6 +11,68 @@
     </header>
     <main>
       <section class="box">
+        <h1>Editar producto: <%= product.productName %> </h1>
+
+        <form action="/product/edit/<%= product.id %>" method="post" class="form">
+            
+            <input class="input-stle <%= locals.errors && errors.productName ? "danger" : null %>"
+            type="text" name="productName" id="productName" placeholder="Nombre del Producto"
+            value= "<%= locals.oldData ? oldData.productName : product.productName %>">
+        <% if (locals.errors && errors.productName) { %>
+            <div class="danger-text">
+            <p><%= errors.productName.msg %></p>
+            </div> 
+        <% } %>
+
+            <input style="-moz-appearance: textfield;-webkit-outer-spin-button: none; -webkit-inner-spin-button: none"
+             class="input-stle <%= locals.errors && errors.price ? "danger" : null %>" type="number" name="price" id="price" placeholder="Precio"
+             value= <%= locals.oldData ? oldData.price : product.price %>>
+            <% if (locals.errors && errors.price) { %>
+                <div class="danger-text">
+                <p><%= errors.price.msg %></p>
+                </div> 
+            <% } %>
+
+            <select class="input-stle" name="category" id="category">
+                <option value="" disabled selected>Elegí una Categoría</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Golosinas">Golosinas</option>
+                <option value="Limpieza">Limpieza</option>
+                <option value="Lacteos">Lacteos</option>
+                <option value="Carnicería">Carnicería</option>
+            </select>
+            <% if (locals.errors && errors.category) { %>
+                <div class="danger-text">
+                <p><%= errors.category.msg %></p>
+                </div> 
+            <% } %>
+            
+            <% if (product.preciosCuidados) { %> 
+            <div style="margin:10px; padding:10px;">
+            <label for="preciosCuidados">Este producto se encuentra en Precios Cuidados</label>
+            <input type="checkbox" name="preciosCuidados" id="preciosCuidados" checked>
+            </div>
+            <% }else{ %> 
+
+            <div style="margin:10px; padding:10px;">
+              <label for="preciosCuidados">Este producto se encuentra en Precios Cuidados</label>
+              <input type="checkbox" name="preciosCuidados" id="preciosCuidados">
+              </div>
+            <% } %> 
+            <textarea class="input-stle <%= locals.errors && errors.description ? "danger" : null %>" type="text" name="description" id="description" placeholder="Descripción"cols="30" rows="10"
+                ><%= locals.oldData ? oldData.description : product.description %></textarea>
+            <% if (locals.errors && errors.description) { %>
+                <div class="danger-text">
+                <p><%= errors.description.msg %></p>
+                </div> 
+            <% } %>
+        </div>
+        <div>
+        <button 
+        type="submit">Guardar Producto</button>
+        
+    </div></form>
+    <a href="/product/"><button class="button edit-button">Volver</button></a>
       </section>  
     </main>
     <%- include("partials/footer")  %> 

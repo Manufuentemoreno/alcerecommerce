@@ -21,10 +21,10 @@ const upload = multer({ storage : saveImage });
 // express validator:
 const { body } = require("express-validator");
 const validations = [
-    body("productName").notEmpty().withMessage("Campo Obligatorio"),
-    body("price").notEmpty().withMessage("Campo Obligatorio"),
-    body("category").notEmpty().withMessage("Campo Obligatorio"),
-    body("description").notEmpty().withMessage("Campo Obligatorio"),
+    body("productName").notEmpty().withMessage("* Campo Obligatorio"),
+    body("price").notEmpty().withMessage("* Campo Obligatorio"),
+    body("category").notEmpty().withMessage("* Se necesita seleccionar una categoría"),
+    body("description").notEmpty().withMessage("* Campo Obligatorio"),
     body("img").custom((value, { req }) => {
         let file = req.file;
         let extensionsOk = [ ".jpg", ".jpeg", ".png", ".webp" ];
@@ -58,7 +58,7 @@ router.get('/:id/', productsController.detail);
 
 // EDIT ONE PRODUCT
 router.get('/edit/:id/', productsController.edit); 
-router.put('/edit/:id/', productsController.update); 
+router.post('/edit/:id/', productsController.update); 
 
 
 // DELETE ONE PRODUCT

@@ -38,7 +38,7 @@ const controller = {
             newProduct.price = Number(newProduct.price);
 
             newProduct.preciosCuidados ? newProduct.preciosCuidados = true : newProduct.preciosCuidados = false;
-            
+
             Products.saveData(newProduct);
 
             res.redirect("/product");
@@ -46,15 +46,49 @@ const controller = {
     },
 
     edit: (req, res) => {
-        res.render("delete");
-        ("editando producto +"+ req.params.id)
+        let productToEdit = Products.editId( req.params.id);
+
+        console.log(productToEdit);
+
+        res.render("edit", { product: productToEdit });
     },
 
-    update: (req, res) => {},
+    update: (req, res) => {
+        const editedNew = req.body;
+        const db = Products.getData();
+
+        let indexOfEdited = db.findIndex( prod => prod.id == req.params.id );
+
+        let originalProd = db[indexOfEdited];
+        
+        if( editedNew.productName && editedNew.productName != originalProd.productName ) {
+            originalProd.productName = editedNew.productName
+        }
+        if( editedNew.description && editedNew.description != originalProd.description ) {
+            originalProd.description = editedNew.description
+        }
+        if( editedNew.price && editedNew.price != originalProd.price ) {
+            originalProd.price = editedNew.price
+        }
+        if( editedNew.preciosCuidados != originalProd.preciosCuidados ) {
+            if (editedNew.preciosCuidados){
+                originalProd.preciosCuidados = true;
+            }else{originalProd.preciosCuidados = false;}}
+                
+        db.splice(indexOfEdited,1,originalProd)        
+
+        productsList =  JSON.stringify(db, null, 4);
+        fs.writeFileSync( Products.fileName, productsList );
+        
+        res.redirect("/product")
+    },
 
     destroy: (req, res) => {
-        res.render("edit");
-        res.send("eliminando XX producto +"+ req.params.id)
+        Products.delete(req.params.id);
+
+        res.redirect("/product")
+
+
     }
 };
 

@@ -16,6 +16,14 @@ const Products = {
         return JSON.parse(fs.readFileSync(this.fileDeleted, "utf-8"));
     },
 
+    editId: function ( id ){
+        const allProduct = this.getData();
+
+        let productToEdit = allProduct.find( producto => producto.id == id);
+
+        return productToEdit;
+    },
+
     saveData: function ( product ) {
         let productDB = this.getData()
         productDB.push(product);
