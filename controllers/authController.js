@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator');
 const User = require('../models/Users');
+const bcryptjs = require('bcryptjs');
 
 module.exports = {
     showRegister: function (req, res) {
@@ -18,7 +19,13 @@ module.exports = {
             });
         }
 
-        User.create(req.body);
+        let userToCreate = {
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            profilePhoto: req.file.filename
+        }
+        
+        User.create(userToCreate);
 
         return res.send('Usuario guardado');
     }

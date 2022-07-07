@@ -9,48 +9,5 @@
         "lastName": "prueba",
         "birthDate": "",
         "profilePhoto": ""
-    },
-    {
-        "id": 2,
-        "email": "js.urquiza@gmail.com",
-        "password": "prueba",
-        "confirmPassword": "prueba",
-        "category": "normalUser",
-        "name": "Juan",
-        "lastName": "Urquiza",
-        "birthDate": "1990-10-30",
-        "profilePhoto": ""
-    },
-    {
-        "id": 3,
-        "email": "js.urquiza@gmail.com",
-        "password": "prueba",
-        "confirmPassword": "prueba",
-        "category": "normalUser",
-        "name": "Juan",
-        "lastName": "Urquiza",
-        "birthDate": "1990-10-30",
-        "profilePhoto": ""
-    },
-    {
-        "id": 4,
-        "email": "prueba@gmail.com",
-        "password": "",
-        "confirmPassword": "",
-        "category": "normalUser",
-        "name": "",
-        "lastName": "",
-        "birthDate": "",
-        "profilePhoto": "Guybrush400x400.jpg"
-    },
-    {
-        "id": 5,
-        "email": "pepito@gmail.com",
-        "password": "banana",
-        "confirmPassword": "banana",
-        "category": "normalUser",
-        "name": "pepito",
-        "lastName": "manzana",
-        "birthDate": "1990-10-30"
     }
 ]
