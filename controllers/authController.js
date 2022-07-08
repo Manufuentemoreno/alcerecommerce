@@ -12,13 +12,25 @@ module.exports = {
     register: function (req, res) {
         const resultValidation = validationResult(req);
 
-        if (resultValidation.errors.lenght > 0) {
+        if (!resultValidation.isEmpty()) { //Si el resultado de la validación no está vacío
             return res.render('register', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
+                errors: resultValidation.mapped(), //Guarda los errores de validación que tiene express-validator
+                oldData: req.body // Información que viajo en el req.body
             });
         }
 
+        let userInDB = User.findByField('email', req.body.email);
+        if (userInDB) {
+            return res.render('register', {
+                errors: {
+                    email: {
+                        msg: 'Este email ya está registrado.'
+                    }
+                },
+                oldData: req.body
+            });
+        }
+        
         let userToCreate = {
             ...req.body,
             password: bcryptjs.hashSync(req.body.password, 10),

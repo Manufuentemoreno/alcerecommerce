@@ -16,7 +16,8 @@
             <h2>Datos de la cuenta</h2>
             <div class="input-icon-container">
                 <i class="fa-solid fa-envelope"></i>
-                <input class="input-with-icon" type="email" name="email" placeholder="Ingrese su email">
+                <input class="input-with-icon" type="email" name="email" placeholder="Ingrese su email"
+                value="<%= locals.oldData && oldData.email ? oldData.email : ''%>"> <!--Trae los datos que había ingresado el usuario-->
             </div>
             <div class="input-icon-container">
                 <i class="fa-solid fa-lock"></i>
@@ -29,24 +30,27 @@
             <div>
                 <label for="category">Categoría:</label>
                 <select class="input-general mt-10" name="category">
-                    <option value="normalUser">Soy comprador</option>
-                    <option value="adminUser">Soy administrador</option>
+                    <option value="normalUser" <%= locals.oldData && oldData.category === 'normalUser' ? 'selected' : ''; %>>Soy comprador</option>
+                    <option value="adminUser" <%= locals.oldData && oldData.category === 'adminUser' ? 'selected' : ''; %>>Soy administrador</option>
                 </select>
             </div>
             <h2>Datos personales</h2>
             <div class="">
                 <label for="name">
-                    <input class="input-general" type="text" name="name" placeholder="Ingrese su nombre">
+                    <input class="input-general" type="text" name="name" placeholder="Ingrese su nombre"
+                    value="<%= locals.oldData && oldData.name ? oldData.name : ''%>">
                 </label>
             </div>
             <div class="">
                 <label for="lastName">
-                    <input class="input-general" type="text" name="lastName" placeholder="Ingrese su apellido">
+                    <input class="input-general" type="text" name="lastName" placeholder="Ingrese su apellido"
+                    value="<%= locals.oldData && oldData.lastName ? oldData.lastName: ''%>">
                 </label>
             </div>
             <div class="">
                 <label for="birthDate">Seleccione su fecha de nacimiento:
-                    <input class="input-general mt-10" type="date" name="birthDate">
+                    <input class="input-general mt-10" type="date" name="birthDate"
+                    value="<%= locals.oldData && oldData.birthDate ? oldData.birthDate: ''%>">
                 </label>
             </div>
             <div>
@@ -57,6 +61,13 @@
             <div class="grupo-botones-formulario mt-15">
                 <button class="boton-enviar" type="submit">Enviar</button>
                 <button class="botones-formulario" type="reset">Borrar</button>
+            </div>
+            <div>
+                <% if (locals && locals.errors) { %> 
+                    <% for ( let error in errors ) { %>
+                        <p> <%= errors[error].msg %>  </p>
+                    <% } %>
+                <% } %> 
             </div>
         </form>
     </main>
