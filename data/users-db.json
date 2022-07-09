@@ -1,1 +1,13 @@
-[]
+[
+    {
+        "id": 1,
+        "email": "prueba@prueba.com",
+        "password": "$2a$10$h9vGarpQhfi0I5upMio1ceXFS2MNKJfwlL4eS1MvefwvUzh.hgY.C",
+        "confirmPassword": "prueba",
+        "category": "normalUser",
+        "name": "prueba",
+        "lastName": "prueba",
+        "birthDate": "1990-10-30",
+        "profilePhoto": "1657405443811.jpg"
+    }
+]

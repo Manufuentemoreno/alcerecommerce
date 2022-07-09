@@ -32,5 +32,6 @@ fileUpload = multer({ storage: multerDiskStorage});
 router.get('/register', authController.showRegister);
 router.post('/register', fileUpload.single('profilePhoto'), userRegisterValidation, authController.register);
 router.get('/login', authController.showLogin);
+router.post('/login', authController.login);
 
 module.exports = router;

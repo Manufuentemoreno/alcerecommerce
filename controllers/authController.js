@@ -40,5 +40,10 @@ module.exports = {
         let userCreated = User.create(userToCreate);
 
         return res.redirect('/login');
+    },
+    login: function (req, res) {
+        let userToLogin = User.findByField('email', req.body.email);
+        return res.send(userToLogin);
+
     }
 }
