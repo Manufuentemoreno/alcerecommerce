@@ -37,8 +37,8 @@ module.exports = {
             profilePhoto: req.file.filename
         }
         
-        User.create(userToCreate);
+        let userCreated = User.create(userToCreate);
 
-        return res.send('Usuario guardado');
+        return res.redirect('/login');
     }
 }
