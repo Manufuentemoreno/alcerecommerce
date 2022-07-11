@@ -5,6 +5,8 @@ const app = express();
 const path = require ("path");  //path unifica las rutas dentro de los sistemas operativos ((direcciones))
 const publicPath = path.resolve(__dirname, "./public"); //le indicamos a path que resuelva la siguiente ruta
 
+const userAuth = require('./middlewares/user-auth');
+
 const routes = require("./routes/main");
 
 
@@ -19,6 +21,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
+
+app.use(userAuth);
 
 app.use("/", routes);
 
