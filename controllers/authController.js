@@ -47,7 +47,7 @@ module.exports = {
         if (userToLogin) {
             let passwordIsOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if (passwordIsOk) {
-                req.session.userLogged = userToLogin;
+                req.session.loggedUser = userToLogin;
                 
                 res.redirect('/');
 
