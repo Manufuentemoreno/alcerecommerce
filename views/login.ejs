@@ -16,10 +16,10 @@
             <div class="input-icon-container">
                 <i class="fa-solid fa-envelope"></i>
                 <input class="input-with-icon" type="email" name="email" placeholder="Ingrese su email">
-                <% if (locals.errors && errors.email) { %> <!--Si en locals tengo errores y si en los errores vino un email-->
-                    <p> <%= errors.email.msg %>  </p>
-                <% } %>
             </div>
+                <% if (locals.errors && errors.email) { %> <!--Si en locals tengo errores y si en los errores vino un email-->
+                    <p class="mensaje-error"> <%= errors.email.msg %>  </p>
+                <% } %>
             <div class="input-icon-container">
                 <i class="fa-solid fa-lock"></i>
                 <input class="input-with-icon" type="password" name="password" placeholder="Contraseña">

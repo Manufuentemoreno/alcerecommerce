@@ -1,6 +1,8 @@
 const { validationResult } = require('express-validator');
 const User = require('../models/Users');
 const bcryptjs = require('bcryptjs');
+const Productos = require("../models/Products");
+const allProduct = Productos.getData();
 
 module.exports = {
     showRegister: function (req, res) {
@@ -43,7 +45,32 @@ module.exports = {
     },
     login: function (req, res) {
         let userToLogin = User.findByField('email', req.body.email);
-        return res.send(userToLogin);
+        
+        if (userToLogin) {
+            let passwordIsOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            if (passwordIsOk) {
+                req.session.userLogged = userToLogin;
+                return res.render('home', {
+                    user: req.session.userLogged,
+                    productos: allProduct
+                });
+            }
+            return res.render('login', {
+                errors: {
+                    email: {
+                        msg: 'Las credenciales son inválidas'
+                    }
+                }
+            })
+        }
+
+        return res.render('login', {
+            errors: {
+                email: {
+                    msg: 'Email no registrado'
+                }
+            }
+        })
 
     }
 }
