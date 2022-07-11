@@ -3,13 +3,15 @@
         <i class="fas fa-bars"></i></a>
     <a href="/"><img class=alcer-logo src="\images\logo-borde.png" alt="Alcer supermercado" /></a>
     <div class="space-header"></div>
-    <i class="font-light-blue fa-solid fa-cart-shopping"></i>
     <% if (locals.loggedUser) { %>
-        <p>Bienvenido</p>
-        <p> <%= locals.loggedUser.name %>  </p>
-        <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        <div class="grupo-bienvenido">
+            <p>Bienvenido</p>
+            <p> <%= locals.loggedUser.name %> </p>
+            <a href="/logout"><i class="top-bar-element font-light-blue fa-solid fa-arrow-right-from-bracket"></i></a>
+        </div>
     <% } else { %>
-        <a href="/login"><i class="font-light-blue fa-solid fa-user"></i></a>
+        <a href="/login"><i class="top-bar-element font-light-blue fa-solid fa-user"></i></a>
     <% } %>
+    <i class="top-bar-element font-light-blue fa-solid fa-cart-shopping"></i>
 </div>
 <div class="space-topbar"></div>

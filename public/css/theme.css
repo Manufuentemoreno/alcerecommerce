@@ -19,6 +19,21 @@ body{
     z-index: 100;
 }
 
+.top-bar-element {
+    font-size: large;
+    padding: 10px;
+}
+
+.grupo-bienvenido {
+    display: flex;
+    align-items: center;
+}
+
+.grupo-bienvenido p {
+    margin: 0px;
+    padding: 2px;
+}
+
 .burger-menu{
     font-size: x-large;
 }
@@ -40,16 +55,6 @@ body{
 }
 .space-header{
     flex-grow: 2.5;
-}
-
-.fa-cart-shopping{
-    font-size: large;
-    padding: 2%;
-}
-
-.fa-user{
-    font-size: large;
-    padding: 2%;
 }
 
 .space-topbar{
