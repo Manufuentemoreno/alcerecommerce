@@ -4,6 +4,12 @@
     <a href="/"><img class=alcer-logo src="\images\logo-borde.png" alt="Alcer supermercado" /></a>
     <div class="space-header"></div>
     <i class="font-light-blue fa-solid fa-cart-shopping"></i>
-    <a href="/login"><i class="font-light-blue fa-solid fa-user"></i></a>
+    <% if (locals.loggedUser) { %>
+        <p>Bienvenido</p>
+        <p> <%= locals.loggedUser.name %>  </p>
+        <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    <% } else { %>
+        <a href="/login"><i class="font-light-blue fa-solid fa-user"></i></a>
+    <% } %>
 </div>
 <div class="space-topbar"></div>
