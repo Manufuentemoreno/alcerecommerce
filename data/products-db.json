@@ -91,9 +91,9 @@
     },
     {
         "productName": "Antitranspirante Rexona Invisible",
-        "price": 420,
+        "price": "420",
         "category": "Limpieza",
-        "preciosCuidados": true,
+        "preciosCuidados": "on",
         "description": "Desodorante Antitranspirante Rexona Invisible En Aerosol 150ml",
         "img": "img-1656903324076-Antitranspirante Rexona Invisible.webp",
         "id": 22

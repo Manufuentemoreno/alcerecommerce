@@ -58,24 +58,11 @@ const controller = {
         const db = Products.getData();
 
         let indexOfEdited = db.findIndex( prod => prod.id == req.params.id );
-
         let originalProd = db[indexOfEdited];
-        
-        if( editedNew.productName && editedNew.productName != originalProd.productName ) {
-            originalProd.productName = editedNew.productName
-        }
-        if( editedNew.description && editedNew.description != originalProd.description ) {
-            originalProd.description = editedNew.description
-        }
-        if( editedNew.price && editedNew.price != originalProd.price ) {
-            originalProd.price = editedNew.price
-        }
-        if( editedNew.preciosCuidados != originalProd.preciosCuidados ) {
-            if (editedNew.preciosCuidados){
-                originalProd.preciosCuidados = true;
-            }else{originalProd.preciosCuidados = false;}}
-                
-        db.splice(indexOfEdited,1,originalProd)        
+
+        let finalEdit = {...originalProd, ...editedNew} // actualiza valores que se hayan modificado en el req.body
+
+        db.splice(indexOfEdited,1,finalEdit)        
 
         productsList =  JSON.stringify(db, null, 4);
         fs.writeFileSync( Products.fileName, productsList );
