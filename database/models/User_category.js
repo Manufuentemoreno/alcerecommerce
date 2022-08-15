@@ -16,6 +16,14 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'users_categories',
         timestamps: false
     };
-    const model = sequelize.define(alias, cols, config);
-    return model;
+    const user_category = sequelize.define(alias, cols, config);
+    
+    user_category.associate = (models) {
+        user_category.hasMany(models.Users, {
+            foreignKey: 'category_id',
+            as: 'users'
+        })
+    }
+
+    return user_category;
 }
