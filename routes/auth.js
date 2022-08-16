@@ -12,8 +12,8 @@ const userRegisterValidation = [
     body('confirmPassword').notEmpty().withMessage('Debe confirmar la contraseña.'),
     body('category').notEmpty().withMessage('El campo categoría no puede quedar vacío.'),
     body('name').notEmpty().withMessage('Debe completar su nombre.'),
-    body('lastName').notEmpty().withMessage('Debe completar su apellido.'),
-    body('birthDate').notEmpty().withMessage('Debe completar su fecha de nacimiento.')
+    body('last_name').notEmpty().withMessage('Debe completar su apellido.'),
+    body('birth_date').notEmpty().withMessage('Debe completar su fecha de nacimiento.')
 ]
 
 let multerDiskStorage = multer.diskStorage({
