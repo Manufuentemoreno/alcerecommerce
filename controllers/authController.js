@@ -46,34 +46,37 @@ module.exports = {
         })
     },
     login: function (req, res) {
-        let userToLogin = User.findByField('email', req.body.email);
-        
-        if (userToLogin) {
-            let passwordIsOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
-            if (passwordIsOk) {
-                req.session.loggedUser = userToLogin;
-                
-                res.redirect('/');
-
-                return;
+        db.Users.findOne({
+            where: {
+                email: req.body.email
             }
+        }).then(function(userToLogin){
+            if (userToLogin) {
+                let passwordIsOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
+                if (passwordIsOk) {
+                    req.session.loggedUser = userToLogin;
+                    
+                    res.redirect('/');
+    
+                    return;
+                }
+                return res.render('login', {
+                    errors: {
+                        email: {
+                            msg: 'Las credenciales son inválidas'
+                        }
+                    }
+                })
+            }
+    
             return res.render('login', {
                 errors: {
                     email: {
-                        msg: 'Las credenciales son inválidas'
+                        msg: 'Email no registrado'
                     }
                 }
             })
-        }
-
-        return res.render('login', {
-            errors: {
-                email: {
-                    msg: 'Email no registrado'
-                }
-            }
         })
-
     },
     logout: function (req, res) {
         req.session.destroy();
