@@ -30,7 +30,7 @@ let multerDiskStorage = multer.diskStorage({
 fileUpload = multer({ storage: multerDiskStorage});
 
 router.get('/register', authController.showRegister);
-router.post('/register', fileUpload.single('profilePhoto'), userRegisterValidation, authController.register);
+router.post('/register', fileUpload.single('profil_photo'), userRegisterValidation, authController.register);
 router.get('/login', authController.showLogin);
 router.post('/login', authController.login);
 router.get('/logout', authController.logout);

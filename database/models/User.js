@@ -15,8 +15,9 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
-        category_id: {
+        category: {
             type: dataTypes.INTEGER,
+            allowNull: false
         },
         name: {
             type: dataTypes.STRING,
@@ -42,13 +43,6 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
     const User = sequelize.define(alias, cols, config);
-
-    User.associate = function (models) {
-        User.belongsTo(models.Users_categories, {
-            foreignKey: 'category_id',
-            as: 'categories'
-        })
-    }
 
     return User;
 }
