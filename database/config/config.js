@@ -2,7 +2,7 @@ module.exports =
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": 'Importante16',
     "database": "alcer_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
