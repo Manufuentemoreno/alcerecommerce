@@ -133,5 +133,14 @@
         "img": "img-1656903510401-Ades Manzana.webp",
         "id": 26,
         "preciosCuidados": false
+    },
+    {
+        "productName": "Papas Mc Cain Tradicionales",
+        "price": "236",
+        "category": "Golosinas",
+        "description": "Papas Tradicional Mc Cain Bsa 720 Grm",
+        "img": "img-1660694127063-Papas Mc Cain Tradicionales.jpg",
+        "id": 27,
+        "preciosCuidados": false
     }
 ]
