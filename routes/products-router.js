@@ -14,20 +14,20 @@ const productsController = require('../controllers/productController');
 // GET ALL PRODUCTS
 router.get('/', productsController.index); 
 
-// CREATE ONE PRODUCT
-router.get('/create', productsController.create); 
-router.post('/create', upload.single("img"), validations , productsController.store); 
+// // CREATE ONE PRODUCT
+// router.get('/create', productsController.create); 
+// router.post('/create', upload.single("img"), validations , productsController.store); 
 
 
-// GET ONE PRODUCT
-router.get('/:id/', productsController.detail); 
+// // GET ONE PRODUCT
+// router.get('/:id/', productsController.detail); 
 
-// EDIT ONE PRODUCT
-router.get('/edit/:id/', productsController.edit); 
-router.post('/edit/:id/', productsController.update); // DEBE SER PUT
+// // EDIT ONE PRODUCT
+// router.get('/edit/:id/', productsController.edit); 
+// router.post('/edit/:id/', productsController.update); // DEBE SER PUT
 
 
-// DELETE ONE PRODUCT
-router.post('/delete/:id', productsController.destroy);  // DEBE SER DELETE
+// // DELETE ONE PRODUCT
+// router.post('/delete/:id', productsController.destroy);  // DEBE SER DELETE
 
 module.exports = router;
