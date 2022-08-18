@@ -12,7 +12,7 @@ const { validationResult } = require("express-validator");
 const controller = {
     index: (req, res) => {
         Products.findAll({
-            include: ["category_id"]
+            include: [{association: 'products_categories'}]
         })
             .then(productsList =>{
                 res.send(productsList)
