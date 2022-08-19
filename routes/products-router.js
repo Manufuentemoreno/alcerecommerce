@@ -14,10 +14,9 @@ const productsController = require('../controllers/productController');
 // GET ALL PRODUCTS
 router.get('/', productsController.index); 
 
-// // CREATE ONE PRODUCT
-// router.get('/create', productsController.create); 
-// router.post('/create', upload.single("img"), validations , productsController.store); 
-
+// CREATE ONE PRODUCT
+router.get('/create', productsController.create); 
+router.post('/create', upload.single("product_photo"), validations , productsController.store); 
 
 // // GET ONE PRODUCT
 // router.get('/:id/', productsController.detail); 

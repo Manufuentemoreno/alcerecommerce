@@ -2,11 +2,11 @@ const path = require("path");
 const { body } = require("express-validator");
 
 const validations = [
-    body("productName").notEmpty().withMessage("* Campo Obligatorio"),
+    body("name").notEmpty().withMessage("* Campo Obligatorio"),
     body("price").notEmpty().withMessage("* Campo Obligatorio"),
     body("category").notEmpty().withMessage("* Se necesita seleccionar una categoría"),
     body("description").notEmpty().withMessage("* Campo Obligatorio"),
-    body("img").custom((value, { req }) => {
+    body("product_photo").custom((value, { req }) => {
         let file = req.file;
         let extensionsOk = [ ".jpg", ".jpeg", ".png", ".webp" ];
 

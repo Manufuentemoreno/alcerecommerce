@@ -12,20 +12,18 @@
     <main>
       <section class="box">
         <h1>Producto Nuevo</h1>
-
-        <form class="form" action="/products/crear" method="POST" enctype="multipart/form-data">
-            
-            <input class="input-stle <%= locals.errors && errors.productName ? "danger" : null %>"
-            type="text" name="productName" id="productName" placeholder="Nombre del Producto"
-            value= <%= locals.oldData ? oldData.productName : null %>>
-        <% if (locals.errors && errors.productName) { %>
+        <form class="form" action="/products/create" method="POST" enctype="multipart/form-data">            
+            <input class="input-stle <%= locals.errors && errors.name ? "danger" : null %>"
+            type="text" name="name" id="name" placeholder="Nombre del Producto"
+            value= <%= locals.oldData ? oldData.name : null %>>
+        <% if (locals.errors && errors.name) { %>
             <div class="danger-text">
-            <p><%= errors.productName.msg %></p>
+            <p><%= errors.name.msg %></p>
             </div> 
         <% } %>
 
             <input style="-moz-appearance: textfield;-webkit-outer-spin-button: none; -webkit-inner-spin-button: none"
-             class="input-stle <%= locals.errors && errors.price ? "danger" : null %>" type="number" name="price" id="price" placeholder="Precio"
+            step = 0.01 min=0 class="input-stle <%= locals.errors && errors.price ? "danger" : null %>" type="number" name="price" id="price" placeholder="Precio"
              value= <%= locals.oldData ? oldData.price : null %>>
             <% if (locals.errors && errors.price) { %>
                 <div class="danger-text">
@@ -49,7 +47,7 @@
 
             <div style="margin:10px; padding:10px;">
             <label for="preciosCuidados">Este producto se encuentra en Precios Cuidados</label>
-            <input type="checkbox" name="preciosCuidados" id="preciosCuidados">
+            <input type="checkbox" name="special_offer" id="preciosCuidados">
             </div>
             
             <textarea class="input-stle <%= locals.errors && errors.description ? "danger" : null %>" type="text" name="description" id="description" placeholder="Descripción"cols="30" rows="10"
@@ -61,15 +59,15 @@
             <% } %>
 
             <div style="margin:10px; padding:10px;">
-            <label for="img" class="form-label">Imagen del Producto: </label>
+            <label for="product_photo" class="form-label">Imagen del Producto: </label>
             <input type="file"
-                    id="img"
-                    name="img"
+                    id="product_photo"
+                    name="product_photo"
                     style="margin-left: 20px"
             />
-            <% if (locals.errors && errors.img) { %>
+            <% if (locals.errors && errors.product_photo) { %>
                 <div class="danger-text">
-                <p><%= errors.img.msg %></p>
+                <p><%= errors.product_photo.msg %></p>
                 </div> 
             <% } else if (locals.errors) { %>
                 <div class="danger-text">
