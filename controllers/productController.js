@@ -16,11 +16,14 @@ const controller = {
             include: [{association: 'products_categories'}]
         })
             .then(productsList =>{
-                res.send(productsList)
+                res.render("products", { products: productsList })
             })
     },
 
-    detail: (req, res) => {},
+    detail: (req, res) => {
+        Products.findByPk(req.params.id)
+        .then(producto => {res.render("productDetail", {product: producto} )})
+    },
     
     create: (req, res) => {
         res.render("create");
@@ -55,7 +58,12 @@ const controller = {
 
     },
 
-    edit: (req, res) =>{},
+    edit: (req, res) =>{
+        Products.findByPk(req.params.id)
+            .then(productToEdit => {
+                res.render("edit", { product: productToEdit } )
+            })
+    },
 
     update: (req, res) => {},
 

@@ -19,10 +19,10 @@ router.get('/create', productsController.create);
 router.post('/create', upload.single("product_photo"), validations , productsController.store); 
 
 // // GET ONE PRODUCT
-// router.get('/:id/', productsController.detail); 
+router.get('/:id/', productsController.detail); 
 
 // // EDIT ONE PRODUCT
-// router.get('/edit/:id/', productsController.edit); 
+router.get('/edit/:id/', productsController.edit); 
 // router.post('/edit/:id/', productsController.update); // DEBE SER PUT
 
 
