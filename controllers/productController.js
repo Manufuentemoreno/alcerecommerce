@@ -18,6 +18,7 @@ const controller = {
             .then(productsList =>{
                 res.render("products", { products: productsList })
             })
+            .catch(error => res.send(error))
     },
 
     detail: (req, res) => {
@@ -63,9 +64,25 @@ const controller = {
             .then(productToEdit => {
                 res.render("edit", { product: productToEdit } )
             })
+            .catch(error => res.send(error))
     },
 
-    update: (req, res) => {},
+    update: async(req, res) => {
+        const productEdited = req.body;
+        const idP = req.params.id;
+
+        await Products.update({
+            name: productEdited.name,
+            price: Number(productEdited.price),
+            description: productEdited.description
+        },{
+            where: {id: idP}
+        })
+        .catch(error => res.send(error))
+        
+        res.redirect("/products");
+        
+    },
 
     destroy: (req, res) => {},
 };

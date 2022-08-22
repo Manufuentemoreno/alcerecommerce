@@ -11,16 +11,16 @@
     </header>
     <main>
       <section class="box">
-        <h1>Editar producto: <%= product.productName %> </h1>
+        <h1>Editar producto: <%= product.name %> </h1>
 
         <form action="/products/edit/<%= product.id %>" method="post" class="form">
             
-            <input class="input-stle <%= locals.errors && errors.productName ? "danger" : null %>"
-            type="text" name="productName" id="productName" placeholder="Nombre del Producto"
-            value= "<%= locals.oldData ? oldData.productName : product.productName %>">
-        <% if (locals.errors && errors.productName) { %>
+            <input class="input-stle <%= locals.errors && errors.name ? "danger" : null %>"
+            type="text" name="name" id="name" placeholder="Nombre del Producto"
+            value= "<%= locals.oldData ? oldData.name : product.name %>">
+        <% if (locals.errors && errors.name) { %>
             <div class="danger-text">
-            <p><%= errors.productName.msg %></p>
+            <p><%= errors.name.msg %></p>
             </div> 
         <% } %>
 

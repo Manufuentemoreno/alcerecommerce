@@ -23,7 +23,7 @@ router.get('/:id/', productsController.detail);
 
 // // EDIT ONE PRODUCT
 router.get('/edit/:id/', productsController.edit); 
-// router.post('/edit/:id/', productsController.update); // DEBE SER PUT
+router.post('/edit/:id/', productsController.update); // DEBE SER PUT
 
 
 // // DELETE ONE PRODUCT
