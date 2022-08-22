@@ -1,0 +1,33 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-container {
+    border: solid 1px black;
+}
+
+.profil-photo {
+    padding: 10px;
+    max-width: 60px;
+}
+
+thead {
+    background-color: lightblue;
+}
+
+th {
+    padding: 20px 15px;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 0px 15px;
+    border-top: 1px solid black;
+}
+
+tbody tr:hover {
+    background-color: rgba(173, 216, 230, 0.250);
+}
