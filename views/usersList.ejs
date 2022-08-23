@@ -16,28 +16,38 @@
         <a class="botonVolver" href="/">inicio</a>
         <br>
         <br>
-        <table>
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Email</th>
-                    <th>Fecha nac.</th>
-                    <th>Foto</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for( let i=0; i < users.length; i++ ) { %>
-                    <tr>
-                        <td><%= users[i].name %> </td>
-                        <td><%= users[i].last_name %> </td>
-                        <td><%= users[i].email %> </td>
-                        <td><%= users[i].birth_date %> </td>
-                        <td><img class="profil-photo" src="/images/profile/<%= users[i].profil_photo %> " alt="Foto"></td>
+        <div class="table-responsive">
+            <table class="table table-sm table-hover">
+                <thead>
+                    <tr class="table-primary">
+                        <th>Acción</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Foto</th>
                     </tr>
-                <% } %>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <% for( let i=0; i < users.length; i++ ) { %>
+                        <tr>
+                            <td>
+                                <a href="/users/detail/<%= users[i].id %> ">Editar</a>
+                            </td>
+                            <td>
+                                <%= users[i].name %>
+                            </td>
+                            <td>
+                                <%= users[i].last_name %>
+                            </td>
+                            <td>
+                                <%= users[i].email %>
+                            </td>
+                            <td><img class="profil-photo" src="/images/profile/<%= users[i].profil_photo %> " alt="Foto"></td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
     </main>
 </body>
 
