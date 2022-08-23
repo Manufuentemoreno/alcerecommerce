@@ -2,36 +2,40 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="/css/theme-form.css" />
-    <!--conecta el archivo theme.form.css con el home-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <%- include("partials/head") %>
-        <title>Lista de usuarios</title>
+    <% include ('partials/head') %> 
+    <link rel="stylesheet" href="/css/theme-users.css" />
+    <title>Lista de usuarios</title>
 </head>
-
 <body>
-    <%- include("partials/topBar") %>
-        <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
-            <h1>Listado de usuarios</h1>
-            <a class="botonAgregar" href="/movies/add">Agregar un usuario</a>
-            <a class="botonVolver" href="/">inicio</a>
-            <br>
-            <ul>
+    <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
+        <h1>Listado de usuarios</h1>
+        <a class="botonAgregar" href="/movies/add">Agregar un usuario</a>
+        <a class="botonVolver" href="/">inicio</a>
+        <br>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Fecha nac.</th>
+                    <th>Foto</th>
+                </tr>
+            </thead>
+            <tbody>
                 <% for( let i=0; i < users.length; i++ ) { %>
-                    <li>
-                        <a href="/users/detail/<%= users[i].id %>">
-                            <%= users[i].name %>
-                        </a>
-                        <%= users[i].last_name %>
-                            <%= users[i].birth_date %>
-                                <figure>
-                                    <img src="/img/<%= users[i].profil_photo %> " alt="Foto de perfil">
-                                </figure>
-                    </li>
+                    <tr>
+                        <td><%= users[i].name %> </td>
+                        <td><%= users[i].last_name %> </td>
+                        <td><%= users[i].email %> </td>
+                        <td><%= users[i].birth_date %> </td>
+                        <td><img class="profil-photo" src="/images/profile/<%= users[i].profil_photo %> " alt="Foto"></td>
+                    </tr>
                 <% } %>
-            </ul>
-        </main>
+            </tbody>
+        </table>
+    </main>
 </body>
 
 </html>

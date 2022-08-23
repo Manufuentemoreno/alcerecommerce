@@ -5,8 +5,11 @@ main {
     justify-content: center;
 }
 
-.table-container {
-    border: solid 1px black;
+table {
+    width: 100%;
+    min-width: 500px;
+    max-width: 1000px;
+    border-collapse: collapse;
 }
 
 .profil-photo {
@@ -16,16 +19,16 @@ main {
 
 thead {
     background-color: lightblue;
+    text-align: left;
 }
 
 th {
-    padding: 20px 15px;
     text-transform: uppercase;
+    border: 1px solid lightblue;
 }
 
 td {
-    padding: 0px 15px;
-    border-top: 1px solid black;
+    border-top: 1px solid lightblue;
 }
 
 tbody tr:hover {
