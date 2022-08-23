@@ -6,5 +6,13 @@ module.exports = {
         .then(function(users){
             res.render('usersList', {users});
         })
+    },
+    edit: function (req, res) {
+        let userId = req.params.id;
+        db.Users.findByPk(userId)
+        .then(function(userToEdit){
+            res.render('usersEdit', {userToEdit});
+        })
+        .catch(error=>res.send(error));
     }
 }
