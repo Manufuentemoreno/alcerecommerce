@@ -13,7 +13,7 @@
 <body>
     <%- include("partials/topBar") %>
     <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
-        <form class="formulario" action="">
+        <form class="formulario" action="/users/update/<%= userToEdit.id %>?_method=PUT" method="POST">
             <div class="grupo-titulo-form">
                 <div class="titulo-form-fondo mb-15 ml">
                     <h1 class="titulo-form-texto">Editar</h1>
