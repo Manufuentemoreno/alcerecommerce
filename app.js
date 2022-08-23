@@ -2,6 +2,9 @@ const express = require("express");  //requerimos el paquete express
 const session = require('express-session'); //requerimos el paquete express-session
 const app = express();
 
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
+
 const path = require ("path");  //path unifica las rutas dentro de los sistemas operativos ((direcciones))
 const publicPath = path.resolve(__dirname, "./public"); //le indicamos a path que resuelva la siguiente ruta
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/css/theme-form.css" />
+    <!--conecta el archivo theme.form.css con el home-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <%- include("partials/head") %>
+    <title>Editar usuario</title>
+</head>
+
+<body>
+    <%- include("partials/topBar") %>
+    <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
+        <form class="formulario" action="">
+            <div class="grupo-titulo-form">
+                <div class="titulo-form-fondo mb-15 ml">
+                    <h1 class="titulo-form-texto">Editar</h1>
+                </div>
+            </div>
+            <h2>Datos de la cuenta</h2>
+            <div class="input-icon-container">
+                <i class="fa-solid fa-envelope"></i>
+                <input class="input-with-icon" type="email" name="email" value="<%= userToEdit.email%>">
+            </div>
+            <div>
+                <label for="category">Categoría:</label>
+                <select class="input-general mt-10" name="category">
+                    <option value="normalUser" <%=userToEdit.category==='normalUser' ? 'selected' : '' ; %>>Soy
+                        comprador</option>
+                    <option value="adminUser" <%=userToEdit.category==='adminUser' ? 'selected' : '' ; %>>Soy
+                        administrador</option>
+                </select>
+            </div>
+            <h2>Datos personales</h2>
+            <div class="">
+                <input class="input-general" type="text" name="name" value="<%= userToEdit.name %>">
+            </div>
+            <div class="">
+                <input class="input-general" type="text" name="last_name" value="<%= userToEdit.last_name %>">
+            </div>
+            <div class="">
+                <label for="birth_date">Seleccione su fecha de nacimiento:
+                    <input class="input-general mt-10" type="date" name="birth_date" value="<%= userToEdit.birth_date %>">
+                </label>
+            </div>
+            <div>
+                <label for="profil_photo">Seleccione una foto de perfil:
+                    <input class="input-general mt-10" type="file" name="profil_photo" id="">
+                </label>
+            </div>
+            <div class="grupo-botones-formulario mt-15">
+                <button class="boton-enviar" type="submit">Enviar</button>
+                <button class="botones-formulario" type="reset">Borrar</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
