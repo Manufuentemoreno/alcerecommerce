@@ -22,7 +22,8 @@ module.exports = {
             category: req.body.category,
             name: req.body.name,
             last_name: req.body.last_name,
-            birth_date: req.body.birth_date
+            birth_date: req.body.birth_date,
+            profil_photo: req.file.filename
         },
         {
             where: {id: userId}

@@ -13,7 +13,7 @@
     <%- include("partials/topBar") %>
     <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
         <div class="formulario">
-            <form class="row g-3 justify-content-center" action="/users/update/<%= userToEdit.id %>?_method=PUT" method="POST">
+            <form class="row g-3 justify-content-center" action="/users/update/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="col-12">
                     <label for="email" class="form-label">Email:</label>
                     <input class="form-control" type="email" name="email" value="<%= userToEdit.email%>">
@@ -30,7 +30,7 @@
                     <input class="form-control" type="text" name="name" value="<%= userToEdit.name %>">
                 </div>
                 <div class="col-12">
-                    <label for="last_name" class="form-label">Apellido</label>
+                    <label for="last_name" class="form-label">Apellido:</label>
                     <input class="form-control" type="text" name="last_name" value="<%= userToEdit.last_name %>">
                 </div>
                 <div class="col-12">
@@ -43,7 +43,7 @@
                         <input class="form-control" type="file" name="profil_photo" id="">
                     </label>
                 </div>
-                <div class="col-12">
+                <div class="">
                     <button class="btn btn-primary" type="submit">Enviar</button>
                     <button class="btn btn-secondary" type="reset">Borrar</button>
                 </div>
