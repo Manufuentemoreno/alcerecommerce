@@ -13,7 +13,7 @@
       <section class="box">
         <h1>Editar producto: <%= product.name %> </h1>
 
-        <form action="/products/edit/<%= product.id %>" method="post" class="form">
+        <form action="/products/edit/<%= product.id %>?_method=PUT" method="post" class="form">
             
             <input class="input-stle <%= locals.errors && errors.name ? "danger" : null %>"
             type="text" name="name" id="name" placeholder="Nombre del Producto"

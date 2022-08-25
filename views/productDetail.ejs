@@ -29,7 +29,7 @@
         <button type="submit" class="button edit-button">Editar</button>
       </form>
 
-      <form action="/products/delete/<%=product.id%>" method="post">
+      <form action="/products/delete/<%=product.id%>?_method=DELETE" method="post">
         <button type="submit" class="button delete-button">Eliminar</button>
         <label for="sure">Quiero eliminar este producto</label>
       <input type="checkbox" name="sure" id="sure">

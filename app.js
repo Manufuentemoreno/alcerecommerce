@@ -12,7 +12,6 @@ const userAuth = require('./middlewares/user-auth');
 
 const routes = require("./routes/main");
 
-
 app.use(express.static(publicPath));  //usamos la funcion static de express, que recibe como parametro la ruta a la carpeta public
 app.set("view engine", "ejs");
 

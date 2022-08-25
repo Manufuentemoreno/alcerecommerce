@@ -18,15 +18,15 @@ router.get('/', productsController.index);
 router.get('/create', productsController.create); 
 router.post('/create', upload.single("product_photo"), validations , productsController.store); 
 
-// // GET ONE PRODUCT
+// GET ONE PRODUCT
 router.get('/:id/', productsController.detail); 
 
-// // EDIT ONE PRODUCT
+// EDIT ONE PRODUCT
 router.get('/edit/:id/', productsController.edit); 
-router.post('/edit/:id/', productsController.update); // DEBE SER PUT
+router.put('/edit/:id/', productsController.update);
 
 
-// // DELETE ONE PRODUCT
-// router.post('/delete/:id', productsController.destroy);  // DEBE SER DELETE
+// DELETE ONE PRODUCT
+router.delete('/delete/:id', productsController.destroy);
 
 module.exports = router;

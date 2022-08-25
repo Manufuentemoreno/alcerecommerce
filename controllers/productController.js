@@ -81,10 +81,21 @@ const controller = {
         .catch(error => res.send(error))
         
         res.redirect("/products");
-        
+    
     },
 
-    destroy: (req, res) => {},
+    destroy: (req, res) => {
+        if ( req.body.sure ) {
+            Products.destroy({
+                where: {
+                    id: req.params.id}
+            });
+
+            res.redirect("/products");
+        }
+
+        res.redirect("/products");
+    },
 };
 
 module.exports = controller;

@@ -27,18 +27,17 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false
         },
-        deleted_at:{
-            type: dataTypes.DATE
-        },
         category_id:{
             type:dataTypes.BIGINT(10),
             allowNull: false
-        }
+        },
     };
     let config = {
         tableName: "products",
-        timestamps: false
+        timestamps: true,
+        paranoid: true
     };
+
     const Products = sequelize.define(alias, cols, config);
 
     Products.associate = function(models) {
