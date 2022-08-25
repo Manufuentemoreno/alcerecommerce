@@ -8,7 +8,7 @@ const Products = db.Products;
 const Category = db.Products_categories;
 
 // Comando:
-// node cd/src/controllers/crearproductos.js
+// node controllers/crearproductos.js
 
 const productos = [{
     name: "Agua con gas",
