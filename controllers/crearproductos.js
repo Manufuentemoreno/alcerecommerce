@@ -7,6 +7,9 @@ const { Op } = require("sequelize");
 const Products = db.Products;
 const Category = db.Products_categories;
 
+// Comando:
+// node cd/src/controllers/crearproductos.js
+
 const productos = [{
     name: "Agua con gas",
     description: "Agua con gas Baja en Sodio Glaciar 1.5 L",
