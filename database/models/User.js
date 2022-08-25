@@ -33,14 +33,12 @@ module.exports = (sequelize, dataTypes) => {
         },
         profil_photo: {
             type: dataTypes.STRING(500)
-        },
-        deleted_at: {
-            type: dataTypes.DATE
         }
     };
     let config = {
         tableName: 'users',
-        timestamps: false
+        timestamps: true,
+        paranoid: true
     };
     const User = sequelize.define(alias, cols, config);
 
