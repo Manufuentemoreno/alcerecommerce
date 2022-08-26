@@ -1,3 +1,4 @@
+const path = require('path');
 const { body } = require('express-validator');
 const userRegisterValidation = [
     body('email')
@@ -16,7 +17,16 @@ const userRegisterValidation = [
     body('last_name')
         .notEmpty().withMessage('Debe completar su apellido.').bail()
         .isLength({min: 2}).withMessage('El apellido debe tener al menos 2 caracteres'),
-    body('birth_date').notEmpty().withMessage('Debe completar su fecha de nacimiento.')
+    body('birth_date').notEmpty().withMessage('Debe completar su fecha de nacimiento.'),
+    body('profile_photo').custom((value, { req }) => {
+        let file = req.file;
+        let extensionsOk = [".jpg", ".jpeg", ".png", ".webp"];
+        let fileExtension = path.extname(file.originalname);
+        
+        if (!extensionsOk.includes(fileExtension)) {
+            throw new Error("Seleccioná un archivo " + extensionsOk.join(" - "));
+        }
+    })
 ];
 
 module.exports = userRegisterValidation;
