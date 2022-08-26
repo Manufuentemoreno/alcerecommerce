@@ -180,5 +180,5 @@ const categoriaProductos = [
 
 
 Products.bulkCreate(productos);
-Category.bulkCreate(categoriaProductos);
+// Category.bulkCreate(categoriaProductos);
 
