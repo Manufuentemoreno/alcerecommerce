@@ -38,7 +38,7 @@ module.exports = {
                 db.Users.create({
                     ...req.body,
                     password: bcryptjs.hashSync(req.body.password, 10),
-                    profil_photo: req.file.filename
+                    profil_photo: req.file ? req.file.filename : 'defaultUser.png'
                 }).then(function(){
                     res.redirect('/login');
                 })
