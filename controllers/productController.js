@@ -32,11 +32,13 @@ const controller = {
 
     store: async (req, res) => {
         const errors = validationResult(req);
-
+        
+        
         if (!errors.isEmpty()){
-            res.render("create", { "errors" : errors.mapped(), "oldData" : req.body })
+            res.render("create", { "errors" : errors.mapped(), "oldData" : req.body });
+            return 
         }
-
+        
         const newProduct = req.body;
         
         newProduct.price = Number(newProduct.price);
