@@ -11,15 +11,6 @@ const Category = db.Products_categories;
 // node controllers/crearproductos.js
 
 const productos = [{
-    name: "Agua con gas",
-    description: "Agua con gas Baja en Sodio Glaciar 1.5 L",
-    price: 139.99,
-    product_photo: "Agua-Baja-En-Sodio-Glaciar-Con-Gas-15-L-1-240110.webp",
-    id: 75,
-    category_id: 1,
-    special_offer: 1
-},
-{
     name: "Chocolate Milka",
     description: "Chocolate con leche Milka 150 grs",
     price: 120,
@@ -61,7 +52,7 @@ const productos = [{
     price: 223,
     product_photo: "Picada-Especial-1-861724.webp",
     id: 17,
-    category_id: 5,
+    category_id: 4,
     special_offer: 0
 },
 {
@@ -104,7 +95,7 @@ const productos = [{
     name: "Antitranspirante Rexona Invisible",
     price: "420",
     category_id: 3,
-    special_offer: "on",
+    special_offer: 1,
     description: "Desodorante Antitranspirante Rexona Invisible En Aerosol 150ml",
     product_photo: "img-1656903324076-Antitranspirante Rexona Invisible.webp",
     id: 22
@@ -176,9 +167,24 @@ const categoriaProductos = [
     name: "Carnicería",
     description: "Carnicería"
 },
+{
+    id: 5,
+    name: "Almacén",
+    description: "Almacén"
+}
 ];
 
+// node controllers/crearproductos.js
 
-Products.bulkCreate(productos);
 // Category.bulkCreate(categoriaProductos);
+Products.bulkCreate(productos);
+// Products.create({
+//     name: "Agua con gas",
+//     description: "Agua con gas Baja en Sodio Glaciar 1.5 L",
+//     price: 139.99,
+//     product_photo: "Agua-Baja-En-Sodio-Glaciar-Con-Gas-15-L-1-240110.webp",
+//     id: 75,
+//     category_id: 1,
+//     special_offer: 1
+// });
 

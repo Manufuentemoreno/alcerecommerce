@@ -1,10 +1,17 @@
-const Productos = require("../models/Products");
-const carrito = require("../dataCarrito");
-const allProduct = Productos.getData();
+const path = require("path");
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+
+// Modelos
+const Products = db.Products;
 
 module.exports = {
     home : (req, res)=>{
-        res.render("home",{"productos": allProduct});
+        Products.findAll()
+        .then((productList)=>{
+            res.render("home",{"productos": productList});})
+        .catch(e=>res.send(e));
     },
 
     cart : (req,res) =>{

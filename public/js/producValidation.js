@@ -1,3 +1,3 @@
 window.onload = function(){
-    this.alert(1)
+    this.alert()
 };
