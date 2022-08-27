@@ -1,44 +1,49 @@
+
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container-fluid">
-        <a class="contenedor-logo nav-icon navbar-brand" href="/"><img class="alcer-logo d-inline-block align-text-top" src="\images\logo-borde.png" alt="Alcer supermercado" /></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <% if (locals.loggedUser) { %>
-                    <% let nombre = locals.loggedUser.name %>
-                    <% let mensaje = 'Bienvenido' %>
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <%= mensaje.concat(' ', nombre) %>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Carrito</a>
-                </li>
-                <% if (locals.loggedUser.category == 'adminUser') {%> 
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/users">Usuarios</a>
+        <div>
+            <a class="contenedor-logo nav-icon navbar-brand" href="/"><img class="alcer-logo d-inline-block align-text-top" src="\images\logo-borde.png" alt="Alcer supermercado" /></a>
+        </div>
+        <div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <% if (locals.loggedUser) { %>
+                        <% let nombre = locals.loggedUser.name %>
+                        <% let mensaje = 'Bienvenido' %>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <%= mensaje.concat(' ', nombre) %>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+                        </ul>
                     </li>
-                <% } %> 
-                <% } else { %>
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Iniciar sesión</a>
-                </li>
-                <% } %>
-            </ul>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Carrito</a>
+                    </li>
+                    <% if (locals.loggedUser.category == 'adminUser') {%> 
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/users">Usuarios</a>
+                        </li>
+                    <% } %> 
+                    <% } else { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Iniciar sesión</a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
