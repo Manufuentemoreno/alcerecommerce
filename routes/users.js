@@ -12,7 +12,7 @@ const checkAdmin = require('../middlewares/checkAdmin');
 const fileUpload = require("../middlewares/multer-save-userImages");
 
 router.get('/users', checkUser, checkAdmin, usersController.list);
-router.get('/users/edit/:id', usersController.edit);
+router.get('/users/edit/:id', checkAdmin, usersController.edit);
 router.put('/users/update/:id', fileUpload.single('profil_photo'), usersController.update);
 
 module.exports = router;
