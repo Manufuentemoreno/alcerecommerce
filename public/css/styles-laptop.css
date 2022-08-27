@@ -2,10 +2,16 @@
   .header{
     padding: 1%;
   }
+
+  /* *********** TOPBAR ***********  */
+
   .alcer-logo{
-      top: 5%;
-      width: 21%;
+    top: 5%;
+    width: 21%;
   }
+
+  /* ******* FIN DE TOPBAR ********  */
+
   .categorias{
     margin-top: 2%;
     display: block;

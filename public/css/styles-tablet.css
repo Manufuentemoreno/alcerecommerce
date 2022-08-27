@@ -1,8 +1,24 @@
 @media (min-width: 768px) {
 
-  .alcer-logo{
-    top: 10%;
-  }
+  /* *********** TOPBAR ***********  */
+  
+  .main-header-top-bar {
+      padding: 2%;
+    }
+  
+    .main-header-top-bar i {
+      font-size: 24px;
+    }
+
+    .alcer-logo {
+      top: 10%;
+    }
+
+    .space-topbar{
+      height: 100px;
+    }
+  
+  /* ******* FIN DE TOPBAR ********  */
   
   .productPrincipalImage {
     width: 60%;
@@ -26,10 +42,6 @@
     margin: auto;
   }
 
-  .space-topbar{
-    height: 100px;
-  }
-
   .search-container{
     padding: 0px;
     margin: 15px 20px;
@@ -42,14 +54,6 @@
     margin: auto;
     padding: 32px 32px;
     background-color: #fff;
-  }
-
-  .main-header-top-bar{
-    padding: 2%;
-  }
-
-  .main-header-top-bar i{
-    font-size: 24px;
   }
 
   .products{
