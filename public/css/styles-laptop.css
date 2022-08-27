@@ -5,9 +5,13 @@
 
   /* *********** TOPBAR ***********  */
 
-  .alcer-logo{
-    top: 5%;
-    width: 21%;
+  .contenedor-logo {
+    display: block;
+    width: 120px;
+  }
+
+  .alcer-logo {
+    width: 100%;
   }
 
   /* ******* FIN DE TOPBAR ********  */
@@ -17,9 +21,7 @@
     display: block;
     display: flex;
   }
-  main{
-    margin-top: 3%;
-  }
+
   .firstProductTitle{
     display: none;
   }

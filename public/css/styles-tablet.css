@@ -1,23 +1,14 @@
 @media (min-width: 768px) {
 
   /* *********** TOPBAR ***********  */
-  
-  .main-header-top-bar {
-      padding: 2%;
-    }
-  
-    .main-header-top-bar i {
-      font-size: 24px;
-    }
+   .contenedor-logo {
+    display: block;
+    width: 120px;
+  }
 
-    .alcer-logo {
-      top: 10%;
-    }
-
-    .space-topbar{
-      height: 100px;
-    }
-  
+  .alcer-logo {
+    width: 100%;
+  }
   /* ******* FIN DE TOPBAR ********  */
   
   .productPrincipalImage {
