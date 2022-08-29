@@ -1,5 +1,5 @@
 window.onload = function(){
-    const button = document.querySelector("#sub");
+    const form = document.querySelector("#createForm");
     const name = document.querySelector("#name");
     const price = document.querySelector("#price");
     const category = document.querySelector("#category");
@@ -178,8 +178,8 @@ window.onload = function(){
 
     // SUBMIT
     let eimage = "";
-    button.addEventListener("submit",(e)=>{
-        e.preventDefault();
+    form.addEventListener("submit", (event)=>{
+        event.preventDefault();
 
         // Image
         if(!errores.productImage){
@@ -256,8 +256,6 @@ window.onload = function(){
             errores[key]!=0 ? rtado.push(key) : null;
         }
 
-        !rtado.length ? e.submit() : null;
+        !rtado.length ? form.submit() : null;
     })
-
-    
 };
