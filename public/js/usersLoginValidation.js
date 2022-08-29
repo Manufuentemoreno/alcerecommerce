@@ -47,12 +47,14 @@ window.onload = function() {
 
         let ulErrores = document.querySelector('div.errores ul');
         
-        for (let i = 0; i < errores.length; i++) {
-            ulErrores.innerHTML +=
-              "<li>" +
-              "<i class='fa-solid fa-triangle-exclamation'></i>" +
-              errores[i] +
-              "</li>";
+        if(errores.length < 3) {
+          for (let i = 0; i < errores.length; i++) {
+              ulErrores.innerHTML +=
+                "<li>" +
+                "<i class='fa-solid fa-triangle-exclamation'></i>" +
+                errores[i] +
+                "</li>";
+          }
         }
       }
     })
