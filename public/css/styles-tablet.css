@@ -9,6 +9,11 @@
   .alcer-logo {
     width: 100%;
   }
+
+  .search-bar input::placeholder {
+    font-size: medium;
+  }
+
   /* ******* FIN DE TOPBAR ********  */
   
   .productPrincipalImage {
