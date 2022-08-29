@@ -17,20 +17,23 @@
             <input class="input-stle <%= locals.errors && errors.name ? "danger" : null %>"
             type="text" name="name" id="name" placeholder="Nombre del Producto"
             value= <%= locals.oldData ? oldData.name : null %>>
+            
         <% if (locals.errors && errors.name) { %>
-            <div class="danger-text">
-            <p><%= errors.name.msg %></p>
-            </div> 
+          <div id="ename" class="danger-text">
+          <p><%= errors.name.msg %></p>
+          </div>
         <% } %>
+            
 
-            <input style="-moz-appearance: textfield;-webkit-outer-spin-button: none; -webkit-inner-spin-button: none"
-            step = 0.01 min=0 class="input-stle <%= locals.errors && errors.price ? "danger" : null %>" type="number" name="price" id="price" placeholder="Precio"
+            <input type="number" style="-moz-appearance: textfield;-webkit-outer-spin-button: none; -webkit-inner-spin-button: none"
+            step = 0.01 min=0 class="input-stle <%= locals.errors && errors.price ? "danger" : null %>" name="price" id="price" placeholder="Precio"
              value= <%= locals.oldData ? oldData.price : null %>>
             <% if (locals.errors && errors.price) { %>
-                <div class="danger-text">
-                <p><%= errors.price.msg %></p>
-                </div> 
+              <div class="danger-text">
+              <p><%= errors.price.msg %></p>
+              </div>
             <% } %>
+            
 
             <select class="input-stle" name="category" id="category">
                 <option value="" disabled selected>Elegí una Categoría</option>
@@ -78,7 +81,7 @@
         </div>
         <div>
         <button 
-        type="submit">Cargar Producto</button>
+        type="submit" id="sub">Cargar Producto</button>
         <button type="reset">Borrar Todo</button>
     </div></form>
       </section>  
