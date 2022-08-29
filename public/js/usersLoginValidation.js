@@ -6,7 +6,6 @@ window.onload = function() {
     let errores = [];
 
     inputEmail.addEventListener('blur', function() {
-        let divEmail = document.querySelector(".input-icon-container");
         
         function emailIsValid(email) {
             return /\S+@\S+\.\S+/.test(email);
@@ -49,7 +48,7 @@ window.onload = function() {
         let ulErrores = document.querySelector('div.errores ul');
         
         for (let i = 0; i < errores.length; i++) {
-            ulErrores.innerHTML =
+            ulErrores.innerHTML +=
               "<li>" +
               "<i class='fa-solid fa-triangle-exclamation'></i>" +
               errores[i] +
