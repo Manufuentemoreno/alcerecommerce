@@ -1,42 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="/css/theme-form.css" /> <!--conecta el archivo theme.form.css con el home-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <head>
+    <link rel="stylesheet" href="/css/theme-form.css" />
+    <!--conecta el archivo theme.form.css con el home-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <%- include("partials/head") %>
     <title>Ingresar</title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include("partials/topBar") %>
     <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
-        <form action="/login" class="formulario" method="POST">
-            <div class="grupo-titulo-form">
-                <div class="titulo-form-fondo mb-15 ml">
-                    <h1 class="titulo-form-texto">Ingresar</h1>
-                </div>
-            </div>
-            <div class="input-icon-container">
-                <i class="fa-solid fa-envelope"></i>
-                <input class="input-with-icon" type="email" name="email" placeholder="Ingrese su email">
-            </div>
-                <% if (locals.errors && errors.email) { %> <!--Si en locals tengo errores y si en los errores vino un email-->
-                    <p class="mensaje-error"> <%= errors.email.msg %>  </p>
-                <% } %>
-            <div class="input-icon-container">
-                <i class="fa-solid fa-lock"></i>
-                <input class="input-with-icon" type="password" name="password" placeholder="Contraseña">
-            </div>
-            <div class="grupo-botones-formulario mt-15">
-                <button class="boton-enviar" type="submit">Enviar</button>
-                <button class="botones-formulario" type="reset">Borrar</button>
-            </div>
-            <div class="grupo-registrate">
-                <p>¿Todavía no tenés una cuenta?</p>
-                <a class="ml-10" href="/register">Registrate ahora</a>
-            </div>
-        </form>
+      <form action="/login" class="formulario" id="loginForm" method="POST">
+        <div class="grupo-titulo-form">
+          <div class="titulo-form-fondo mb-15 ml">
+            <h1 class="titulo-form-texto">Ingresar</h1>
+          </div>
+        </div>
+        <div class="input-icon-container">
+          <i class="fa-solid fa-envelope"></i>
+          <input
+            class="input-with-icon"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Ingrese su email"
+          />
+        </div>
+        <% if (locals.errors && errors.email) { %>
+        <!--Si en locals tengo errores y si en los errores vino un email-->
+        <p class="mensaje-error"><%= errors.email.msg %></p>
+        <% } %>
+        <div class="input-icon-container">
+          <i class="fa-solid fa-lock"></i>
+          <input
+            class="input-with-icon"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Contraseña"
+          />
+        </div>
+        <div class="grupo-botones-formulario mt-15">
+          <button class="boton-enviar" type="submit">Enviar</button>
+          <button class="botones-formulario" type="reset">Borrar</button>
+        </div>
+        <div class="grupo-registrate">
+          <p>¿Todavía no tenés una cuenta?</p>
+          <a class="ml-10" href="/register">Registrate ahora</a>
+        </div>
+        <div class="errores">
+            <ul></ul>
+        </div>
+      </form>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/usersLoginValidation.js"></script>
+  </body>
 </html>
