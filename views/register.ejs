@@ -11,11 +11,6 @@
     <%- include("partials/topBar") %>
     <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
         <form action="/register" class="formulario" method="POST" enctype="multipart/form-data">
-            <div class="grupo-titulo-form">
-                <div class="titulo-form-fondo mb-15 ml">
-                    <h1 class="titulo-form-texto">Registro</h1>
-                </div>
-            </div>
             <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
                 <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
                     <path
@@ -45,42 +40,42 @@
             <h2>Datos de la cuenta</h2>
             <div class="input-icon-container">
                 <i class="fa-solid fa-envelope"></i>
-                <input class="input-with-icon" type="email" name="email" placeholder="Ingrese su email"
+                <input class="input-with-icon" type="email" name="email" id="email" placeholder="Ingrese su email"
                 value="<%= locals.oldData && oldData.email ? oldData.email : ''%>"> <!--Trae los datos que había ingresado el usuario-->
             </div>
             <div class="input-icon-container">
                 <i class="fa-solid fa-lock"></i>
-                <input class="input-with-icon" type="password" name="password" placeholder="Contraseña nueva">
+                <input class="input-with-icon" type="password" name="password" id="password" placeholder="Ingrese una contraseña nueva">
             </div>
             <div class="input-icon-container">
                 <i class="fa-solid fa-lock"></i>
-                    <input class="input-with-icon" type="password" name="confirmPassword" placeholder="Confirmar contraseña">
+                    <input class="input-with-icon" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirmar contraseña">
             </div>
             <div>
                 <label for="category">Categoría:</label>
-                <select class="input-general mt-10" name="category">
+                <select class="input-general mt-10" name="category" id="category">
                     <option value="normalUser" <%= locals.oldData && oldData.category === 'normalUser' ? 'selected' : ''; %>>Soy comprador</option>
                     <option value="adminUser" <%= locals.oldData && oldData.category === 'adminUser' ? 'selected' : ''; %>>Soy administrador</option>
                 </select>
             </div>
             <h2>Datos personales</h2>
             <div class="">
-                <input class="input-general" type="text" name="name" placeholder="Ingrese su nombre"
+                <input class="input-general" type="text" name="name" id="name" placeholder="Ingrese su nombre"
                 value="<%= locals.oldData && oldData.name ? oldData.name : ''%>">
             </div>
             <div class="">
-                <input class="input-general" type="text" name="last_name" placeholder="Ingrese su apellido"
+                <input class="input-general" type="text" name="last_name" id="last_name" placeholder="Ingrese su apellido"
                 value="<%= locals.oldData && oldData.last_name ? oldData.last_name: ''%>">
             </div>
             <div class="">
                 <label for="birth_date">Seleccione su fecha de nacimiento:
-                    <input class="input-general mt-10" type="date" name="birth_date"
+                    <input class="input-general mt-10" type="date" name="birth_date" id="birth_date"
                     value="<%= locals.oldData && oldData.birth_date ? oldData.birth_date: ''%>">
                 </label>
             </div>
             <div>
                 <label for="profil_photo">Seleccione una foto de perfil:
-                    <input class="input-general mt-10" type="file" name="profil_photo" id="">
+                    <input class="input-general mt-10" type="file" name="profil_photo" id="profil_photo">
                 </label>
             </div>
             <div class="grupo-botones-formulario mt-15">
@@ -89,5 +84,6 @@
             </div>
         </form>
     </main>
+    <script src="/js/usersRegisterValidation"></script>
 </body>
 </html>
