@@ -444,7 +444,7 @@ section h2{
     background-color: rgb(135, 6, 6);
   }
 
-  /* formulario de creacion */
+/* formulario de creacion */
 
   .form{
     display: flex;
@@ -478,9 +478,17 @@ section h2{
   .danger{
     border: solid 2px rgba(231, 47, 47, 0.601);
   }
+
+  .acepted{
+    border: solid 2px rgba(17, 240, 32, 0.9);
+  }
   
   .danger-text{
     color: rgb(231, 47, 47);
     margin-left: 15px;
     height: 15px;
   }
+
+ *:focus{
+    outline:none;
+ }
