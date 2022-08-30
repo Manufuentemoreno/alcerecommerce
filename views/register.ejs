@@ -10,7 +10,9 @@
 <body>
     <%- include("partials/topBar") %>
     <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
-        <form action="/register" class="formulario" method="POST" enctype="multipart/form-data">
+        <section class="form-box">
+        <h1>Datos de la cuenta</h1>
+        <form action="/register" class="form" method="POST" enctype="multipart/form-data" id="register-form">
             <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
                 <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
                     <path
@@ -37,53 +39,48 @@
                     <% } %>
                 </div>
             <% } %>
-            <h2>Datos de la cuenta</h2>
-            <div class="input-icon-container">
+            <div class="input-icon-container input-style" id="emailField">
                 <i class="fa-solid fa-envelope"></i>
-                <input class="input-with-icon" type="email" name="email" id="email" placeholder="Ingrese su email"
+                <input class="input-with-icon" type="email" name="email" id="email" placeholder="E-mail"
                 value="<%= locals.oldData && oldData.email ? oldData.email : ''%>"> <!--Trae los datos que había ingresado el usuario-->
             </div>
-            <div class="input-icon-container">
+            <div class="input-icon-container  input-style" id="passwordField">
                 <i class="fa-solid fa-lock"></i>
-                <input class="input-with-icon" type="password" name="password" id="password" placeholder="Ingrese una contraseña nueva">
+                <input class="input-with-icon" type="password" name="password" id="password" placeholder="Contraseña">
             </div>
-            <div class="input-icon-container">
+            <div class="input-icon-container  input-style" id="rePasswordField">
                 <i class="fa-solid fa-lock"></i>
                     <input class="input-with-icon" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirmar contraseña">
             </div>
-            <div>
-                <label for="category">Categoría:</label>
-                <select class="input-general mt-10" name="category" id="category">
+            <select class="input-style input-whithout-logo" name="category" id="category">
+                    <option value="" disabled selected>Categoría de Usuario</option>
                     <option value="normalUser" <%= locals.oldData && oldData.category === 'normalUser' ? 'selected' : ''; %>>Soy comprador</option>
                     <option value="adminUser" <%= locals.oldData && oldData.category === 'adminUser' ? 'selected' : ''; %>>Soy administrador</option>
-                </select>
-            </div>
-            <h2>Datos personales</h2>
-            <div class="">
-                <input class="input-general" type="text" name="name" id="name" placeholder="Ingrese su nombre"
+            </select>
+            <h3 class="subtitle">Datos personales</h3>
+            <input class="input-style input-whithout-logo" type="text" name="name" id="name" placeholder="Nombre"
                 value="<%= locals.oldData && oldData.name ? oldData.name : ''%>">
-            </div>
-            <div class="">
-                <input class="input-general" type="text" name="last_name" id="last_name" placeholder="Ingrese su apellido"
+            <input class="input-style input-whithout-logo" type="text" name="last_name" id="last_name" placeholder="Apellido"
                 value="<%= locals.oldData && oldData.last_name ? oldData.last_name: ''%>">
-            </div>
-            <div class="">
-                <label for="birth_date">Seleccione su fecha de nacimiento:
-                    <input class="input-general mt-10" type="date" name="birth_date" id="birth_date"
+            
+            <div style="margin:10px; padding:10px;">
+            <label for="birth_date input-style">Fecha de nacimiento:</label>
+            <input class="input-style" type="date" name="birth_date" id="birth_date"
                     value="<%= locals.oldData && oldData.birth_date ? oldData.birth_date: ''%>">
-                </label>
             </div>
+
+            <div style="margin:10px; padding:10px;">
+            <label for="profil_photo">Seleccione una foto de perfil:</label>
+            <input type="file" name="profil_photo" id="profil_photo">
+            </div>
+
             <div>
-                <label for="profil_photo">Seleccione una foto de perfil:
-                    <input class="input-general mt-10" type="file" name="profil_photo" id="profil_photo">
-                </label>
-            </div>
-            <div class="grupo-botones-formulario mt-15">
-                <button class="boton-enviar" type="submit">Enviar</button>
-                <button class="botones-formulario" type="reset">Borrar</button>
+                <button class="button-submit" type="submit">Registrarme</button>
+                <button class="button" type="reset">Borrar Todo</button>
             </div>
         </form>
+        </section>
     </main>
-    <script src="/js/usersRegisterValidation.js"></script>
+    <script src="/js/usersRegisterValidation.js" type="text/javascript"></script>
 </body>
 </html>

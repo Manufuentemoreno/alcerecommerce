@@ -446,12 +446,21 @@ section h2{
 
 /* formulario de creacion */
 
+  .form-box{
+    margin: auto;
+    border: 1px solid #0003;
+    border-radius: 20px;
+    padding: 20px;
+    background: white;
+    max-width: 1000px;
+  }
+
   .form{
     display: flex;
     flex-direction: column;
   }
 
-  .form button {
+  .button {
     background-color: #1259c3;
     border: none;
     border-radius: 7px;
@@ -464,15 +473,38 @@ section h2{
     margin: 5px;
   }
 
-  .form button:hover{
+  .button:hover{
     background-color: #0a3069;
   }
 
-  .input-stle{
+  .button-submit {
+    background-color: #16b140;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    /* padding: 5px; */
+    height: 40px;
+    width: 150px;
+    max-width: 500px;
+    font-size: 15px;
+    margin: 5px;
+  }
+
+  .button-submit:hover{
+    background-color: #0c5e22;
+  }
+  
+  .input-style{
     margin: 10px 10px 0px 10px;
     border: solid 1px #9fb1ff;
     border-radius: 5px;
     padding: 10px;
+    max-height: 50px;
+  }
+
+  .input-whithout-logo{
+    height: 50px;
+    background-color: #FFF;
   }
 
   .danger{
@@ -491,4 +523,8 @@ section h2{
 
  *:focus{
     outline:none;
+ }
+
+ .subtitle{
+    margin: 20px 10px 10px;
  }
