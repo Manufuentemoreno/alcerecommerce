@@ -29,6 +29,7 @@ window.onload = function() {
     form.addEventListener('submit', function(e) {
       //Validaciones email
       if (inputEmail.value == "") {
+        e.preventDefault();
         let pErrorEmail = document.querySelector("div.error-email ul");
         pErrorEmail.innerHTML =
           "<li>" +
