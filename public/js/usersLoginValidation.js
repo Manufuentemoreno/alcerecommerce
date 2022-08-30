@@ -12,50 +12,46 @@ window.onload = function() {
         }
         let email = inputEmail.value;
         if (!emailIsValid(email)) {
-            errores.push('Debe escribir un email válido.')
-        } else {
-          errores = [];
+          let pErrorEmail = document.querySelector('div.error-email ul');
+          pErrorEmail.innerHTML =
+            "<li>" +
+            "<i class='fa-solid fa-triangle-exclamation'></i>" +
+            'Email inválido' +
+            "</li>";
         }
+    })
 
-        if (errores.length > 0) {
-
-          let ulErrores = document.querySelector("div.errores ul");
-
-          for (let i = 0; i < errores.length; i++) {
-            ulErrores.innerHTML =
-              "<li>" +
-              "<i class='fa-solid fa-triangle-exclamation'></i>" +
-              errores[i] +
-              "</li>";
-          }
-        }
+    inputEmail.addEventListener('focus', function() {
+      let pErrorEmail = document.querySelector('div.error-email ul');
+      pErrorEmail.innerHTML = ''
     })
 
     form.addEventListener('submit', function(e) {
       //Validaciones email
       if (inputEmail.value == "") {
-        errores.push("Debe escribir un email.");
+        let pErrorEmail = document.querySelector("div.error-email ul");
+        pErrorEmail.innerHTML =
+          "<li>" +
+          "<i class='fa-solid fa-triangle-exclamation'></i>" +
+          "Debe escribir su email" +
+          "</li>";
       }
 
       //Validaciones password
       if (inputPassword.value == "") {
-        errores.push("Debe escribir una constraseña.");
-      }
-
-      if (errores.length > 0) {
         e.preventDefault();
-
-        let ulErrores = document.querySelector('div.errores ul');
-        
-        if(errores.length < 3) {
-          for (let i = 0; i < errores.length; i++) {
-              ulErrores.innerHTML +=
-                "<li>" +
-                "<i class='fa-solid fa-triangle-exclamation'></i>" +
-                errores[i] +
-                "</li>";
-          }
-        }
+        let pErrorPassword = document.querySelector('div.error-password ul');
+        pErrorPassword.innerHTML =
+          "<li>" +
+          "<i class='fa-solid fa-triangle-exclamation'></i>" +
+          "Debe ingresar una contraseña" +
+          "</li>";
       }
+
+    })
+
+    inputPassword.addEventListener('focus', function() {
+      let pErrorPassword = document.querySelector('div.error-password ul');
+      pErrorPassword.innerHTML = ''
     })
 }

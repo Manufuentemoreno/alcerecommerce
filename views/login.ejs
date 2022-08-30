@@ -31,6 +31,7 @@
             placeholder="Ingrese su email"
           />
         </div>
+        <div class="error-email errores"><ul></ul></div>
         <% if (locals.errors && errors.email) { %>
         <!--Si en locals tengo errores y si en los errores vino un email-->
         <p class="mensaje-error"><%= errors.email.msg %></p>
@@ -45,6 +46,7 @@
             placeholder="Contraseña"
           />
         </div>
+        <div class="error-password errores"><ul></ul></div>
         <div class="grupo-botones-formulario mt-15">
           <button class="boton-enviar" type="submit">Enviar</button>
           <button class="botones-formulario" type="reset">Borrar</button>
@@ -52,9 +54,6 @@
         <div class="grupo-registrate">
           <p>¿Todavía no tenés una cuenta?</p>
           <a class="ml-10" href="/register">Registrate ahora</a>
-        </div>
-        <div class="errores">
-            <ul></ul>
         </div>
       </form>
     </main>
