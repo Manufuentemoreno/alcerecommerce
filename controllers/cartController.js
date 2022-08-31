@@ -5,6 +5,6 @@ const sequelize = db.sequelize;
 module.exports = {
     
     cart: (req, res)=>{
-        req.session.loggedUser ? res.render("productCart") : res.render("login")
+        res.render("productCart")
     }
 };

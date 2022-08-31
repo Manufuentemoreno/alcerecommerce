@@ -333,7 +333,7 @@ window.onload = function(){
         }
 
         submitError ? submitError.remove() : null;
-        e.submit(); 
+        form.submit();
 
     })
 

@@ -7,11 +7,13 @@ const mainController = require("../controllers/mainController");
 const authRouter = require('./auth');
 const usersRouter = require('./users');
 
+const checkUser = require('../middlewares/checkUser');
+
 router.get("/", mainController.home);
 
 router.use("/products", productsRouter);
 
-router.use("/cart", cartRouter);
+router.use("/cart",checkUser, cartRouter);
 
 router.use(authRouter);
 router.use(usersRouter);
