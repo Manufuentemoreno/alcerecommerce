@@ -7,4 +7,5 @@ module.exports = {
     cart: (req, res)=>{
         res.render("productCart")
     }
+    
 };
