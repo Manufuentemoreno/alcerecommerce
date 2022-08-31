@@ -23,14 +23,14 @@
         <div class="price">$<%= product.price  %> </div>
       </article>
       
-        <a href="/products"><button type="submit" class="button">Comprar</button></a>
+        <a href="/products"><button type="submit" class="button button-submit">Agregar al Carrito</button></a>
     
       <form action="/products/edit/<%= product.id %> " method="get">
         <button type="submit" class="button edit-button">Editar</button>
       </form>
 
       <form action="/products/delete/<%=product.id%>?_method=DELETE" method="post">
-        <button type="submit" class="button delete-button">Eliminar</button>
+        <button type="submit" class="delete-button button">Eliminar</button>
         <label for="sure">Quiero eliminar este producto</label>
       <input type="checkbox" name="sure" id="sure">
 

@@ -164,9 +164,15 @@ window.onload = function(){
 
     // LastName:
     lName.addEventListener("keyup",()=>{
-        lName.classList.remove("danger");
-        lName.classList.add("acepted");
-        errors.lName = 0;
+        if(lName.value.length > 2){
+            lName.classList.remove("danger");
+            lName.classList.add("acepted");
+            errors.lName = 0;
+            return
+        }
+        lName.classList.remove("acepted");
+        lName.classList.add("danger");
+        
     });
 
     // BDate:
@@ -303,16 +309,16 @@ window.onload = function(){
             errors.lName = 0;
         }
 
-        // Image
-        if (!photo.value){
-            photo.classList.add("danger");
-            errors.photo = 1;
+        // // Image
+        // if (!photo.value){
+        //     photo.classList.add("danger");
+        //     errors.photo = 1;
             
-        }else{
-            photo.classList.remove("danger");
-            photo.classList.add("acepted");
-            errors.photo = 0;
-        }
+        // }else{
+        //     photo.classList.remove("danger");
+        //     photo.classList.add("acepted");
+        //     errors.photo = 0;
+        // }
 
         result = []
         for(const key in errors){
@@ -321,14 +327,13 @@ window.onload = function(){
 
         if(result.length){
             formButtons.insertAdjacentHTML("beforebegin",
-                "<div id=submitError class=danger-text><p>* Todos los campos son obligatorios</p></div>");
+                "<div id=submitError class=danger-text><p>* Completá los campos obligatorios</p></div>");
             submitError = document.querySelector("#submitError")
             return submitError;
         }
 
         submitError ? submitError.remove() : null;
-        console.log("submit");
-        // e.submit()
+        e.submit(); 
 
     })
 

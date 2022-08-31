@@ -30,20 +30,20 @@
 
                     </div>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <div>
                         <a class="d-flex justify-content-center" href="/">
                             <i class="topbar-icon font-light-blue fa-solid fa-house"></i>
                         </a>
                         <a class="nav-link" href="/">Inicio</a>
                     </div>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <div>
-                        <a class="d-flex justify-content-center" href="/">
+                        <a class="d-flex justify-content-center" href="/cart">
                             <i class="topbar-icon font-light-blue fa-solid fa-cart-shopping"></i>
                         </a>
-                        <a class="nav-link" href="/chart">Carrito</a>
+                        <a class="nav-link" href="/cart">Carrito</a>
                     </div>
                 </li>
             <% if (locals.loggedUser.category == 'adminUser') {%> 
@@ -59,10 +59,10 @@
             <% } else { %>
                 <li class="nav-item">
                     <div>
-                        <a class="d-flex justify-content-center" href="/">
-                            <i class="topbar-icon font-light-blue fa-solid fa-house"></i>
+                        <a class="d-flex justify-content-center" href="/cart">
+                            <i class="topbar-icon font-light-blue fa-solid fa-cart-shopping"></i>
                         </a>
-                        <a class="nav-link" href="/">Inicio</a>
+                        <a class="nav-link" href="/cart">Carrito</a>
                     </div>
                 </li>
                 <li class="nav-item">

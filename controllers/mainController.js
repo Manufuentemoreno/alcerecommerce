@@ -16,5 +16,9 @@ module.exports = {
 
     cart : (req,res) =>{
         res.render("productCart",{"carrito":carrito});
+    },
+
+    notFound : (req,res) =>{
+        res.render('notFound');
     }
 };

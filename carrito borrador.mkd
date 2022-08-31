@@ -1,0 +1,23 @@
+<% carrito.forEach( producto => { %> 
+                <article class="card-cart">
+                    <img src="images/cart/<%= producto.imagen%>" alt="<% producto.nombre%>">
+                    <div class="product-text">
+                        <h3 class="product-name"><%= producto.nombre %> </h3>
+                        <p class="product-description"><%= producto.descripcion  %> </p>
+                        <p class="product-price">$<%= producto.precio  %> </p>
+                    </div>
+                    <div class="cart-units">
+                        <div class="cantidad-unidades">
+                    <form action="/carrito" method="post">
+                        <button><i class="fa-solid fa-circle-minus"></i></button>
+                    </form>
+                    <h4><%= producto.unidades %> </h4>
+                    <form action="/carrito" method="post">
+                        <button><i class="fa-solid fa-circle-plus"></i></button>
+                        </form>
+                    </div>
+                    <h3 class="precio-total">$<%= producto.unidades*producto.precio %> </h3>
+                    </div>
+                </article>
+            <% }) %> 
+            <section>TOTAL <%=   %> </section>

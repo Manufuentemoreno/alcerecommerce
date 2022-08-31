@@ -9,36 +9,14 @@
     <header>
         <%- include("partials/topBar") %>
     </header>
-    <main>
+    <main  class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
        <section>
            <img src="" alt="">
            <h2>Mi Carrito</h2>
        </section>
        <div class="carrito-productos">
 
-            <% carrito.forEach( producto => { %> 
-                <article class="card-cart">
-                    <img src="images/cart/<%= producto.imagen%>" alt="<% producto.nombre%>">
-                    <div class="product-text">
-                        <h3 class="product-name"><%= producto.nombre %> </h3>
-                        <p class="product-description"><%= producto.descripcion  %> </p>
-                        <p class="product-price">$<%= producto.precio  %> </p>
-                    </div>
-                    <div class="cart-units">
-                        <div class="cantidad-unidades">
-                    <form action="/carrito" method="post">
-                        <button><i class="fa-solid fa-circle-minus"></i></button>
-                    </form>
-                    <h4><%= producto.unidades %> </h4>
-                    <form action="/carrito" method="post">
-                        <button><i class="fa-solid fa-circle-plus"></i></button>
-                        </form>
-                    </div>
-                    <h3 class="precio-total">$<%= producto.unidades*producto.precio %> </h3>
-                    </div>
-                </article>
-            <% }) %> 
-            <section>TOTAL <%=   %> </section>
+            
 
        </div>
     </main>
