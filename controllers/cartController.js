@@ -7,4 +7,5 @@ module.exports = {
     cart: (req, res)=>{
         req.session.loggedUser ? res.render("productCart") : res.render("login")
     }
+    
 };
