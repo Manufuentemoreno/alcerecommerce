@@ -41,30 +41,21 @@ const controller = {
         
         const newProduct = req.body;
         
+        newProduct.stock = Number(newProduct.stock);
         newProduct.price = Number(newProduct.price);
+        newProduct.category_id = Number(newProduct.category_id);
         newProduct.product_photo = req.file.filename;
         newProduct.special_offer ? newProduct.special_offer = 1 : newProduct.special_offer = 0;
-        
-        let resultado = await Category.findOne({
-            where: {
-                name: newProduct.category
-            } 
-        })
-        
-        newProduct.category_id = await resultado.id;
-
-        delete newProduct.category;
-        
+                
         await Products.create(newProduct);
 
         res.redirect("/products");
-
     },
 
     edit: (req, res) =>{
         Products.findByPk(req.params.id)
             .then(productToEdit => {
-                res.render("edit", { product: productToEdit } )
+                res.render("edit", { product: productToEdit })
             })
             .catch(error => res.send(error))
     },

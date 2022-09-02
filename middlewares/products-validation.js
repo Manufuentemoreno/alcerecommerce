@@ -5,7 +5,7 @@ const validations = [
     body("name").notEmpty().withMessage("* Campo Obligatorio").bail()
         .isLength( {min:5} ).withMessage("* El nombre debe tener al menos 5 caracteres"), 
     body("price").notEmpty().withMessage("* Campo Obligatorio"),
-    body("category").notEmpty().withMessage("* Se necesita seleccionar una categoría"),
+    body("category_id").notEmpty().withMessage("* Se necesita seleccionar una categoría"),
     body("description").notEmpty().withMessage("* Campo Obligatorio").bail()
         .isLength( {min:20} ).withMessage("* El nombre debe tener al menos 20 caracteres"),
     body("product_photo").custom((value, { req }) => {

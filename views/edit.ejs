@@ -34,12 +34,13 @@
             <% } %>
 
             <select class="input-style" name="category" id="category">
-                <option value="" disabled selected>Elegí una Categoría</option>
-                <option value="Bebidas">Bebidas</option>
-                <option value="Golosinas">Golosinas</option>
-                <option value="Limpieza">Limpieza</option>
-                <option value="Lacteos">Lacteos</option>
-                <option value="Carnicería">Carnicería</option>
+                <option value="Bebidas" <%= product.category_id == 1 ? "selected" : null%> >Bebidas</option>
+                <option value="Golosinas" <%=product.category_id == 2 ? "selected" : null%> >Golosinas</option>
+                <option value="Limpieza" <%=product.category_id == 3 ? "selected" : null%> >Limpieza</option>
+                <option value="Carnicería" <%=product.category_id == 4 ? "selected" : null%> >Carnicería</option>
+                <option value="Almacén" <%=product.category_id == 5 ? "selected" : null%> >Almacén</option>
+                <option value="Lácteos" <%= product.category_id == 6 ? "selected" : null%> >Lacteos</option>
+                
             </select>
             <% if (locals.errors && errors.category) { %>
                 <div class="danger-text">
@@ -67,14 +68,13 @@
                 </div> 
             <% } %>
         </div>
-        <div>
-        <button class="buttom buttom-submit"
-        type="submit">Guardar Producto</button>
-        
-    </div></form>
-    <a href="/products/"><button class="button edit-button">Volver</button></a>
-      </section>  
-    </main>
+        <div id="formButtons">
+        <button class="button button-submit" type="submit">Guardar Producto</button>
+        <a href="/products/"><button class="button edit-button">Volver</button></a>
+        </div>
+  </form>
+  </section>  
+  </main>
     <%- include("partials/footer")  %> 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>

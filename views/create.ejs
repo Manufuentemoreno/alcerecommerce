@@ -35,19 +35,22 @@
             <% } %>
             
 
-            <select class="input-style" name="category" id="category">
+            <select class="input-style" name="category_id" id="category_id">
                 <option value="" disabled selected>Elegí una Categoría</option>
-                <option value="Bebidas">Bebidas</option>
-                <option value="Golosinas">Golosinas</option>
-                <option value="Limpieza">Limpieza</option>
-                <option value="Lacteos">Lacteos</option>
-                <option value="Carnicería">Carnicería</option>
+                <option value="1">Bebidas</option>
+                <option value="2">Golosinas</option>
+                <option value="3">Limpieza</option>
+                <option value="6">Lacteos</option>
+                <option value="4">Carnicería</option>
+                <option value="5">Almacén</option>
             </select>
             <% if (locals.errors && errors.category) { %>
                 <div class="danger-text">
                 <p><%= errors.category.msg %></p>
                 </div> 
             <% } %>
+
+            <input type="number" class="input-style" style="-moz-appearance: textfield;-webkit-outer-spin-button: none; -webkit-inner-spin-button: none" name="stock" id="stock" placeholder="Stock Inicial">
 
             <div style="margin:10px; padding:10px;">
             <label for="preciosCuidados">Este producto se encuentra en Precios Cuidados</label>
