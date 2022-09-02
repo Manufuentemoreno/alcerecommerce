@@ -32,10 +32,6 @@ window.onload = function(){
     let errorEmail = "";
     mail.addEventListener("blur",(e)=>{
         const email = mail.value;
-
-        const emailIsValid = function (input) {
-            return /\S+@\S+\.\S+/.test(input);
-        };
         
         const validateEmail = (input) => {
             return String(input)
