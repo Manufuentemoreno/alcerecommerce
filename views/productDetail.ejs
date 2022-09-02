@@ -23,7 +23,9 @@
         <div class="price">$<%= product.price  %> </div>
       </article>
       
-        <a href="/products"><button type="submit" class="button button-submit">Agregar al Carrito</button></a>
+      <form action="/cart/add/<%= product.id %>" method="POST">
+        <button type="submit" class="button button-submit">Agregar al Carrito</button>
+      </form>
     
       <form action="/products/edit/<%= product.id %> " method="get">
         <button type="submit" class="button edit-button">Editar</button>

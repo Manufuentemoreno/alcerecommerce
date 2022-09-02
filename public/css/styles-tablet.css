@@ -64,4 +64,19 @@
   .boton-enviar {
     max-width: 150px;
   }
+
+    /* *********** CARRITO DE COMPRA ***********  */
+    
+    .card-cart figure {
+      width: 15%;
+    }
+  
+    .cart-detail {
+      width: 85%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
 }

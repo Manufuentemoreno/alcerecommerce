@@ -9,16 +9,40 @@
     <header>
         <%- include("partials/topBar") %>
     </header>
-    <main  class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
-       <section>
-           <img src="" alt="">
-           <h2>Mi Carrito</h2>
-       </section>
-       <div class="carrito-productos">
-
-            
-
-       </div>
+    <main  class="bg-lightgrey p-8 m-center">
+        <section class="box">
+            <h2>Mi Carrito</h2>
+           <div class="carrito-productos">
+                <% let total = 0; %> 
+                <% for (let i = 0; i < detalles.length; i++) {%> 
+                    <% total = total + parseFloat(detalles[i].product.price, 10) %> 
+                    <div class="card-cart">
+                        <figure>
+                            <img src="/images/productDetail/<%= detalles[i].product.product_photo %>" alt="Foto">
+                        </figure>
+                        <div class="cart-detail">
+                            <p> <%= detalles[i].product.name %> </p>
+                            <form action="">
+                                <label for="amount">Cant.:
+                                    <input type="text" class="cart-amount" name="amount" id="amount" value="<%= detalles[i].amount %>">
+                                </label>
+                            </form>
+                            <p class="cart-price">$<%= (parseFloat(detalles[i].amount) * parseFloat(detalles[i].product.price)) %> </p>
+                            <div class="cart-buttons-group">
+                                <form action="">
+                                    <button type="submit" class="cart-save-btn">Guardar</button>
+                                </form>
+                                <form action="/cart/<%= detalles[i].id %>/delete?_method=DELETE" method="POST">
+                                    <button type="submit" class="cart-delete-btn">Eliminar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <% } %> 
+                
+                <h3>Total: $<%= parseFloat(total, 10).toFixed(2) %></h3>
+           </div>
+        </section>   
     </main>
     <%- include("partials/footer") %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

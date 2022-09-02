@@ -112,4 +112,34 @@
     margin: auto;
     background-color: #fff;
   }
+
+  /* *********** CARRITO DE COMPRA ***********  */
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .box {
+    width: 75%;
+  }
+    
+  .carrito-productos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .card-cart {
+    width: 75%;
+  }
+
+  /* *********** CARRITO DE COMPRA ***********  */
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 }
