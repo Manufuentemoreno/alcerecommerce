@@ -10,6 +10,7 @@ const Op = sequelize.Op;
 module.exports = {
 
     add: async (req, res) => {
+      
         let ordenEnCarrito = await db.Orders.findOne({
             where: {
                 user_id: req.session.loggedUser.id,

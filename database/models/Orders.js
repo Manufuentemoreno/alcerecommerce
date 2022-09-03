@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     order_status: {
-      type: dataTypes.INTEGER,
+      type: dataTypes.STRING,
       allowNull: false,
     },
   };

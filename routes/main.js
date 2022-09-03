@@ -13,7 +13,8 @@ router.get("/", mainController.home);
 
 router.use("/products", productsRouter);
 
-router.use("/cart",checkUser, cartRouter);
+// router.use("/cart",checkUser, cartRouter);
+router.use("/cart", cartRouter);
 
 router.use(authRouter);
 router.use(usersRouter);
