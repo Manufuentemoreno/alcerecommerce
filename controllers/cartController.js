@@ -10,16 +10,13 @@ const Op = sequelize.Op;
 module.exports = {
 
     add: async (req, res) => {
-      
         let ordenEnCarrito = await db.Orders.findOne({
             where: {
                 user_id: req.session.loggedUser.id,
                 order_status: 'enCarrito'
             }
         })
-
         if(!ordenEnCarrito) {
-            
             let ordenCreada = await db.Orders.create(
               {
                 order_date: new Date(),
@@ -28,7 +25,6 @@ module.exports = {
                 order_status: "enCarrito",
               }
             );
-
             let detalleCreado = await db.Orders_details.create(
                 {
                     order_id: ordenCreada.id,
@@ -36,20 +32,17 @@ module.exports = {
                     amount: 1
                 }
             )
-
             res.redirect('/products');
+            return };
+      
+        let detalleCreado = await db.Orders_details.create({
+          order_id: ordenEnCarrito.id,
+          product_id: req.params.id,
+          amount: 1,
+        });
 
-        } else {
-            let detalleCreado = await db.Orders_details.create({
-              order_id: ordenEnCarrito.id,
-              product_id: req.params.id,
-              amount: 1,
-            });
-
-            res.redirect('/products');
-        }
-        
-    },
+        res.redirect('/products');        
+      },
 
     list: async (req, res) => {
         let ordenEnCarrito = await db.Orders.findOne({
@@ -86,5 +79,9 @@ module.exports = {
         })
 
         res.redirect('/cart');
+    },
+
+    startProces: (req, res)=>{
+      res.send("datos de usuario para envio de producto/forma de pago")
     }
 };
