@@ -35,14 +35,37 @@ module.exports = {
 
     } else {
 
-      let detalleCreado = await db.Orders_details.create({
-        order_id: ordenEnCarrito.id,
-        product_id: req.params.id,
-        amount: 1,
-      });
+      let detalleExistente = await db.Orders_details.findOne({
+        where: {
+          order_id: ordenEnCarrito.id,
+          product_id: req.params.id
+        }
+      })
 
-      req.session.addedProductId = req.params.id;
-      res.redirect("/cart/added");
+      if (detalleExistente) {
+        let detalleAgregado = await db.Orders_details.update({
+          amount: detalleExistente.amount + 1
+        },
+        {
+          where: {
+            order_id: ordenEnCarrito.id,
+            product_id: req.params.id
+          }
+        });
+
+        req.session.addedProductId = req.params.id;
+        res.redirect("/cart/added");
+      } else {
+        let detalleCreado = await db.Orders_details.create({
+          order_id: ordenEnCarrito.id,
+          product_id: req.params.id,
+          amount: 1,
+        });
+  
+        req.session.addedProductId = req.params.id;
+        res.redirect("/cart/added");
+      }
+      
     }
   },
 

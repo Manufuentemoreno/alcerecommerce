@@ -15,7 +15,8 @@
            <div class="carrito-productos">
                 <% let total = 0; %> 
                 <% for (let i = 0; i < detalles.length; i++) {%> 
-                    <% total = total + parseFloat(detalles[i].product.price, 10) %> 
+                    <% total = total + parseFloat(subtotal) %> 
+                    <% subtotal = (parseFloat(detalles[i].amount) * parseFloat(detalles[i].product.price)) %> 
                     <div class="card-cart">
                         <figure>
                             <img src="/images/productDetail/<%= detalles[i].product.product_photo %>" alt="Foto">
@@ -27,7 +28,7 @@
                                     <input type="text" class="cart-amount" name="amount" id="amount" value="<%= detalles[i].amount %>">
                                 </label>
                             </form>
-                            <p class="cart-price">$<%= (parseFloat(detalles[i].amount) * parseFloat(detalles[i].product.price)) %> </p>
+                            <p class="cart-price">$<%= subtotal.toFixed(2) %></p>
                             <div class="cart-buttons-group">
                                 <form action="/cart/<%= detalles[i].id %>/delete?_method=DELETE" method="POST">
                                     <button type="submit" class="cart-delete-btn">Eliminar</button>
