@@ -474,7 +474,21 @@ section h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 3px 3px 10px lightgrey;
     background-color: #FFF;
+    animation-name: fadeIn;
+    animation-duration: 1500ms;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        filter: blur(3px);
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .added-info {

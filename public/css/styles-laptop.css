@@ -145,7 +145,18 @@
 
     /* ADDED PRODUCT */
 
-    
+    .cart-info-container {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      padding: 5px;
+    }
+
+    .cart-info-container i {
+      font-size: 32px;
+      background-color: lightgreen;
+      border-radius: 100%;
+    }
     
     .cart-info-container figure {
       width: 10%;
