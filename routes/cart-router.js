@@ -10,5 +10,6 @@ router.get('/', cartController.list);
 router.post("/add/:id", cartController.add);
 router.delete('/:id/delete', cartController.delete);
 
+router.get('/added', cartController.added);
 
 module.exports = router;
