@@ -82,6 +82,13 @@ module.exports = {
     },
 
     startProces: (req, res)=>{
-      res.send("datos de usuario para envio de producto/forma de pago")
+      res.render("productCartConfirm")
+    },
+
+    checkout: (req, res)=>{
+      let options = [0, 1]
+      let result = Math.floor(Math.random()*options.length)
+      // para simular una compra exitosa o no exitosa y modificar la vista
+      res.render("checkoutCart", {result})
     }
 };

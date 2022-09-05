@@ -13,4 +13,6 @@ router.delete('/:id/delete', cartController.delete);
 
 router.get("/confirm", checkUser, cartController.startProces);
 
+router.post("/checkout", checkUser, cartController.checkout)
+
 module.exports = router;

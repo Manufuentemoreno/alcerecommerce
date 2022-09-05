@@ -111,7 +111,7 @@ footer{
     font-weight: bold;
 }
 
-ul{
+footer ul{
     display: flex;
 }
 
@@ -129,7 +129,7 @@ footer a{
     text-decoration: none;
 }
 
-li{
+footer li{
     margin: 1vw;
     text-decoration: none;
     display: flex;
@@ -195,7 +195,7 @@ li{
     width: 90%;
 }
 
-h2{
+footer h2{
     margin-top: 3%;
 }
 
@@ -345,6 +345,7 @@ section h2{
 }
 
 .card-cart p {
+    width: 150px;
     margin: 3px;
     padding: 3px;
 }
@@ -357,8 +358,9 @@ section h2{
 }
 
 .cart-price {
+    width: 100px;
     color: #044dac;
-    display: flex;
+    text-align: end;
     font-weight: bold;
     margin: 0%;
     font-size: 24px;
@@ -572,4 +574,20 @@ section h2{
 
  .subtitle{
     margin: 20px 10px 10px;
+ }
+
+/* Checkout page */
+ .checkout-msg{
+    text-align: center;
+ }
+ .checkout-msg .danger{
+    color: rgb(153, 13, 13);
+    border: none;
+    font-size: 150px;
+ }
+
+ .checkout-msg .acepted{
+    color: #16b140;
+    border: none;
+    font-size: 150px;
  }
