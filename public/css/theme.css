@@ -67,6 +67,22 @@ body{
     align-self: center;
 }
 
+.user-logo{
+    align-items: center;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.user-photo{
+    max-width: 30px;
+}
+
+.dropdown-toggle{
+    padding: 5px;
+}
+
 /* *********** FIN DE TOPBAR ***********  */
 
 .fa-bars{

@@ -17,54 +17,55 @@
                 <% let nombre = locals.loggedUser.name %>
                 <% let mensaje = 'Bienvenido' %>
                 <li class="nav-item dropdown">
-                    <div class="pp-container">
-                        <img src="/images/profile/<%= locals.loggedUser.profil_photo%> " alt="Foto">
-                    </div>
-                    <div class="d-flex flex-column">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <%= mensaje.concat(' ', nombre) %>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item d-flex" href="/logout">Cerrar sesión</a></li>
-                        </ul>
-
+                    <!-- pp-container -->
+                    <div class="user-logo">
+                        <img class="user-photo" src="/images/profile/<%= locals.loggedUser.profil_photo%> " alt="Foto">
+                    
+                        <div class="d-flex flex-column">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <%= mensaje.concat(' ', nombre) %>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item d-flex" href="/logout">Cerrar sesión</a></li>
+                            </ul>
+                         </div>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <div>
+                    
                         <a class="d-flex justify-content-center" href="/cart">
                             <i class="topbar-icon font-light-blue fa-solid fa-cart-shopping"></i>
                         </a>
                         <a class="nav-link" href="/cart">Carrito</a>
-                    </div>
+                    
                 </li>
             <% if (locals.loggedUser.category == 'adminUser') {%> 
                 <li class="nav-item">
-                    <div>
+                    
                         <a class="d-flex justify-content-center" href="/users">
                             <i class="topbar-icon font-light-blue fa-solid fa-users"></i>
                         </a>
                         <a class="nav-link" href="/users">Usuarios</a>
-                    </div>
+                    
                 </li>
             <% } %> 
             <% } else { %>
                 <li class="nav-item">
-                    <div>
+                    
                         <a class="d-flex justify-content-center" href="/cart">
                             <i class="topbar-icon font-light-blue fa-solid fa-cart-shopping"></i>
                         </a>
                         <a class="nav-link" href="/cart">Carrito</a>
-                    </div>
+                    
                 </li>
                 <li class="nav-item">
-                    <div>
+                    
                         <a class="d-flex justify-content-center" href="/login">
                             <i class="topbar-icon font-light-blue fa-solid fa-user"></i>
                         </a>
                         <a class="nav-link" href="/login">Ingresar</a>
-                    </div>
+                    
                 </li>
             <% } %>
         </ul>
