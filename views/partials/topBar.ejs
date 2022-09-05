@@ -2,9 +2,10 @@
   <div class="container-fluid">
     <a class="contenedor-logo" href="/"><img class="alcer-logo d-inline-block align-text-top" src="\images\logo-borde.png" alt="Alcer supermercado" /></a>
     <div class="search-container">
-        <form class="container search-bar">
-            <input placeholder="Encontrá lo que estás buscando"></input>
-            <a href=#><button class="button-search"><i class="fa-solid fa-magnifying-glass"></i></button></a>
+        <form class="container search-bar" action="/products/search/" method="get">
+            <input name="producto" id="producto"
+            type="text" placeholder="Encontrá lo que estás buscando" />
+            <button class="button-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
          </form>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,14 +31,6 @@
 
                     </div>
                 </li>
-                <!-- <li class="nav-item">
-                    <div>
-                        <a class="d-flex justify-content-center" href="/">
-                            <i class="topbar-icon font-light-blue fa-solid fa-house"></i>
-                        </a>
-                        <a class="nav-link" href="/">Inicio</a>
-                    </div>
-                </li> -->
                 <li class="nav-item">
                     <div>
                         <a class="d-flex justify-content-center" href="/cart">

@@ -29,9 +29,6 @@
                             </form>
                             <p class="cart-price">$<%= (parseFloat(detalles[i].amount) * parseFloat(detalles[i].product.price)) %> </p>
                             <div class="cart-buttons-group">
-                                <form action="">
-                                    <button type="submit" class="cart-save-btn">Guardar</button>
-                                </form>
                                 <form action="/cart/<%= detalles[i].id %>/delete?_method=DELETE" method="POST">
                                     <button type="submit" class="cart-delete-btn">Eliminar</button>
                                 </form>
@@ -39,8 +36,13 @@
                         </div>
                     </div>
                 <% } %> 
-                
-                <h3>Total: $<%= parseFloat(total, 10).toFixed(2) %></h3>
+
+                <div>
+                    <h3>Total: $<%= parseFloat(total, 10).toFixed(2) %></h3>
+                    <form action="/cart/confirm">
+                        <button class="button-submit" type="submit">Continuar</button>
+                    </form>
+                </div>
            </div>
         </section>   
     </main>

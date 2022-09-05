@@ -14,6 +14,9 @@ const productsController = require('../controllers/productController');
 // GET ALL PRODUCTS
 router.get('/', productsController.index); 
 
+// SEARCH PRODUCT
+router.get("/search/", productsController.search);
+
 // CREATE ONE PRODUCT
 router.get('/create', productsController.create); 
 router.post('/create', upload.single("product_photo"), validations , productsController.store); 
@@ -24,7 +27,6 @@ router.get('/:id/', productsController.detail);
 // EDIT ONE PRODUCT
 router.get('/edit/:id/', productsController.edit); 
 router.put('/edit/:id/', productsController.update);
-
 
 // DELETE ONE PRODUCT
 router.delete('/delete/:id', productsController.destroy);

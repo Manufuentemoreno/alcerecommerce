@@ -20,5 +20,6 @@ router.use(authRouter);
 router.use(usersRouter);
 
 router.get("/:x", mainController.notFound)
+router.post("/:x", mainController.notFound)
 
 module.exports = router;

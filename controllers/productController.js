@@ -89,6 +89,17 @@ const controller = {
 
         res.redirect("/products");
     },
+
+    search: (req, res) => {
+        let searched = req.query.producto;
+        Products.findAll({
+            where: {name: {[Op.like]: `%${searched}%` }}
+        })
+            .then(productsList =>{
+                res.render("search", { products: productsList, searched: searched})
+            })
+            .catch(error => res.send(error))
+    },
 };
 
 module.exports = controller;

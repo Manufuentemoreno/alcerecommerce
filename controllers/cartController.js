@@ -32,7 +32,9 @@ module.exports = {
 
       req.session.addedProductId = req.params.id;
       res.redirect("/cart/added");
+
     } else {
+
       let detalleCreado = await db.Orders_details.create({
         order_id: ordenEnCarrito.id,
         product_id: req.params.id,
@@ -100,4 +102,15 @@ module.exports = {
     2) Hacer findOne del producto recién comprado almacenado con ID en session.
     3) Pasar info del producto.
     */
+
+  startProces: (req, res)=>{
+      res.render("productCartConfirm")
+    },
+
+  checkout: (req, res)=>{
+    let options = [0, 1]
+    let result = Math.floor(Math.random()*options.length)
+    // para simular una compra exitosa o no exitosa y modificar la vista
+    res.render("checkoutCart", {result})
+  }
 };
