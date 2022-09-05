@@ -15,8 +15,8 @@
            <div class="carrito-productos">
                 <% let total = 0; %> 
                 <% for (let i = 0; i < detalles.length; i++) {%> 
-                    <% total = total + parseFloat(subtotal) %> 
                     <% subtotal = (parseFloat(detalles[i].amount) * parseFloat(detalles[i].product.price)) %> 
+                    <% total = total + parseFloat(subtotal) %> 
                     <div class="card-cart">
                         <figure>
                             <img src="/images/productDetail/<%= detalles[i].product.product_photo %>" alt="Foto">
