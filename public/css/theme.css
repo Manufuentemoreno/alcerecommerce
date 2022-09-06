@@ -680,6 +680,10 @@ section h2{
     margin: 20px 10px 10px;
  }
 
+ .button-box{
+    margin-top: 10px;
+ }
+
 /* Checkout page */
  .checkout-msg{
     text-align: center;
