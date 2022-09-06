@@ -120,11 +120,48 @@ module.exports = {
 
     res.render("productAdded", { products, lastAdded });
   },
-  /* TODO
-    1)Transformar función a async await.
-    2) Hacer findOne del producto recién comprado almacenado con ID en session.
-    3) Pasar info del producto.
-    */
+
+  addOne: async (req, res) => {
+    let detalleExistente = await db.Orders_details.findOne({
+      where: {
+        id: req.params.id
+      }
+    });
+
+    let detalleAgregado = await db.Orders_details.update(
+      {
+        amount: detalleExistente.amount + 1,
+      },
+      {
+        where: {
+          id: req.params.id
+        },
+      }
+    );
+
+    res.redirect('/cart');
+  },
+
+  removeOne: async (req, res) => {
+    let detalleExistente = await db.Orders_details.findOne({
+      where: {
+        id: req.params.id
+      }
+    });
+
+    let detalleAgregado = await db.Orders_details.update(
+      {
+        amount: detalleExistente.amount - 1
+      },
+      {
+        where: {
+          id: req.params.id
+        },
+      }
+    );
+
+    res.redirect('/cart');
+  },
 
   startProces: (req, res)=>{
       res.render("productCartConfirm")

@@ -367,10 +367,29 @@ section h2{
 }
 
 .cart-amount {
-    width: 64px;
+    width: 46px;
     margin: 3px;
     padding: 3px;
     text-align: center;
+    border: none;
+}
+
+.addRemove-group {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: 1px solid grey;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+.addRemove-btn {
+    width: 25px;
+    text-align: center;
+    font-size: 18px;
+    color: #044dac;
+    background-color: transparent;
+    border: none;
 }
 
 .cart-price {

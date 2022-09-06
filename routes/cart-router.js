@@ -10,6 +10,8 @@ router.get('/', checkUser, cartController.list);
 
 router.post("/add/:id", checkUser, cartController.add);
 router.delete('/:id/delete', cartController.delete);
+router.put('/:id/addOne', cartController.addOne);
+router.put('/:id/removeOne', cartController.removeOne);
 
 router.get("/confirm", checkUser, cartController.startProces);
 

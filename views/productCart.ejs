@@ -23,11 +23,17 @@
                         </figure>
                         <div class="cart-detail">
                             <p> <%= detalles[i].product.name %> </p>
-                            <form action="">
-                                <label for="amount">Cant.:
+                            <div class="addRemove-group">
+                                <form action="/cart/<%= detalles[i].id %>/removeOne?_method=PUT" method="POST">
+                                    <button class="addRemove-btn" type="submit">-</button>
+                                </form>
+                                <form action="">
                                     <input type="text" class="cart-amount" name="amount" id="amount" value="<%= detalles[i].amount %>">
-                                </label>
-                            </form>
+                                </form>
+                                <form action="/cart/<%= detalles[i].id %>/addOne?_method=PUT" method="POST">
+                                    <button class="addRemove-btn" type="submit">+</button>
+                                </form>
+                            </div>
                             <p class="cart-price">$<%= subtotal.toFixed(2) %></p>
                             <div class="cart-buttons-group">
                                 <form action="/cart/<%= detalles[i].id %>/delete?_method=DELETE" method="POST">
