@@ -28,6 +28,12 @@ app.use(userAuth);
 
 app.use("/", routes);
 
+// Rutas de API Users
+const apiUsersRouter = require("./routes/API/apiUsersRouter");
+
+// Seteo de rutas API
+app.use("/api/users", apiUsersRouter)
+
 const PORT = 3000;
 app.listen(PORT, () => console.log("Servidor ejecutándose en el puerto ", PORT));
 

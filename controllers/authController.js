@@ -37,6 +37,7 @@ module.exports = {
             } else {
                 db.Users.create({
                     ...req.body,
+                    category: "normalUser",
                     password: bcryptjs.hashSync(req.body.password, 10),
                     profil_photo: req.file ? req.file.filename : 'defaultUser.png'
                 }).then(function(){

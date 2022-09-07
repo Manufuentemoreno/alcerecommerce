@@ -10,7 +10,6 @@ window.onload = function(){
     const rePasswordField = document.querySelector("#rePasswordField");
     const rePassword = document.querySelector("#confirmPassword");
 
-    const category = document.querySelector("#category");
     const name =  document.querySelector("#name");
     const lName =  document.querySelector("#last_name");
     const bDate =  document.querySelector("#birth_date"); 
@@ -21,7 +20,6 @@ window.onload = function(){
         email: 0,
         password: 0,
         rePassword: 0,
-        category: 0,
         name: 0,
         lName: 0,
         bDate: 0,
@@ -144,13 +142,6 @@ window.onload = function(){
         errors.rePassword = 0;
     });
 
-    // Category:
-    category.addEventListener("change",()=>{
-        category.classList.remove("danger");
-        category.classList.add("acepted");
-        errors.category = 0;
-    })
-
     // Name:
     name.addEventListener("keyup",()=>{
         name.classList.remove("danger");
@@ -262,16 +253,6 @@ window.onload = function(){
             rePasswordField.classList.remove("danger");
             rePasswordField.classList.add("acepted");
             errors.rePassword = 0;
-        }
-
-        // Category
-        if (!category.value){
-            category.classList.add("danger");
-            errors.category = 1;
-        }else{
-            category.classList.remove("danger");
-            category.classList.add("acepted");
-            errors.category = 0;
         }
 
         // Name

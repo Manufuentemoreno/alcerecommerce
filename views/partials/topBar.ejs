@@ -36,16 +36,24 @@
                         <a class="d-flex justify-content-center" href="/cart">
                             <i class="topbar-icon font-light-blue fa-solid fa-cart-shopping"></i>
                         </a>
-                        <a class="nav-link" href="/cart">Carrito</a>
+                        <a class="nav-link icon-topbar-text" href="/cart">Carrito</a>
                     
                 </li>
             <% if (locals.loggedUser.category == 'adminUser') {%> 
                 <li class="nav-item">
                     
+                    <a class="d-flex justify-content-center" href="/products/creates">
+                        <i class="topbar-icon font-light-blue fa-solid fa-circle-plus"></i>
+                    </a>
+                    <a class="nav-link icon-topbar-text-add" href="/products/create">Cargar Producto</a>
+                
+                </li>
+                <li class="nav-item">
+                    
                         <a class="d-flex justify-content-center" href="/users">
                             <i class="topbar-icon font-light-blue fa-solid fa-users"></i>
                         </a>
-                        <a class="nav-link" href="/users">Usuarios</a>
+                        <a class="nav-link icon-topbar-text" href="/users">Usuarios</a>
                     
                 </li>
             <% } %> 
@@ -55,7 +63,7 @@
                         <a class="d-flex justify-content-center" href="/cart">
                             <i class="topbar-icon font-light-blue fa-solid fa-cart-shopping"></i>
                         </a>
-                        <a class="nav-link" href="/cart">Carrito</a>
+                        <a class="nav-link icon-topbar-text" href="/cart">Carrito</a>
                     
                 </li>
                 <li class="nav-item">
@@ -63,7 +71,7 @@
                         <a class="d-flex justify-content-center" href="/login">
                             <i class="topbar-icon font-light-blue fa-solid fa-user"></i>
                         </a>
-                        <a class="nav-link" href="/login">Ingresar</a>
+                        <a class="nav-link icon-topbar-text" href="/login">Ingresar</a>
                     
                 </li>
             <% } %>

@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <%- include("partials/head") %>
-    <link rel="stylesheet" href="/css/theme-form.css"
+    <link rel="stylesheet" href="/css/theme-form.css">
 </head>
 
 <body>
@@ -43,9 +43,10 @@
                         <input class="form-control" type="file" name="profil_photo" id="">
                     </label>
                 </div>
-                <div class="">
-                    <button class="btn btn-primary" type="submit">Enviar</button>
-                    <button class="btn btn-secondary" type="reset">Borrar</button>
+                <div class="button-box">
+                    <button class="button button-submit" type="submit">Guardar Cambios</button>
+                    <button class="button edit-buton" type="reset">Borrar Cambios</button>
+                    <a href="#"><button class="button delete-button">Eliminar Usuario</button></a>
                 </div>
             </form>
         </div>

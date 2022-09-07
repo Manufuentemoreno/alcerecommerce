@@ -4,6 +4,6 @@ module.exports = function (req, res, next) {
     if (loggedUser.category == 'adminUser') {
         next();
     } else {
-        res.redirect('/');
+        res.render("notFound");
     }
 }

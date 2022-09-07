@@ -21,9 +21,11 @@ const controller = {
             .catch(error => res.send(error))
     },
 
-    detail: (req, res) => {
-        Products.findByPk(req.params.id)
-        .then(producto => {res.render("productDetail", {product: producto} )})
+    detail: async (req, res) => {
+        let producto = await Products.findByPk(req.params.id)
+        if (producto){
+            return res.render("productDetail", {product: producto} )}
+        res.render("notFound");
     },
     
     create: (req, res) => {
@@ -100,6 +102,10 @@ const controller = {
             })
             .catch(error => res.send(error))
     },
+
+    notFound: (req,res) =>{
+        res.render("notFound");
+    }
 };
 
 module.exports = controller;

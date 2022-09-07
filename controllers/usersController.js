@@ -7,6 +7,7 @@ module.exports = {
             res.render('usersList', {users});
         })
     },
+
     edit: function (req, res) {
         let userId = req.params.id;
         db.Users.findByPk(userId)
@@ -15,22 +16,24 @@ module.exports = {
         })
         .catch(error=>res.send(error));
     },
-    update: function (req, res) {
+
+    update: async function (req, res) {
         let userId = req.params.id;
-        db.Users.update({
-            email: req.body.email,
-            category: req.body.category,
-            name: req.body.name,
-            last_name: req.body.last_name,
-            birth_date: req.body.birth_date,
-            profil_photo: req.file.filename
+        let userEdited = await db.Users.findByPk(userId);
+        let newData = req.body;
+
+        await db.Users.update({
+            email: userEdited.email != newData.email ? newData.email : userEdited.email,
+            category: userEdited.category != newData.category ? newData.category : userEdited.category,
+            name: userEdited.name != newData.name ? newData.name : userEdited.name,
+            last_name: userEdited.last_name != newData.last_name ? newData.last_name : userEdited.last_name,
+            birth_date: userEdited.birth_date != newData.birth_date ? newData.birth_date : userEdited.birth_date,
+            profil_photo: userEdited.profil_photo != newData.profil_photo ? newData.profil_photo : userEdited.profil_photo,
         },
         {
             where: {id: userId}
-        })
-        .then(function(){
-            return res.redirect('/users')
-        })
-        .catch(error=>res.send(error))
+        }).catch(error=>res.send(error))
+
+        return res.redirect('/users');        
     }
 }

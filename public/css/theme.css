@@ -17,6 +17,7 @@ body{
 
 .topbar-icon {
     display: none;
+    font-size: 20px;
 }
 
 .pp-container {
@@ -81,6 +82,23 @@ body{
 
 .dropdown-toggle{
     padding: 5px;
+}
+
+.navbar-nav{
+    align-items: center;
+}
+
+.icon-topbar-text{
+    line-height: 13px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+
+.icon-topbar-text-add{
+    line-height: 13px;
+    padding-bottom: 0px;
+    text-align: center;
+    padding-top: 1px
 }
 
 /* *********** FIN DE TOPBAR ***********  */
@@ -556,6 +574,7 @@ section h2{
 
 /* PRODUCT DETAIL */
 .box{
+    align-self: center;
     margin: 20px;
     border: 1px solid #0003;
     border-radius: 20px;
@@ -699,3 +718,16 @@ section h2{
     border: none;
     font-size: 150px;
  }
+
+/* 404 */
+
+.e404-box{
+    display: flex;
+    justify-content: center;
+}
+.e404{
+    font-size: 100px;
+    text-align: center;
+    margin: 0px;
+    font-weight: 600;
+}

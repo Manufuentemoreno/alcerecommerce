@@ -52,11 +52,7 @@
                 <i class="fa-solid fa-lock"></i>
                     <input class="input-with-icon" type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirmar contraseña">
             </div>
-            <select class="input-style input-whithout-logo" name="category" id="category">
-                    <option value="" disabled selected>Categoría de Usuario</option>
-                    <option value="normalUser" <%= locals.oldData && oldData.category === 'normalUser' ? 'selected' : ''; %>>Soy comprador</option>
-                    <option value="adminUser" <%= locals.oldData && oldData.category === 'adminUser' ? 'selected' : ''; %>>Soy administrador</option>
-            </select>
+
             <h3 class="subtitle">Datos personales</h3>
             <input class="input-style input-whithout-logo" type="text" name="name" id="name" placeholder="Nombre"
                 value="<%= locals.oldData && oldData.name ? oldData.name : ''%>">

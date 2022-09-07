@@ -7,7 +7,6 @@ const userRegisterValidation = [
     body('password')
         .notEmpty().withMessage('La contraseña no puede quedar vacía.').bail()
         .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres.'),
-    body('category').notEmpty().withMessage('El campo categoría no puede quedar vacío.'),
     body('name')
         .notEmpty().withMessage('Debe completar su nombre.').bail()
         .isLength({min: 2}).withMessage('El nombre debe tener al menos 2 caracteres.'),

@@ -26,6 +26,8 @@
       <form action="/cart/add/<%= product.id %>" method="POST">
         <button type="submit" class="button button-submit">Agregar al Carrito</button>
       </form>
+
+      <% if (locals.loggedUser && locals.loggedUser.category == 'adminUser') {%> 
     
       <form action="/products/edit/<%= product.id %> " method="get">
         <button type="submit" class="button edit-button">Editar</button>
@@ -37,8 +39,8 @@
       <input type="checkbox" name="sure" id="sure">
 
       </form>
-
-      </div></div>
+      <% } %> 
+      
       </section>  
     </main>
     <%- include("partials/footer")  %> 
