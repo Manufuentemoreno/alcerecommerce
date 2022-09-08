@@ -9,6 +9,9 @@ const usersRouter = require('./users');
 
 const checkUser = require('../middlewares/checkUser');
 
+const apiProductsRouter = require('./API/apiProductsRouter');
+const apiUsersRouter = require('./API/apiUsersRouter');
+
 router.get("/", mainController.home);
 
 router.use("/products", productsRouter);
@@ -21,5 +24,10 @@ router.use(usersRouter);
 
 router.get("/:x", mainController.notFound)
 router.post("/:x", mainController.notFound)
+
+// --- APIs --- 
+router.use('/api/products', apiProductsRouter);
+router.use('/api/users', apiUsersRouter);
+// --- fin de APIs ---
 
 module.exports = router;
