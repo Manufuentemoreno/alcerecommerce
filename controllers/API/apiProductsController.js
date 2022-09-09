@@ -39,4 +39,25 @@ module.exports = {
 
     res.json(productsCollection);
   },
+
+  detail: async (req, res) => {
+    let product = await db.Products.findOne({
+        include: 'products_categories',
+        where: {
+            id: req.params.id
+        }
+    });
+
+    let productEntity = {
+      id: product.id,
+      name: product.name,
+      description: product.description,
+      price: product.price,
+      stock: product.stock,
+      category: product.products_categories.name,
+      product_photo: 'http://localhost:3000/images/productDetail/' + product.product_photo
+    };
+
+    res.json(productEntity);
+  }
 };
