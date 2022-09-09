@@ -360,9 +360,24 @@ section h2{
 
 /* *********** CARRITO DE COMPRA ***********  */
 
+.cart-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    border: 1px solid #0003;
+    border-radius: 20px;
+    padding: 20px;
+    background: white;
+}
+
 .carrito-productos{
     display: flex;
     flex-wrap: wrap;
+}
+
+.cart-title {
+    text-align: center;
 }
 
 .card-cart{
@@ -378,14 +393,8 @@ section h2{
     margin-bottom: 15px;
 }
 
-.card-cart p {
-    width: 150px;
-    margin: 3px;
-    padding: 3px;
-}
-
 .cart-amount {
-    width: 46px;
+    width: 24px;
     margin: 3px;
     padding: 3px;
     text-align: center;
@@ -414,9 +423,8 @@ section h2{
     width: 100px;
     color: #044dac;
     text-align: end;
-    font-weight: bold;
     margin: 0%;
-    font-size: 24px;
+    font-size: 21px;
 }
 
 .card-cart a {
@@ -426,6 +434,7 @@ section h2{
 
 .card-cart figure {
     width: 40%;
+    align-self: center;
 }
 
 .card-cart img{
@@ -441,6 +450,11 @@ section h2{
     width: 60%;
 }
 
+.cart-product-name {
+    text-align: right;
+    margin-bottom: 6px;
+}
+
 .cart-delete-btn {
     background-color: red;
     border: none;
@@ -453,16 +467,32 @@ section h2{
     margin: 5px;
 }
 
-.cart-save-btn {
-    background-color: green;
+.cart-submit-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cart-submit-btn {
+    background-color: #16b140;
     border: none;
     border-radius: 7px;
     color: white;
-    height: 32px;
-    width: 75px;
+    height: 40px;
+    width: 150px;
     max-width: 500px;
     font-size: 15px;
     margin: 5px;
+}
+
+.continue-group {
+    width: 75%;
+}
+
+.cart-total-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .cart-units{
@@ -503,7 +533,9 @@ section h2{
     align-self: flex-end;
 }
 
-/* ADDED PRODUCT */
+/* *********** FIN DE CARRITO DE COMPRA ***********  */
+
+/* **************** ADDED PRODUCT ****************** */
 
 .cart-info-container {
     display: flex;

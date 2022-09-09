@@ -118,10 +118,10 @@
   main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
   }
   
-  .box {
+  .cart-box {
     width: 75%;
   }
     
@@ -135,7 +135,17 @@
     width: 75%;
   }
 
-  /* *********** CARRITO DE COMPRA ***********  */
+  .continue-group {
+    width: 75%;
+  }
+
+  .cart-total-group {
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 12px;
+  }
+
+  /* *********** FIN DE CARRITO DE COMPRA ***********  */
 
   main {
     display: flex;
