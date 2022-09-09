@@ -28,7 +28,7 @@ module.exports = {
             name: userEdited.name != newData.name ? newData.name : userEdited.name,
             last_name: userEdited.last_name != newData.last_name ? newData.last_name : userEdited.last_name,
             birth_date: userEdited.birth_date != newData.birth_date ? newData.birth_date : userEdited.birth_date,
-            profil_photo: userEdited.profil_photo != newData.profil_photo ? newData.profil_photo : userEdited.profil_photo,
+            profil_photo: req.file ? req.file.filename : userEdited.profil_photo
         },
         {
             where: {id: userId}
