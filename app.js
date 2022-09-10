@@ -28,12 +28,9 @@ app.use(userAuth);
 
 app.use("/", routes);
 
-// Rutas de API Users
-const apiUsersRouter = require("./routes/API/apiUsersRouter");
+// Aplicación de CORS para habilitar el acceso a la API
+const cors = require("cors");
+app.use(cors("*")) // Dee esta forma cualquier url puede acceder a la API
 
-// Seteo de rutas API
-app.use("/api/users", apiUsersRouter)
-
-const PORT = 3000;
+const PORT = require("./modules/Port");
 app.listen(PORT, () => console.log("Servidor ejecutándose en el puerto ", PORT));
-

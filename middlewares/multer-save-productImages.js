@@ -8,7 +8,8 @@ const saveImage = multer.diskStorage({
     },
     
     filename: (req, file, cb) => {
-        const imagName = "img-" + Date.now() + "-" + req.body.productName + path.extname(file.originalname);
+        let nameInForm = req.body.name.replaceAll(" ","-");
+        const imagName = "img-" + Date.now() + "-" + nameInForm + path.extname(file.originalname);
         cb(null, imagName);
     }
 });

@@ -13,8 +13,7 @@ router.delete('/:id/delete', cartController.delete);
 router.put('/:id/addOne', cartController.addOne);
 router.put('/:id/removeOne', cartController.removeOne);
 
-// router.get("/confirm", checkUser, cartController.startProces);
-router.get("/confirm", cartController.startProces); // sin checkuser para preparar formulario
+router.get("/confirm", checkUser, cartController.startProces);
 
 router.post("/checkout", checkUser, cartController.checkout)
 

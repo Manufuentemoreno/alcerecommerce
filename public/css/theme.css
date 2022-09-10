@@ -451,8 +451,9 @@ section h2{
 }
 
 .cart-product-name {
-    text-align: right;
+    text-align: left;
     margin-bottom: 6px;
+    width: 130px;
 }
 
 .cart-delete-btn {

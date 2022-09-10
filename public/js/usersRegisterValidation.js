@@ -286,17 +286,6 @@ window.onload = function(){
             errors.lName = 0;
         }
 
-        // // Image
-        // if (!photo.value){
-        //     photo.classList.add("danger");
-        //     errors.photo = 1;
-            
-        // }else{
-        //     photo.classList.remove("danger");
-        //     photo.classList.add("acepted");
-        //     errors.photo = 0;
-        // }
-
         result = []
         for(const key in errors){
             errors[key]!=0 ? result.push(key) : null;

@@ -73,7 +73,7 @@ module.exports = {
             return res.render('login', {
                 errors: {
                     email: {
-                        msg: 'Email no registrado'
+                        msg: 'El email o la contraseña no coinciden'
                     }
                 }
             })

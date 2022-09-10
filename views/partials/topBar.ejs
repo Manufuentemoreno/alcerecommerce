@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="contenedor-logo" href="/"><img class="alcer-logo d-inline-block align-text-top" src="\images\logo-borde.png" alt="Alcer supermercado" /></a>
+    <a class="contenedor-logo" href="/"><img class="alcer-logo d-inline-block align-text-top" src="\images\brand\logo-borde.png" alt="Alcer supermercado" /></a>
     <div class="search-container">
         <form class="container search-bar" action="/products/search/" method="get">
             <input name="producto" id="producto"
@@ -42,7 +42,7 @@
             <% if (locals.loggedUser.category == 'adminUser') {%> 
                 <li class="nav-item">
                     
-                    <a class="d-flex justify-content-center" href="/products/creates">
+                    <a class="d-flex justify-content-center" href="/products/create">
                         <i class="topbar-icon font-light-blue fa-solid fa-circle-plus"></i>
                     </a>
                     <a class="nav-link icon-topbar-text-add" href="/products/create">Cargar Producto</a>

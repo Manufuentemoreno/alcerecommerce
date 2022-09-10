@@ -2,6 +2,7 @@ const { Sequelize } = require('../../database/models');
 const db = require('../../database/models');
 const sequelize = db.sequelize;
 const Op = sequelize.Op;
+const Port = require("../../modules/Port");
 
 module.exports = {
   index: async (req, res) => {
@@ -26,7 +27,7 @@ module.exports = {
           name: product.name,
           description: product.description,
           category: product.products_categories.name,
-          detail: 'http://localhost:3000/api/products/' + product.id
+          detail: `http://localhost:${Port}/api/products/${product.id}`
         };
         return result;
     })
@@ -55,7 +56,7 @@ module.exports = {
       price: product.price,
       stock: product.stock,
       category: product.products_categories.name,
-      product_photo: 'http://localhost:3000/images/productDetail/' + product.product_photo
+      product_photo: `http://localhost:${Port}/images/productDetail/${product.product_photo}`
     };
 
     res.json(productEntity);

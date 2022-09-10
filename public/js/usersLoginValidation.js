@@ -1,58 +1,84 @@
 window.onload = function() {
     let form = document.querySelector('#loginForm');
-    let inputEmail = document.querySelector('#email');
+    let mail = document.querySelector('#email');
+    let emailField = document.querySelector("#emailField")
+
     let inputPassword = document.querySelector('#password');
+    let passwordField = document.querySelector("#passwordField")
+    let button = document.querySelector("#buttonSubmit")
 
-    let errores = [];
+    let errores = {
+      email: 0,
+      password: 0
+    };
 
-    inputEmail.addEventListener('blur', function() {
+    // Email:
+    mail.addEventListener("blur",(e)=>{
+        const email = mail.value;
         
-        function emailIsValid(email) {
-            return /\S+@\S+\.\S+/.test(email);
+        const validateEmail = (input) => {
+            return String(input)
+              .toLowerCase()
+              .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+              );
+          };
+
+        if(!email){
+          emailField.classList.add("danger");
+          errores.email = 1;
+          return
         }
-        let email = inputEmail.value;
-        if (!emailIsValid(email)) {
-          let pErrorEmail = document.querySelector('div.error-email ul');
-          pErrorEmail.innerHTML =
-            "<li>" +
-            "<i class='fa-solid fa-triangle-exclamation'></i>" +
-            'Email inválido' +
-            "</li>";
+        else if (email && !validateEmail(email)) {
+            if (!errorEmail){
+                emailField.insertAdjacentHTML("afterend",
+                "<div id=errorEmail class=danger-text><p>* Dirección de mail inválida</p></div>")
+                errorEmail = document.getElementById("errorEmail");
+                emailField.classList.add("danger");
+                errores.email = 1;
+                return errorEmail;
+            }
+            errorEmail.style.display = "block"
+            emailField.classList.add("danger")
+            errores.email = 1;
+            return
         }
-    })
 
-    inputEmail.addEventListener('focus', function() {
-      let pErrorEmail = document.querySelector('div.error-email ul');
-      pErrorEmail.innerHTML = ''
-    })
+        emailField.classList.remove("danger");
+        errores.email = 0;
+        
+    });
 
-    form.addEventListener('submit', function(e) {
-      //Validaciones email
-      if (inputEmail.value == "") {
-        e.preventDefault();
-        let pErrorEmail = document.querySelector("div.error-email ul");
-        pErrorEmail.innerHTML =
-          "<li>" +
-          "<i class='fa-solid fa-triangle-exclamation'></i>" +
-          "Debe escribir su email" +
-          "</li>";
+    // Password
+    inputPassword.addEventListener("blur",()=>{
+      if(!inputPassword.value){
+        passwordField.classList.add("danger");
+        errores.password = 1;
       }
+    })
 
-      //Validaciones password
-      if (inputPassword.value == "") {
-        e.preventDefault();
-        let pErrorPassword = document.querySelector('div.error-password ul');
-        pErrorPassword.innerHTML =
-          "<li>" +
-          "<i class='fa-solid fa-triangle-exclamation'></i>" +
-          "Debe ingresar una contraseña" +
-          "</li>";
+    inputPassword.addEventListener("keypress",()=>{
+      if(!inputPassword.value){
+        passwordField.classList.add("danger");
+        errores.password = 1;
+        return
       }
+      else if(inputPassword.value.length < 7){
+        passwordField.classList.add("danger");
+        errores.password = 1;
+        return
+      }
+      passwordField.classList.remove("danger");
+      errores.password = 0;
+    });
 
-    })
+    button.addEventListener("click", (e)=>{
+      e.preventDefault();
 
-    inputPassword.addEventListener('focus', function() {
-      let pErrorPassword = document.querySelector('div.error-password ul');
-      pErrorPassword.innerHTML = ''
-    })
+      if ( errores.password == 0 && errores.email == 0 ){
+        form.submit();
+      }
+      
+    });
+
 }

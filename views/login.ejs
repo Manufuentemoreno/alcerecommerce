@@ -21,7 +21,7 @@
             <h1 class="titulo-form-texto">Ingresar</h1>
           </div>
         </div>
-        <div class="input-icon-container">
+        <div class="input-icon-container" id="emailField">
           <i class="fa-solid fa-envelope"></i>
           <input
             class="input-with-icon"
@@ -32,7 +32,7 @@
           />
         </div>
         <div class="error-email errores"><ul></ul></div>
-        <div class="input-icon-container">
+        <div class="input-icon-container" id="passwordField">
           <i class="fa-solid fa-lock"></i>
           <input
             class="input-with-icon"
@@ -48,7 +48,7 @@
         <p class="mensaje-error"><%= errors.email.msg %></p>
         <% } %>
         <div class="grupo-botones-formulario mt-15">
-          <button class="button button-submit" type="submit">Ingresar</button>
+          <button class="button button-submit" type="submit" id="buttonSubmit">Ingresar</button>
           <button class="button" type="reset">Borrar</button>
         </div>
         <div class="grupo-registrate">

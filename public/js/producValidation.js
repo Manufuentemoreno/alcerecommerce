@@ -2,15 +2,18 @@ window.onload = function(){
     const form = document.querySelector("#createForm");
     const name = document.querySelector("#name");
     const price = document.querySelector("#price");
-    const category = document.querySelector("#category");
+    const category = document.querySelector("#category_id");
     const descrip = document.querySelector("#description");
     const image = document.querySelector("#product_photo");
+    const buttonSubmit = document.querySelector("#sub")
+    const stock = document.querySelector("#stock")
     
     let errores = {
         productName:0,
         productPrice:0,
         productCategory:0,
         productDescription:0,
+        stock:0,
         productImage:0
     };
 
@@ -72,6 +75,15 @@ window.onload = function(){
             eprice.style.display = "block";
             errores.productPrice = 1;
             return eprice
+        }else if(price.value < 1){
+            if(!eprice){
+            price.insertAdjacentHTML("afterend",
+                "<div id=eprice class=danger-text><p>* Valor no aceptado</p></div>")
+            eprice = document.getElementById("eprice");}
+            price.classList.remove("acepted");
+            price.classList.add("danger");
+            errores.productPrice = 1;
+            return eprice;
         }
         price.classList.add("acepted");
         errores.productPrice = 0;
@@ -98,6 +110,26 @@ window.onload = function(){
         category.classList.remove("danger");
         category.classList.add("acepted");
         errores.productCategory = 0;
+    })
+
+    // Stock
+    stock.addEventListener("keyup", ()=>{      
+        if(!stock.value){
+            stock.classList.remove("acepted");
+            stock.classList.add("danger");
+            errores.stock = 1;
+            return
+        }
+        else if(stock.value < 1){
+            stock.classList.remove("acepted");
+            stock.classList.add("danger");
+            errores.stock = 1;
+            return
+        }
+
+        stock.classList.remove("danger");
+        stock.classList.add("acepted");
+        errores.stock = 0;
     })
   
     // Description:
@@ -174,11 +206,9 @@ window.onload = function(){
             errores.productImage = 0;
     })
 
-
-
     // SUBMIT
     let eimage = "";
-    form.addEventListener("submit", (event)=>{
+    buttonSubmit.addEventListener("click", (event)=>{
         event.preventDefault();
 
         // Image
@@ -235,6 +265,18 @@ window.onload = function(){
                 category.classList.remove("danger");
                 category.classList.add("acepted");
                 errores.productCategory = 0;
+            }
+        }
+
+        // Stock
+        if(!errores.stock){
+            if(!stock.value){
+                stock.classList.add("danger");
+                errores.stock = 1;
+            }else{
+                stock.classList.remove("danger");
+                stock.classList.add("acepted");
+                errores.stock = 0;
             }
         }
 

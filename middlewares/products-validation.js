@@ -4,8 +4,11 @@ const { body } = require("express-validator");
 const validations = [
     body("name").notEmpty().withMessage("* Campo Obligatorio").bail()
         .isLength( {min:5} ).withMessage("* El nombre debe tener al menos 5 caracteres"), 
-    body("price").notEmpty().withMessage("* Campo Obligatorio"),
+    body("price").notEmpty().withMessage("* Campo Obligatorio")
+        .isNumeric({no_symbols: true}).withMessage("* Valor no válido"),
     body("category_id").notEmpty().withMessage("* Se necesita seleccionar una categoría"),
+    body("stock").notEmpty().withMessage("* Campo obligatorio").bail()
+        .isInt({min:0}).withMessage("* Ingresá un valor válido"),
     body("description").notEmpty().withMessage("* Campo Obligatorio").bail()
         .isLength( {min:20} ).withMessage("* El nombre debe tener al menos 20 caracteres"),
     body("product_photo").custom((value, { req }) => {
