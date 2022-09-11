@@ -2,6 +2,11 @@ const express = require("express");  //requerimos el paquete express
 const session = require('express-session'); //requerimos el paquete express-session
 const app = express();
 
+// Aplicación de CORS para habilitar el acceso a la API
+const cors = require("cors");
+app.use(cors(["localhost:3000"]));
+
+
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
@@ -27,10 +32,6 @@ app.use(session({
 app.use(userAuth);
 
 app.use("/", routes);
-
-// Aplicación de CORS para habilitar el acceso a la API
-const cors = require("cors");
-app.use(cors("*")) // Dee esta forma cualquier url puede acceder a la API
 
 const PORT = require("./modules/Port");
 app.listen(PORT, () => console.log("Servidor ejecutándose en el puerto ", PORT));
