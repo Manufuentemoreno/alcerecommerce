@@ -79,3 +79,10 @@
     </div>
   </div>
 </nav>
+<% if( locals.categories){ %> 
+    <ul class="categories-bar">
+    <% categories.forEach(category => { %>
+        <a href="/products/<%=category%>" class="category-list"><%= category %></a>
+    <% }) %>
+    </div>
+<% } %> 

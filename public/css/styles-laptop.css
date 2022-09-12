@@ -72,11 +72,8 @@
   
   .product{
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: row;
-
-   
-    
+    justify-content: space-around;    
   }
   .productPrincipalImage{
     width: 27vw;
@@ -153,6 +150,9 @@
     flex-direction: column;
   }
 
+  .productos-destacados{
+    width: 90%
+  }
     /* ADDED PRODUCT */
 
     .cart-info-container {

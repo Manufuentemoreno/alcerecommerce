@@ -6,25 +6,30 @@ const { Op } = require("sequelize");
 // Modelos
 const Products = db.Products;
 const Category = db.Products_categories;
+const categoryList = require('../modules/productCategoryTopBar');
 
 // Validations-express validator
 const { validationResult } = require("express-validator");
 
 const controller = {
-    index: (req, res) => {
-        Products.findAll({
-            include: [{association: 'products_categories'}]
-        })
-            .then(productsList =>{
-                res.render("products", { products: productsList })
-            })
-            .catch(error => res.send(error))
+    index: async(req, res) => {
+        let categories = await categoryList();
+        let productsList = []
+        try {
+            productsList = await Products.findAll({
+            include: [{association: 'products_categories'}]})
+        }catch(error){
+            return res.send(error)
+        }
+        
+        res.render("products", { products: productsList, categories })
     },
 
     detail: async (req, res) => {
         let producto = await Products.findByPk(req.params.id)
+        let categories = await categoryList();
         if (producto){
-            return res.render("productDetail", {product: producto} )}
+            return res.render("productDetail", {product: producto, categories} )}
         res.render("notFound");
     },
     
@@ -92,19 +97,25 @@ const controller = {
         res.redirect("/products");
     },
 
-    search: (req, res) => {
+    search: async(req, res) => {
+        let categories = await categoryList();
         let searched = req.query.producto;
-        Products.findAll({
+
+        let productsList = []
+        try{
+            productsList = await Products.findAll({
             where: {name: {[Op.like]: `%${searched}%` }}
-        })
-            .then(productsList =>{
-                res.render("search", { products: productsList, searched: searched})
-            })
-            .catch(error => res.send(error))
+            });
+        }catch(error){
+            return res.render("notFound")
+        }
+
+        res.render("search", { products: productsList, searched: searched, categories})
     },
 
-    notFound: (req,res) =>{
-        res.render("notFound");
+    notFound: async(req,res) =>{
+        let categories = await categoryList();
+        res.render("notFound", {categories});
     }
 };
 
