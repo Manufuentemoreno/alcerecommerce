@@ -19,6 +19,18 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING,
       allowNull: false,
     },
+    delivery_method: {
+      type: dataTypes.STRING
+    },
+    delivery_adress: {
+      type: dataTypes.STRING
+    },
+    between_streets: {
+      type: dataTypes.STRING
+    },
+    payment_method: {
+      type: dataTypes.STRING
+    }
   };
   let config = {
     tableName: "orders",

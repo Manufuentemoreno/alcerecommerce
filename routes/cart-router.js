@@ -5,6 +5,7 @@ const checkUser = require("../middlewares/checkUser")
 
 // CART CONTROLLER:
 const cartController = require("../controllers/cartController");
+const { cart } = require('../controllers/mainController');
 
 router.get('/', checkUser, cartController.list);
 
@@ -15,7 +16,11 @@ router.put('/:id/removeOne', cartController.removeOne);
 
 router.get("/confirm", checkUser, cartController.startProces);
 
-router.post("/checkout", checkUser, cartController.checkout)
+router.put("/checkout", checkUser, cartController.checkout),
+router.post('/checkoutMP', cartController.checkoutMP);
+
+router.get("/success", cartController.success);
+router.get("/failure", cartController.failure);
 
 router.get("/added", cartController.added);
 

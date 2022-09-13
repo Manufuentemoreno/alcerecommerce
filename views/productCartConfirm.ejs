@@ -13,26 +13,26 @@
     <main>
       <section class="form-box">
         <h1>Datos de envío y pago</h1>
-        <form id="createForm" class="form" method="post" action="/cart/checkout"
-        enctype="multipart/form-data">
+        <form id="createForm" class="form" action="/cart/checkout?_method=PUT" method="POST">
             
-            <select name="envio" id="envio" class="input-style">
+            <select name="delivery_method" id="delivery_method" class="input-style">
                 <option value="" disabled selected>Forma de envío</option>
                 <option value="retiro">Retiro en sucursal</option>
                 <option value="envio">Envío a domicilio</option>
             </select>
 
             <div class="form" id="envio-form">
-            <input class="input-style" type="text" name="calle" id="calle" placeholder="Dirección de Envío">
-            <input class="input-style" type="number" name="numer" id="numero" placeholder="Número">
+            <input class="input-style" type="text" name="calle" id="calle" placeholder="Calle">
+            <input class="input-style" type="number" name="numero" id="numero" placeholder="Número">
             <input class="input-style" type="text" name="localidad" id="localidad" placeholder="Localidad">
-            <input class="input-style" type="number" name="" id="" placeholder="Teléfono">
+            <input class="input-style" type="number" name="telefono" id="telefono" placeholder="Teléfono">
             </div>      
 
-            <select class="input-style" name="pago" id="pago">
+            <select class="input-style" name="payment_method" id="payment_method">
                 <option value="" disabled selected>Forma de pago</option>
                 <option value="efectivo">Efectivo</option>
                 <option value="tarjeta">Tarjeta</option>
+                <option value="mercadoPago">Mercado Pago</option>
             </select>
             
             <div class="form" id="card-form">

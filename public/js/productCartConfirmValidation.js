@@ -1,9 +1,11 @@
 window.onload = function(){
-    const envio = document.querySelector("#envio");
+    const envio = document.querySelector("#delivery_method");
     const envioForm = document.querySelector("#envio-form");
 
-    const pago = document.querySelector("#pago");
+    const pago = document.querySelector("#payment_method");
     const cardForm = document.querySelector("#card-form");
+
+    const createForm = document.querySelector("#createForm");
 
 
     envio.value == "envio" ? envioForm.style.display = "flex" :  envioForm.style.display = "none";
@@ -14,7 +16,14 @@ window.onload = function(){
     })
 
     pago.addEventListener("click", ()=>{
-        pago.value == "tarjeta" ? cardForm.style.display = "flex" :  cardForm.style.display = "none";
+        if (pago.value == "tarjeta") {
+            cardForm.style.display = "flex"
+        }
+        else if (pago.value == 'mercadoPago') {
+            createForm.action = '/cart/checkoutMP'
+        } else {
+            cardForm.style.display = "none";
+        }
     })
 
 
