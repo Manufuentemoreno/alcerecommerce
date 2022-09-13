@@ -15,8 +15,14 @@ const validations = require("../middlewares/products-validation");
 // PRODUCT CONTROLLER 
 const productsController = require('../controllers/productController');
 
+
+
+
 // GET ALL PRODUCTS
 router.get('/', productsController.index); 
+
+// GET CATEGORIES
+router.get("/category/:category", productsController.category);
 
 // SEARCH PRODUCT
 router.get("/search/", productsController.search);

@@ -22,7 +22,7 @@ const controller = {
             return res.send(error)
         }
         
-        res.render("products", { products: productsList, categories })
+        res.render("products", { products: productsList, categories, title: "Nuestros Productos" })
     },
 
     detail: async (req, res) => {
@@ -31,6 +31,15 @@ const controller = {
         if (producto){
             return res.render("productDetail", {product: producto, categories} )}
         res.render("notFound");
+    },
+
+    category: async(req, res) =>{
+        let catSelected = req.params.category;
+        let categories = await categoryList();
+        const selection = await Category.findOne({where:{name: catSelected}});
+        let products = await Products.findAll({where:{category_id: selection.id}});
+
+        res.render("products", {products, categories, title: `Productos en ${catSelected}`});
     },
     
     create: (req, res) => {
