@@ -1,3 +1,15 @@
+@keyframes categoryBar{
+  from{
+    background-color: #fff;
+    color: #1259c3;
+  }
+  to{
+    background-color: #1259c3;
+    color: #fff;
+  }
+}
+
+
 @media (min-width: 768px) {
 
   /* *********** TOPBAR ***********  */
@@ -13,8 +25,7 @@
   .search-bar input::placeholder {
     font-size: medium;
   }
-
-  
+ 
 
   .categories-bar{
     display: flex;
@@ -26,6 +37,7 @@
   }
 
   .category-list{
+    transition: ease-out;
     list-style-type: none;
     text-align: center;
     flex-grow: 1;
@@ -35,12 +47,12 @@
   }
 
   .category-list:hover{
-    background-color: #1259c3;
-    color: #fff;
+    animation: categoryBar 400ms forwards;
   }
 
   /* ******* FIN DE TOPBAR ********  */
-  
+
+ 
   .productPrincipalImage {
     width: 60%;
   }
@@ -66,6 +78,17 @@
   .search-container{
     padding: 0px;
     margin: 15px 20px;
+  }
+
+  .section-products{
+    width: 50%;
+  }
+
+  .cart-box-products{
+    display: block;
+    width: 40%;
+    position: sticky;
+    top: 20px;
   }
 
   /* FORMULARIOS */

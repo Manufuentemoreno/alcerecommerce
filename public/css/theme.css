@@ -308,8 +308,8 @@ footer h2{
 
 /* *********** TARJETAS DE HOME ***********  */
 
-section h2{
-    margin: 3%;
+.title-products{
+    margin: 3% 3%;
 }
 
 .products {
@@ -334,7 +334,7 @@ section h2{
 .product-text{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 3%;
     height: 103px;
 }
@@ -360,6 +360,40 @@ section h2{
     margin: 1.5px;
     text-align: end;
 
+}
+
+@keyframes icon-add-fx{
+    from{
+        color: #4b5c71c6;
+    }
+    to{
+        color: #044dac;
+        font-size: x-large;
+    }
+}
+
+.add-cart-form{
+    position: relative;
+    top: 61px;
+    left: 125px;
+}
+
+.button-add-cart{
+    width: 45px;
+    height: 45px;
+    background: #ffffff94;
+    border: none;
+    border-radius: 50px;
+    box-shadow: -10px 3px 24px -13px rgba(0,0,0,0.43);
+    color: #4b5c71c6;
+}
+
+.button-add-cart :hover{
+    animation: icon-add-fx 250ms forwards;
+}
+
+.cart-box-products{
+    display: none;
 }
 
 /* *********** CARRITO DE COMPRA ***********  */

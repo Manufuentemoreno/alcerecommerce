@@ -21,8 +21,32 @@ const controller = {
         }catch(error){
             return res.send(error)
         }
+
+        // cart section:
+        let detalles = []
+        if(req.session.loggedUser){
+        let ordenEnCarrito = await db.Orders.findOne({
+            where: {
+              user_id: req.session.loggedUser.id,
+              order_status: "enCarrito",
+            },
+          });
+      
+          if (ordenEnCarrito) {
+            detalles = await db.Orders_details.findAll({
+              include: ["product"],
+              where: {
+                order_id: ordenEnCarrito.id,
+              },
+            });
+            let totalOrden = await db.Orders_details.sum("product.price", {
+              include: ["product"],
+              where: {
+                order_id: ordenEnCarrito.id,
+              },
+            })}};
         
-        res.render("products", { products: productsList, categories, title: "Nuestros Productos" })
+        res.render("products", { products: productsList, categories, title: "Nuestros Productos", detalles })
     },
 
     detail: async (req, res) => {
