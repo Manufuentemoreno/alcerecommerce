@@ -140,10 +140,6 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-footer{
-    background-color: #1A1A1A;
-    color: #f5f4f4;
-}
 .firstProductTitle {
     text-align: center;
     display: block;
@@ -159,31 +155,6 @@ footer{
     margin: 5% 5% 5% 5%;
     font-size: 30px;
     font-weight: bold;
-}
-
-footer ul{
-    display: flex;
-}
-
-footer a{
-    color: white;
-    text-decoration: none;
-    width: 50%;
-    font-weight: bold;
-}
-.socialMediaList{
-    padding: 0vw;
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-    text-decoration: none;
-}
-
-footer li{
-    margin: 1vw;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-around;
 }
 
 .productPrincipalImage{
@@ -245,10 +216,6 @@ footer li{
     width: 90%;
 }
 
-footer h2{
-    margin-top: 3%;
-}
-
 .relatedProductsScroll{
     display: flex;
     justify-content: space-around;
@@ -278,44 +245,6 @@ footer h2{
 .relatedProductImage{
     width: 25vw;
     margin: 1%;
-}
-
- /* *********** FOOTER ***********  */
-
-.footer{
-    text-align: center;
-    margin-top:3% ;
-    padding-top:3% ;
-}
-
-.footer p{
-    padding: 3%;
-}
-
-.contact{
-    display: box;
-    margin: auto;
-    padding: 0;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.alcerLogo{
-    width: 21vw;
-    margin: 2%;
-}
-
-.socialMedia{
-    display: flex;
-    padding: 3%;
-    justify-content: space-around;
-}
-
-.socialMedia button{
-    border-radius: 50%;
-    background-color: #8b8888;
-    border: #8b8888;
-    font-size: larger;
 }
 
 /* *********** TARJETAS DE HOME ***********  */
@@ -373,6 +302,21 @@ footer h2{
     margin: 1.5px;
     text-align: end;
 
+}
+
+.productos-destacados{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.productos-destacados-list{
+    display: ruby;
+    height: 350px;
+    overflow: scroll;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
 }
 
 @keyframes icon-add-back {
@@ -840,6 +784,7 @@ footer h2{
     margin: 0px;
     font-weight: 600;
 }
+
 
 /* *** ANIMACIONES *** */
 
