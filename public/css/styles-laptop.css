@@ -104,9 +104,14 @@
 
   .product-description{
     margin: 1px;
-    flex-grow: 1;
     overflow: hidden;
-    line-break: auto;
+    white-space: unset;
+    text-overflow: ellipsis;
+    line-height: 15px;
+    height: 27px;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   .title-products{

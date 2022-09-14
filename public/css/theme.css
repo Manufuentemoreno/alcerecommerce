@@ -316,7 +316,7 @@ footer h2{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     margin: auto;
 }
 
@@ -326,9 +326,10 @@ footer h2{
     border: 1px rgba(0, 0, 0, 0.188) solid;
     border-radius: 10px;
     width: 160px;
-    margin: 4%;
+    margin: 8px 5px;
     overflow: hidden;
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    position: relative;
 }
 
 .product-text{
@@ -372,29 +373,42 @@ footer h2{
     }
 }
 
+@keyframes icon-add-back {
+    from{
+        background: #ffffff94;
+    }
+    to{
+        background: #ffffffe3;
+    }
+}
+
 .add-cart-form{
-    position: relative;
-    top: 61px;
-    left: 125px;
+    position: absolute;
+    top: 9px;
+    left: 113px;
+    background: #ffffff94;
+    border-radius: 50px;
+}
+
+.add-cart-form{
+    animation: icon-add-back 250ms forwards;
 }
 
 .button-add-cart{
     width: 45px;
     height: 45px;
-    background: #ffffff94;
+    
     border: none;
     border-radius: 50px;
     box-shadow: -10px 3px 24px -13px rgba(0,0,0,0.43);
-    color: #4b5c71c6;
+    /* color: #4b5c71c6; */
 }
 
 .button-add-cart :hover{
     animation: icon-add-fx 250ms forwards;
 }
 
-.cart-box-products{
-    display: none;
-}
+
 
 /* *********** CARRITO DE COMPRA ***********  */
 
@@ -407,6 +421,10 @@ footer h2{
     border-radius: 20px;
     padding: 20px;
     background: white;
+}
+
+.cart-box-products{
+    display: none;
 }
 
 .carrito-productos{

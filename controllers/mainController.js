@@ -12,7 +12,7 @@ module.exports = {
     home : async (req, res)=>{
         let productList = {};
         try {
-            productList = await Products.findAll()
+            productList = await Products.findAll({limit:6})
         }catch(error){
             return res.render("notFound")
         }
@@ -20,7 +20,7 @@ module.exports = {
         let categories = await categoryList();
 
         res.render("home",{
-            "productos": productList,
+            "products": productList,
             categories
         });
         

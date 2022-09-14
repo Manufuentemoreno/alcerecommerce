@@ -7,6 +7,7 @@ const { Op } = require("sequelize");
 const Products = db.Products;
 const Category = db.Products_categories;
 const categoryList = require('../modules/productCategoryTopBar');
+const cartProducts = require("../modules/cartProductSide")
 
 // Validations-express validator
 const { validationResult } = require("express-validator");
@@ -23,28 +24,7 @@ const controller = {
         }
 
         // cart section:
-        let detalles = []
-        if(req.session.loggedUser){
-        let ordenEnCarrito = await db.Orders.findOne({
-            where: {
-              user_id: req.session.loggedUser.id,
-              order_status: "enCarrito",
-            },
-          });
-      
-          if (ordenEnCarrito) {
-            detalles = await db.Orders_details.findAll({
-              include: ["product"],
-              where: {
-                order_id: ordenEnCarrito.id,
-              },
-            });
-            let totalOrden = await db.Orders_details.sum("product.price", {
-              include: ["product"],
-              where: {
-                order_id: ordenEnCarrito.id,
-              },
-            })}};
+        let detalles = await cartProducts(req, res);
         
         res.render("products", { products: productsList, categories, title: "Nuestros Productos", detalles })
     },
@@ -63,7 +43,10 @@ const controller = {
         const selection = await Category.findOne({where:{name: catSelected}});
         let products = await Products.findAll({where:{category_id: selection.id}});
 
-        res.render("products", {products, categories, title: `Productos en ${catSelected}`});
+        // cart section:
+        let detalles = await cartProducts(req, res);
+
+        res.render("products", {products, categories, title: `Productos en ${catSelected}`, detalles});
     },
     
     create: (req, res) => {

@@ -91,6 +91,10 @@
     top: 20px;
   }
 
+  .product-card{
+    margin: 5px;
+  }
+
   /* FORMULARIOS */
 
   .formulario {
@@ -100,10 +104,6 @@
     background-color: #fff;
   }
 
-  .products{
-    width: auto;
-    margin: 0px 120px;
-  }
 
   .botones-formulario {
     max-width: 150px;
