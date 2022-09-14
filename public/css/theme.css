@@ -30,8 +30,6 @@ body{
     border-radius: 100%;
 }
 
-
-
 .search-container {
     width: 50%;
     display: block;
@@ -103,9 +101,8 @@ body{
 
 
 
-
-
 /* *********** FIN DE TOPBAR ***********  */
+
 
 .fa-bars{
     align-items: center;
@@ -118,16 +115,25 @@ input:focus{
 .categorias{
     justify-content: space-around;
 }
+
 main{
-    margin-top: 1%;
+    display: flex;
+    margin: 20px 30px;
     background-color: #f5f4f4;
+    justify-content: center;
+    justify-content: space-between;
 }
+
+.title-all-products{
+    margin-left: 10px;
+}
+
 body{
     /* font-family: 'Source Sans Pro', sans-serif; */
     font-family: 'Radio Canada', sans-serif;
     font-family: 'Roboto', sans-serif;
-    
 }
+
 footer{
     background-color: #1A1A1A;
     color: #f5f4f4;
@@ -316,7 +322,7 @@ footer h2{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
     margin: auto;
 }
 
@@ -337,7 +343,7 @@ footer h2{
     flex-direction: column;
     justify-content: space-between;
     padding: 3%;
-    height: 103px;
+    height: 115px;
 }
 
 .product-name{
@@ -363,60 +369,67 @@ footer h2{
 
 }
 
-@keyframes icon-add-fx{
-    from{
-        color: #4b5c71c6;
-    }
-    to{
-        color: #044dac;
-        font-size: x-large;
-    }
-}
-
 @keyframes icon-add-back {
-    from{
-        background: #ffffff94;
+    0%{
+        background: #ffffff9d;
     }
-    to{
-        background: #ffffffe3;
+    40%{
+        transform: rotate(-5deg);
+    }
+    60%{
+        transform: rotate(7deg);
+        background: #fffffffb;
+        width: 50px;
+        height: 50px;
+        box-shadow: -10px 3px 24px -13px rgba(0,0,0,0.55);
+    }
+    100%{
+        transform: rotate(-15deg);
+        background: #fffffffb;
+        width: 50px;
+        height: 50px;
+        box-shadow: -10px 3px 24px -13px rgba(0,0,0,0.55);
     }
 }
 
 .add-cart-form{
     position: absolute;
-    top: 9px;
-    left: 113px;
-    background: #ffffff94;
+    top: 7px;
+    left: 7px;
     border-radius: 50px;
-}
-
-.add-cart-form{
-    animation: icon-add-back 250ms forwards;
 }
 
 .button-add-cart{
+    color: none;
     width: 45px;
     height: 45px;
-    
     border: none;
     border-radius: 50px;
     box-shadow: -10px 3px 24px -13px rgba(0,0,0,0.43);
-    /* color: #4b5c71c6; */
+    background: #FFFFFFBA;
+    
 }
 
-.button-add-cart :hover{
-    animation: icon-add-fx 250ms forwards;
+.button-add-cart:hover{
+    animation: icon-add-back 350ms forwards;
+    transition: ease-in-out;
 }
 
+.icon-add-cart{
+    color:#044dac
+}
 
 
 /* *********** CARRITO DE COMPRA ***********  */
+
+.section-cart{
+    display: none;
+}
 
 .cart-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 20px;
     border: 1px solid #0003;
     border-radius: 20px;
     padding: 20px;
@@ -425,6 +438,7 @@ footer h2{
 
 .cart-box-products{
     display: none;
+    width: 40%;
 }
 
 .carrito-productos{
@@ -542,9 +556,9 @@ footer h2{
     margin: 5px;
 }
 
-.continue-group {
+/* .continue-group {
     width: 75%;
-}
+} */
 
 .cart-total-group {
     display: flex;

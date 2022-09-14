@@ -66,7 +66,7 @@ module.exports = {
         );
 
         req.session.addedProductId = req.params.id;
-        res.redirect("/cart/added");
+        res.redirect("back");
       } else {
         let detalleCreado = await db.Orders_details.create({
           order_id: ordenEnCarrito.id,
@@ -75,7 +75,7 @@ module.exports = {
         });
 
         req.session.addedProductId = req.params.id;
-        res.redirect("/cart/added");
+        res.redirect("back");
       }
     }
   },
@@ -137,19 +137,18 @@ module.exports = {
         id: req.params.id,
       },
     });
-
+    
     let detalleAgregado = await db.Orders_details.update(
-      {
-        amount: detalleExistente.amount + 1,
-      },
-      {
-        where: {
-          id: req.params.id,
+        {
+          amount: detalleExistente.amount + 1,
         },
-      }
-    );
-
-    res.redirect("/cart");
+        {
+          where: {
+            id: req.params.id,
+          },
+        });
+    return res.redirect("back");
+        
   },
 
   removeOne: async (req, res) => {
@@ -170,7 +169,7 @@ module.exports = {
       }
     );
 
-    res.redirect("/cart");
+    res.redirect("back");
   },
 
   startProces: (req, res) => {

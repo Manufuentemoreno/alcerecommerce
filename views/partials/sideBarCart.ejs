@@ -1,6 +1,7 @@
 <% if (detalles.length) {%> 
-<section class="cart-box cart-box-products">
-    <h2 class="cart-title">Mi Carrito</h2>
+<section class="section-cart">
+    <h2 class="cart-title">Carrito</h2>
+    <div class="cart-box cart-box-products">
     <div class="carrito-productos">
         <% let total = 0; %> 
         <% for (let i = 0; i < detalles.length; i++) {%> 
@@ -32,6 +33,7 @@
                 </div>
             </div>
         <% } %> 
+    </div>
     </div>
     <div class="continue-group">
         <div class="cart-total-group">

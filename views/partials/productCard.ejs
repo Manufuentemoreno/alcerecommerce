@@ -1,6 +1,6 @@
 <% products.forEach(producto => { %>
 <a href="/products/<%= producto.id %> " style=text-decoration:none class="product-card">          
-    <form class="add-cart-form" action="/products" method="post">
+    <form class="add-cart-form" action="/cart/add/<%= producto.id %>" method="post">
         <button class="button-add-cart" type="submit"><i class="fa-sharp fa-solid fa-cart-plus icon-add-cart"></i></button>
     </form>
     <img src="/images/productDetail/<%= producto.product_photo  %>" alt="Producto 1">
