@@ -29,22 +29,31 @@ const controller = {
 
         //lastAdded:
         if(req.session.addedProductId 
-            && lastAdded 
-            && lastAdded.id == req.session.addedProductId.id){
+            && lastAdded == req.session.addedProductId){
                 lastAdded = "" 
         }else{
             lastAdded = req.session.addedProductId;
         }
         
-        
+        req.session.addedProductId = "";
         res.render("products", { products: productsList, categories, title: "Nuestros Productos", detalles, lastAdded });
     },
 
     detail: async (req, res) => {
         let producto = await Products.findByPk(req.params.id)
         let categories = await categoryList();
+        
+        //lastAdded:
+        if(req.session.addedProductId 
+             && lastAdded == req.session.addedProductId){
+                lastAdded = "" 
+        }else{
+            lastAdded = req.session.addedProductId;
+        }
+        req.session.addedProductId = "";
+
         if (producto){
-            return res.render("productDetail", {product: producto, categories} )}
+            return res.render("productDetail", {product: producto, categories, lastAdded} )}
         res.render("notFound");
     },
 
@@ -59,13 +68,13 @@ const controller = {
 
         //lastAdded:
         if(req.session.addedProductId 
-            && lastAdded 
-            && lastAdded.id == req.session.addedProductId.id){
+            && lastAdded == req.session.addedProductId){
                 lastAdded = "" 
         }else{
             lastAdded = req.session.addedProductId;
         }
-
+        
+        req.session.addedProductId = "";
         res.render("products", {products, categories, title: `Productos en ${catSelected}`, detalles, lastAdded});
     },
     
@@ -148,15 +157,14 @@ const controller = {
 
         //lastAdded:
         if(req.session.addedProductId 
-            && lastAdded 
-            && lastAdded.id == req.session.addedProductId.id){
+            && lastAdded == req.session.addedProductId){
                 lastAdded = "" 
         }else{
             lastAdded = req.session.addedProductId;
         }
-
+        
+        req.session.addedProductId = "";
         res.render("search", { products: productsList, searched: searched, categories, lastAdded})
-        return lastAdded
     },
 
     notFound: async(req,res) =>{

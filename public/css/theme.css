@@ -113,6 +113,9 @@ nav a {
     padding-top: 1px
 }
 
+.cart-p-number{
+    display: none;
+}
 
 
 /* *********** FIN DE TOPBAR ***********  */

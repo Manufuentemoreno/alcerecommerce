@@ -55,6 +55,25 @@
     border-radius: 100%;
   }
 
+  .carrito-logo{
+    position: relative;
+  }
+
+  .cart-p-number{
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    right: 11px;
+    color: white;
+    background-color: #044dac;
+    border-radius: 50px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
   /* ******* FIN DE TOPBAR ********  */
   
   .main-page{

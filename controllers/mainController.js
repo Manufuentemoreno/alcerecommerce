@@ -3,6 +3,7 @@ const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const { PassThrough } = require("stream");
+const cartProducts = require("../modules/cartProductSide")
 
 // Modelos
 const Products = db.Products;
@@ -21,19 +22,23 @@ module.exports = {
 
         let categories = await categoryList();
 
+        // cart section:
+        let detalles = await cartProducts(req, res);
+
         //lastAdded:
         if(req.session.addedProductId 
-            && lastAdded 
-            && lastAdded.id == req.session.addedProductId.id){
+            && lastAdded == req.session.addedProductId){
                 lastAdded = "" 
         }else{
             lastAdded = req.session.addedProductId;
         }
-
+        
+        req.session.addedProductId = "";
         res.render("home",{
             "products": productList,
             categories,
-            lastAdded
+            lastAdded,
+            detalles
         });
         return lastAdded        
     },
