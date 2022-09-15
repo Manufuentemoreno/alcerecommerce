@@ -11,11 +11,11 @@ window.onload = function(){
     envio.value == "envio" ? envioForm.style.display = "flex" :  envioForm.style.display = "none";
     pago.value == "tarjeta" ? cardForm.style.display = "flex" :  cardForm.style.display = "none" ;
 
-    envio.addEventListener("click", ()=>{
+    envio.addEventListener("change", ()=>{
         envio.value == "envio" ? envioForm.style.display = "flex" : envioForm.style.display = "none" ;
     })
 
-    pago.addEventListener("click", ()=>{
+    pago.addEventListener("change", ()=>{
         if (pago.value == "tarjeta") {
             cardForm.style.display = "flex"
         }
