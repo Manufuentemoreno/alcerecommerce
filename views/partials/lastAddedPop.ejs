@@ -1,0 +1,18 @@
+<section class="cart-info-container">
+    <i class="fa-regular fa-circle-check"></i>
+    <div class="added-info">
+        <figure>
+            <img src="/images/productDetail/<%= lastAdded.product_photo %>" alt="Foto del producto">
+        </figure>
+        <div class="added-description">
+            <h3>Agregaste a tu carrito</h3>
+            <div class="">
+                <p><%= lastAdded.name %></p>
+                <p><%= lastAdded.description %> </p>
+            </div>
+        </div>
+    </div>
+    <form action="/cart">
+        <button type="submit">Ver carrito</button>
+    </form>
+</section>
