@@ -7,6 +7,10 @@ body{
 
 /* *********** TOPBAR ***********  */
 
+nav a {
+    text-decoration: none;
+}
+
 .contenedor-logo {
     width: 100px;
 }
