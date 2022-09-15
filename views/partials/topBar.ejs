@@ -33,8 +33,11 @@
                 </li>
                 <li class="nav-item">
                     
-                        <a class="d-flex justify-content-center" href="/cart">
+                        <a class="d-flex justify-content-center carrito-logo" href="/cart">
                             <i class="topbar-icon font-light-blue fa-solid fa-cart-shopping"></i>
+                            <% if(detalles){ %>
+                                <p class="cart-p-number"><%=detalles.length%> </p> 
+                            <% } %> 
                         </a>
                         <a class="nav-link icon-topbar-text" href="/cart">Carrito</a>
                     
