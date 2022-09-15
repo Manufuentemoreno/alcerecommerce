@@ -42,8 +42,15 @@ module.exports = {
         amount: 1,
       });
 
-      req.session.addedProductId = req.params.id;
-      res.redirect("/cart/added");
+    
+      let lastAdded = await db.Products.findOne({
+        where: {
+          id: req.params.id,
+        },
+      });
+      req.session.addedProductId = lastAdded;
+
+      res.redirect("back");
     } else {
       let detalleExistente = await db.Orders_details.findOne({
         where: {

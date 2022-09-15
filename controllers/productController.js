@@ -25,8 +25,11 @@ const controller = {
 
         // cart section:
         let detalles = await cartProducts(req, res);
+
+        //lastAdded:
+        let lastAdded =  req.session.addedProductId
         
-        res.render("products", { products: productsList, categories, title: "Nuestros Productos", detalles })
+        res.render("products", { products: productsList, categories, title: "Nuestros Productos", detalles, lastAdded })
     },
 
     detail: async (req, res) => {

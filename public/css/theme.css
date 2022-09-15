@@ -559,6 +559,8 @@ body{
 /* **************** ADDED PRODUCT ****************** */
 
 .cart-info-container {
+    position: inherit;
+    z-index: 200;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -576,8 +578,17 @@ body{
         filter: blur(3px);
     }
 
-    100% {
+    40% {
         opacity: 1;
+    }
+
+    70%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+        display: none;
     }
 }
 
