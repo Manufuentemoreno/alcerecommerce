@@ -966,3 +966,12 @@ footer p {
     text-align: center;
     padding-top: 15px;
  }
+
+ .order-sections{
+    border: solid 0.5px lightgray;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    width: 80%;
+    margin-bottom: 20px;
+ }
