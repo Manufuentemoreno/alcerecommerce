@@ -34,6 +34,7 @@
  
 
   .categories-bar{
+    position: initial;
     display: flex;
     flex-direction: row;
     background-color: #fff;
@@ -90,6 +91,18 @@
   .addCart{
     width: 70%;
   }
+
+  /* PRODUCT DETAIL */
+  .description{
+    flex-direction: row;
+  }
+
+  .detail-image{
+    width: 60%;
+  }
+
+  /* FIN PRODUCT DETAIL */
+
 
   .relatedProductsScroll {
     flex-direction: ROW;
@@ -153,6 +166,7 @@
     padding: 20px 40px;
     flex-direction: column;
     align-content: center;
+    min-height: 400px;
 }
 
 .cart-page-card{

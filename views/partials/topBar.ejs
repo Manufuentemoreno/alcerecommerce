@@ -31,19 +31,19 @@
 
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item li-burger">
                     
                         <a class="d-flex justify-content-center carrito-logo" href="/cart">
-                            <i class="topbar-icon font-light-blue fa-solid fa-cart-shopping"></i>
-                            <% if(detalles){ %>
+                            <i class="topbar-icon font-light-blue fa-solid fa-cart-shopping logo-cart"></i>
+                            <% if(locals.detalles){ %>
                                 <p class="cart-p-number"><%=detalles.length%> </p> 
                             <% } %> 
                         </a>
-                        <a class="nav-link icon-topbar-text" href="/cart">Carrito</a>
+                        <a class="nav-link icon-topbar-text li-burger" href="/cart">Carrito</a>
                     
                 </li>
             <% if (locals.loggedUser.category == 'adminUser') {%> 
-                <li class="nav-item">
+                <li class="nav-item li-burger">
                     
                     <a class="d-flex justify-content-center" href="/products/create">
                         <i class="topbar-icon font-light-blue fa-solid fa-circle-plus"></i>
@@ -51,7 +51,7 @@
                     <a class="nav-link icon-topbar-text-add" href="/products/create">Cargar Producto</a>
                 
                 </li>
-                <li class="nav-item">
+                <li class="nav-item li-burger">
                     
                         <a class="d-flex justify-content-center" href="/users">
                             <i class="topbar-icon font-light-blue fa-solid fa-users"></i>
@@ -59,7 +59,7 @@
                         <a class="nav-link icon-topbar-text" href="/users">Usuarios</a>
                     
                 </li>
-                <li class="nav-item">
+                <li class="nav-item li-burger">
                     <a class="d-flex justify-content-center" href="">
                         <i class="topbar-icon font-light-blue fa-solid fa-clipboard-list"></i>
                     </a>
@@ -67,7 +67,7 @@
                 </li>
             <% } %> 
             <% } else { %>
-                <li class="nav-item">
+                <li class="nav-item li-burger">
                     
                         <a class="d-flex justify-content-center" href="/cart">
                             <i class="topbar-icon font-light-blue fa-solid fa-cart-shopping"></i>
@@ -75,7 +75,7 @@
                         <a class="nav-link icon-topbar-text" href="/cart">Carrito</a>
                     
                 </li>
-                <li class="nav-item">
+                <li class="nav-item li-burger">
                     
                         <a class="d-flex justify-content-center" href="/login">
                             <i class="topbar-icon font-light-blue fa-solid fa-user"></i>

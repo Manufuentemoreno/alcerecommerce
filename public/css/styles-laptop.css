@@ -56,7 +56,9 @@
   }
 
   .carrito-logo{
+    display: block;
     position: relative;
+    height: 20px;
   }
 
   .cart-p-number{
@@ -101,6 +103,7 @@
     display: block;
     display: flex;
   }
+
 
   .firstProductTitle{
     display: none;

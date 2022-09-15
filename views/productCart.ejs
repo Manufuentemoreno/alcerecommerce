@@ -11,6 +11,9 @@
     </header>
     <main  class="bg-lightgrey p-8 m-center cart-main">
         <section class="cart-box cart-page">
+            <% if(detalles.length < 1){ %>
+                <h2 class="cart-title">Tu carrito está vacío!</h2>
+            <% }else{ %> 
             <h2 class="cart-title">Mi Carrito</h2>
             <div class="cart-page-all">
                 <% let total = 0; %> 
@@ -53,6 +56,7 @@
                     <button class="cart-submit-btn" type="submit">Continuar</button>
                 </form>
             </div>
+            <% } %> 
         </section>   
     </main>
     <%- include("partials/footer") %>

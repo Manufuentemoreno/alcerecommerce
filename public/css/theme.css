@@ -117,6 +117,15 @@ nav a {
     display: none;
 }
 
+.categories-bar{
+    display: none;
+    position: absolute;
+    top: -100vh;
+}
+
+.li-burger{
+    margin: 5px;
+}
 
 /* *********** FIN DE TOPBAR ***********  */
 
@@ -319,6 +328,8 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #fff0 #fff0;
 }
 
 .productos-destacados-list{
@@ -328,6 +339,7 @@ body{
     flex-wrap: wrap;
     width: 90%;
     margin: auto;
+    height: 80%;
 }
 
 @keyframes icon-add-back {
@@ -405,6 +417,10 @@ body{
 .carrito-productos{
     display: flex;
     flex-wrap: wrap;
+}
+
+.carrito-logo{
+    display: none;
 }
 
 .cart-title {
@@ -694,6 +710,7 @@ body{
   .description{
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
   }
 
   .details{
@@ -702,9 +719,12 @@ body{
     justify-content: space-around;
   }
 
+  .p-detail-image{
+    display: flex;
+  }
 
   .detail-image{
-    width: 40%;
+    width: 100%;
   }
 
   .button {
