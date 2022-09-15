@@ -12,6 +12,12 @@
 
 @media (min-width: 768px) {
 
+  /* ********* FOOTER ************** */
+
+  .ftr-banner {
+    flex-direction: row;
+  }
+
   /* *********** TOPBAR ***********  */
    .contenedor-logo {
     display: block;
