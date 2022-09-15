@@ -119,11 +119,11 @@ const controller = {
         await Products.update({
             name: productEdited.name,
             price: Number(productEdited.price),
-            description: productEdited.description
+            description: productEdited.description,
+            category_id: Number(productEdited.category)
         },{
             where: {id: idP}
         })
-        .catch(error => res.send(error))
         
         res.redirect("/products");
     
