@@ -34,12 +34,12 @@
             <tr>
               <td>
                 <form action="/orders/<%= ordenesConRetiro[i].id %>/listo?_method=PUT" method="POST">
-                  <button type="submit">Listo</button>
+                  <button class="btn-order" type="submit"><i class="fa-solid fa-check"></i></button>
                 </form>
               </td>
               <td>
                 <form action="/orders/detail/<%= ordenesConRetiro[i].id %>/" method="GET">
-                  <button type="submit">Detalle</button>
+                  <button class="btn-order" type="submit"><i class="fa-solid fa-info"></i></button>
                 </form>
               </td>
               <td><%= ordenesConRetiro[i].id %></td>
@@ -57,7 +57,7 @@
         <table class="table table-sm">
           <thead>
             <tr>
-              <th scope="col">Acción</th>
+              <th scope="col">Retirado</th>
               <th scope="col">Id</th>
               <th scope="col">Estado</th>
               <th scope="col">Met. envío</th>
@@ -70,7 +70,7 @@
             <tr>
               <td>
                 <form action="/orders/<%= ordenesConRetiroListas[i].id %>/retirado?_method=PUT" method="POST">
-                  <button type="submit">Retirado</button>
+                  <button class="btn-order" type="submit"><i class="fa-solid fa-check"></i></button>
                 </form>
               </td>
               <td><%= ordenesConRetiroListas[i].id %></td>
@@ -88,7 +88,7 @@
         <table class="table table-sm">
           <thead>
             <tr>
-              <th scope="col">Acción</th>
+              <th scope="col">Borrar</th>
               <th scope="col">Id</th>
               <th scope="col">Estado</th>
               <th scope="col">Met. envío</th>
@@ -101,7 +101,7 @@
             <tr>
               <td>
                 <form action="/orders/<%= ordenesConRetiroRetiradas[i].id %>/retirado?_method=PUT" method="POST">
-                  <button type="submit">Borrar</button>
+                  <button class="btn-order" type="submit"><i class="fa-solid fa-trash"></i></button>
                 </form>
               </td>
               <td><%= ordenesConRetiroRetiradas[i].id %></td>
