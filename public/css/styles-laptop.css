@@ -68,6 +68,15 @@
     width: 100%;
   }
 
+  .productos-destacados-list{
+    display: flex;
+    overflow: unset;
+    height: auto;
+    width: auto;
+    justify-content: center;
+
+  }
+
   .categorias{
     margin-top: 2%;
     display: block;
@@ -103,8 +112,6 @@
     line-height: 15px;
     flex-grow: 1;
   }
-
-
 
   .title-products{
     margin: 3% 0%;

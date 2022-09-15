@@ -11,6 +11,7 @@ const cartProducts = require("../modules/cartProductSide")
 
 // Validations-express validator
 const { validationResult } = require("express-validator");
+let lastAdded = ""
 
 const controller = {
     index: async(req, res) => {
@@ -27,9 +28,16 @@ const controller = {
         let detalles = await cartProducts(req, res);
 
         //lastAdded:
-        let lastAdded =  req.session.addedProductId
+        if(req.session.addedProductId 
+            && lastAdded 
+            && lastAdded.id == req.session.addedProductId.id){
+                lastAdded = "" 
+        }else{
+            lastAdded = req.session.addedProductId;
+        }
         
-        res.render("products", { products: productsList, categories, title: "Nuestros Productos", detalles, lastAdded })
+        
+        res.render("products", { products: productsList, categories, title: "Nuestros Productos", detalles, lastAdded });
     },
 
     detail: async (req, res) => {
@@ -49,7 +57,16 @@ const controller = {
         // cart section:
         let detalles = await cartProducts(req, res);
 
-        res.render("products", {products, categories, title: `Productos en ${catSelected}`, detalles});
+        //lastAdded:
+        if(req.session.addedProductId 
+            && lastAdded 
+            && lastAdded.id == req.session.addedProductId.id){
+                lastAdded = "" 
+        }else{
+            lastAdded = req.session.addedProductId;
+        }
+
+        res.render("products", {products, categories, title: `Productos en ${catSelected}`, detalles, lastAdded});
     },
     
     create: (req, res) => {
@@ -129,7 +146,17 @@ const controller = {
             return res.render("notFound")
         }
 
-        res.render("search", { products: productsList, searched: searched, categories})
+        //lastAdded:
+        if(req.session.addedProductId 
+            && lastAdded 
+            && lastAdded.id == req.session.addedProductId.id){
+                lastAdded = "" 
+        }else{
+            lastAdded = req.session.addedProductId;
+        }
+
+        res.render("search", { products: productsList, searched: searched, categories, lastAdded})
+        return lastAdded
     },
 
     notFound: async(req,res) =>{

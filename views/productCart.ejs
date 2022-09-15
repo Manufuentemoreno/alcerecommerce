@@ -9,20 +9,20 @@
     <header>
         <%- include("partials/topBar") %>
     </header>
-    <main  class="bg-lightgrey p-8 m-center">
+    <main  class="bg-lightgrey p-8 m-center cart-main">
         <section class="cart-box cart-page">
             <h2 class="cart-title">Mi Carrito</h2>
-            <div class="carrito-productos">
+            <div class="cart-page-all">
                 <% let total = 0; %> 
                 <% for (let i = 0; i < detalles.length; i++) {%> 
                     <% subtotal = (parseFloat(detalles[i].amount) * parseFloat(detalles[i].product.price)) %> 
                     <% total = total + parseFloat(subtotal) %> 
-                    <div class="card-cart">
+                    <div class="cart-page-card">
                         <figure>
-                            <img src="/images/productDetail/<%= detalles[i].product.product_photo %>" alt="Foto">
+                            <img class="cart-page-photo" src="/images/productDetail/<%= detalles[i].product.product_photo %>" alt="Foto">
                         </figure>
-                        <div class="cart-detail">
-                            <p class="cart-product-name"> <%= detalles[i].product.name %> </p>
+                        <div class="cart-page-detail">
+                            <p class="cart-page-product-name"> <%= detalles[i].product.name %> </p>
                             <div class="addRemove-group">
                                 <form action="/cart/<%= detalles[i].id %>/removeOne?_method=PUT" method="POST">
                                     <button class="addRemove-btn" type="submit">-</button>
@@ -35,11 +35,11 @@
                                 </form>
                             </div>
                             <p class="cart-price">$<%= subtotal.toFixed(2) %></p>
-                            <div class="cart-buttons-group">
-                                <form action="/cart/<%= detalles[i].id %>/delete?_method=DELETE" method="POST">
-                                    <button type="submit" class="cart-delete-btn">Eliminar</button>
-                                </form>
-                            </div>
+                        </div>
+                        <div class="cart-buttons-group">
+                            <form action="/cart/<%= detalles[i].id %>/delete?_method=DELETE" method="POST">
+                                <button type="submit" class="cart-delete-btn">Eliminar</button>
+                            </form>
                         </div>
                     </div>
                 <% } %> 

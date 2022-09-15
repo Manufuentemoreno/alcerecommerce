@@ -106,7 +106,7 @@
     flex-direction: column;
     max-height: 650px;
   }
-  }
+  
 
   .cart-box-products{
     border-radius: 0px;
@@ -140,6 +140,38 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
+
+  .cart-page{
+    display: flex;
+    padding: 20px 40px;
+    flex-direction: column;
+    align-content: center;
+}
+
+.cart-page-card{
+    border: 0.5px solid rgb(176, 176, 176);
+    width: 600px;
+    justify-content: space-between;
+    padding: 15px;
+    flex-direction: row;
+}
+
+.cart-page-photo{
+    width: 91px;
+}
+
+.cart-page-detail{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between; 
+  flex-grow: 1;
+  margin: 15px;
+}
+
+.cart-page-product-name{
+  width: 120px;
+}
 
   /* FORMULARIOS */
 
@@ -184,3 +216,4 @@
       display: flex;
       flex-wrap: wrap;
     }
+  }

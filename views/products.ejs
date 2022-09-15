@@ -9,10 +9,7 @@
     <header>
         <%- include("partials/topBar")  %> 
     </header>
-    <main class="main-page">
-        <% if(locals.lastAdded) {%>
-            <%- include('partials/lastAddedPop') %>
-        <% } %>   
+    <main class="main-page">  
         <section class="section-products"> 
             <h2 class="title-all-products"><%= locals.title %>:</h2>
             <div class="products">              

@@ -8,6 +8,8 @@ const { PassThrough } = require("stream");
 const Products = db.Products;
 const categoryList = require('../modules/productCategoryTopBar');
 
+let lastAdded = ""
+
 module.exports = {
     home : async (req, res)=>{
         let productList = {};
@@ -19,11 +21,21 @@ module.exports = {
 
         let categories = await categoryList();
 
+        //lastAdded:
+        if(req.session.addedProductId 
+            && lastAdded 
+            && lastAdded.id == req.session.addedProductId.id){
+                lastAdded = "" 
+        }else{
+            lastAdded = req.session.addedProductId;
+        }
+
         res.render("home",{
             "products": productList,
-            categories
+            categories,
+            lastAdded
         });
-        
+        return lastAdded        
     },
 
     cart : async(req,res) =>{

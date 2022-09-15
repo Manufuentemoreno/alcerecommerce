@@ -49,6 +49,8 @@ module.exports = {
         },
       });
       req.session.addedProductId = lastAdded;
+      req.session.addedProductId.maxAge = 4000
+
 
       res.redirect("back");
     } else {
@@ -72,7 +74,13 @@ module.exports = {
           }
         );
 
-        req.session.addedProductId = req.params.id;
+        let lastAdded = await db.Products.findOne({
+          where: {
+            id: req.params.id,
+          },
+        });
+        req.session.addedProductId = lastAdded;
+        req.session.addedProductId.maxAge = 4000
         res.redirect("back");
       } else {
         let detalleCreado = await db.Orders_details.create({
@@ -81,7 +89,13 @@ module.exports = {
           amount: 1,
         });
 
-        req.session.addedProductId = req.params.id;
+        let lastAdded = await db.Products.findOne({
+          where: {
+            id: req.params.id,
+          },
+        });
+        req.session.addedProductId = lastAdded;
+        req.session.addedProductId.maxAge = 4000
         res.redirect("back");
       }
     }
@@ -121,7 +135,7 @@ module.exports = {
       },
     });
 
-    res.redirect("/cart");
+    res.redirect("back");
   },
 
   added: async (req, res) => {

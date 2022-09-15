@@ -5,6 +5,10 @@ body{
     background-color: #f5f4f4;
 }
 
+header{
+    position: relative;
+}
+
 /* *********** TOPBAR ***********  */
 
 .contenedor-logo {
@@ -506,10 +510,6 @@ body{
     margin: 5px;
 }
 
-/* .continue-group {
-    width: 75%;
-} */
-
 .cart-total-group {
     display: flex;
     flex-wrap: wrap;
@@ -554,12 +554,43 @@ body{
     align-self: flex-end;
 }
 
+.cart-main{
+    justify-content: center;
+}
+
+.cart-page{
+    display: flex;
+    align-content: center; 
+    flex-direction: column;
+}
+
+.cart-page-card{
+    display: flex;
+    border-top: 0.5px solid lightgray;;
+    border-bottom: 0.5px solid lightgray;
+    border-radius: 10px;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-page-photo{
+    width: 90px;
+}
+
+.cart-page-detail{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
 /* *********** FIN DE CARRITO DE COMPRA ***********  */
 
 /* **************** ADDED PRODUCT ****************** */
 
 .cart-info-container {
-    position: inherit;
+    position: absolute;
+    top: 127px;
     z-index: 200;
     display: flex;
     flex-wrap: wrap;
@@ -568,27 +599,34 @@ body{
     align-items: center;
     box-shadow: 3px 3px 10px lightgrey;
     background-color: #FFF;
-    animation-name: fadeIn;
-    animation-duration: 1500ms;
+    animation: fade 4000ms forwards;
+    width: 700px;
+    border-radius: 10px;
 }
 
-@keyframes fadeIn {
+@keyframes fade {
     0% {
         opacity: 0;
         filter: blur(3px);
+        top: 0;
     }
 
-    40% {
+    20% {
+        filter: blur(0px);
         opacity: 1;
+        top: 127px;
+    }
+
+    60%{
+        opacity: 1;
+        top: 127px;
     }
 
     70%{
-        opacity: 1;
-    }
-
-    100%{
         opacity: 0;
-        display: none;
+    }
+    100%{
+        top: -100vh
     }
 }
 
