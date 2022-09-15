@@ -58,6 +58,7 @@
           <thead>
             <tr>
               <th scope="col">Retirado</th>
+              <th scope="col">Vuelta atrás</th>
               <th scope="col">Id</th>
               <th scope="col">Estado</th>
               <th scope="col">Met. envío</th>
@@ -71,6 +72,11 @@
               <td>
                 <form action="/orders/<%= ordenesConRetiroListas[i].id %>/retirado?_method=PUT" method="POST">
                   <button class="btn-order" type="submit"><i class="fa-solid fa-check"></i></button>
+                </form>
+              </td>
+              <td>
+                <form action="/orders/<%= ordenesConRetiroListas[i].id %>/vueltaAtras?_method=PUT" method="POST">
+                  <button class="btn-order" type="submit"><i class="fa-solid fa-arrow-left"></i></button>
                 </form>
               </td>
               <td><%= ordenesConRetiroListas[i].id %></td>

@@ -97,8 +97,21 @@ module.exports = {
     res.redirect("back");
   },
 
+  updateBackToProcess: async (req, res) => {
+    let esto = await db.Orders.update(
+      {
+        order_status: "enProceso",
+      },
+      {
+        where: {
+          id: req.params.id
+        },
+      }
+    );
+    res.redirect('back');
+  },
+
   detail: async (req, res) => {
-    
     let ordenEnPreparacion = await db.Orders.findOne({
       where: {
         id: req.params.id,
@@ -113,7 +126,5 @@ module.exports = {
     });
 
     res.render("orderDetail", { ordenEnPreparacion, detalles });
-
-  }
-
+  },
 };
