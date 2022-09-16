@@ -104,11 +104,22 @@ module.exports = {
       },
       {
         where: {
-          id: req.params.id
+          id: req.params.id,
         },
       }
     );
-    res.redirect('back');
+    res.redirect("back");
+  },
+
+  orderDelete: async (req, res) => {
+    await db.Orders.destroy(
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    res.redirect("back");
   },
 
   detail: async (req, res) => {
