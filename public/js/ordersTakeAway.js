@@ -2,7 +2,6 @@ window.onload = function () {
     let ordenListaForm = document.querySelector('#ordenListaForm');
     let ordenesListasSection = document.querySelector("#ordenesListasSection");
     const trs = document.querySelectorAll("tr");
-    const trForms = document.querySelectorAll('tr form');
 
     let selectedForm
     
@@ -22,10 +21,10 @@ window.onload = function () {
     })
 
     function dragStart () {
-        this.classList.add("trShadow");
+        this.classList.add("trShadow", "fade-out");
         selectedForm = this.querySelector("form");
     }
     function dragEnd () {
-        this.classList.remove("trShadow");
+        this.classList.remove("trShadow", "fade-out");
     }
 }
