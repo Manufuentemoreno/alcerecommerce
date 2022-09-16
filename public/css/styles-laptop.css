@@ -80,6 +80,43 @@
     margin:auto
   }
 
+  .mostrar-login-container-topbar{
+    background-color: #5050506b;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    z-index: +150;
+    left: 50%;
+}
+
+.mostrar-login-topbar{
+    position: fixed;
+    top: 50%;
+    z-index: +200;
+    left: 50%;
+    border-radius: 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+}
+
+.leave-form{
+  width: 30px;
+  height: 30px;
+  background-color: #f52121;
+  border-radius: 50px;
+  color: #fff;
+  align-self: flex-end;
+  text-align: center;
+  font-size: inherit;
+  font-weight: bolder;
+  text-decoration: none;
+  line-height: 1.8;
+}
+
   /* ******* FIN DE TOPBAR ********  */
   
   .main-page{

@@ -127,11 +127,24 @@ nav a {
     margin: 5px;
 }
 
+.login-container-topbar{
+    height: 0px;    
+    width: 0px;
+    position: fixed;
+    top: -100vh;
+}
+
+.login-topbar{
+    display: none;
+}
+
+
 /* *********** FIN DE TOPBAR ***********  */
 
 
 .fa-bars{
     align-items: center;
+    z-index: 200;
 }
 
 input:focus{
