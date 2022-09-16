@@ -967,6 +967,8 @@ footer p {
     padding-top: 15px;
  }
 
+ /* ORDENES */
+
  .order-sections{
     border: solid 0.5px lightgray;
     padding: 10px;
@@ -981,4 +983,41 @@ footer p {
     border: none;
     width: 30px;
     height: 30px;
+ }
+
+ .bnt-order-ok{
+    background-color: lightgreen;
+    border-right: solid 0.5px #0c5e22;
+    box-shadow: 17px 15px 17px -11px rgba(0,0,0,0.41);
+-webkit-box-shadow: 17px 15px 17px -11px rgba(0,0,0,0.41);
+-moz-box-shadow: 17px 15px 17px -11px rgba(0,0,0,0.41);
+ }
+
+ .bnt-order-ok:hover{
+    background-color: rgb(96, 155, 96);
+    border: none;
+    color: white;
+ }
+
+
+ .btn-order-warning{
+    background-color: rgb(252, 252, 126);
+ }
+
+ .btn-order-warning:hover{
+    background-color: rgb(177, 177, 87);
+    color: white;
+ }
+
+
+ .btn-order-danger{
+    background-color: rgb(247, 100, 100);
+ }
+ .btn-order-danger:hover{
+    background-color: rgb(176, 71, 71);
+    color: white;
+}
+
+ .order-main{
+    flex-direction: column;
  }

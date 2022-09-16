@@ -9,14 +9,14 @@
       crossorigin="anonymous"
     />
     <%- include("partials/head") %>
-    <title>Lista de ordenes</title>
+    <title>Lista de órdenes</title>
   </head>
   <body>
     <%- include("partials/topBar") %>
-    <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
-      <h1>Listado de ordenes a retirar</h1>
+    <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15 order-main">
+      <h1>Listado de órdenes a retirar</h1>
       <section class="order-sections">
-        <h2>Ordenes en preparación</h2>
+        <h2>Órdenes en preparación</h2>
         <table class="table table-sm">
           <thead>
             <tr>
@@ -34,12 +34,12 @@
             <tr>
               <td>
                 <form action="/orders/<%= ordenesConRetiro[i].id %>/listo?_method=PUT" method="POST">
-                  <button class="btn-order" type="submit"><i class="fa-solid fa-check"></i></button>
+                  <button class="btn-order bnt-order-ok" type="submit"><i class="fa-solid fa-check"></i></button>
                 </form>
               </td>
               <td>
                 <form action="/orders/detail/<%= ordenesConRetiro[i].id %>/" method="GET">
-                  <button class="btn-order" type="submit"><i class="fa-solid fa-info"></i></button>
+                  <button class="btn-order btn-order-warning" type="submit"><i class="fa-solid fa-info"></i></button>
                 </form>
               </td>
               <td><%= ordenesConRetiro[i].id %></td>
@@ -53,7 +53,7 @@
         </table>
       </section>
       <section  class="order-sections">
-        <h2>Ordenes listas</h2>
+        <h2>Órdenes listas</h2>
         <table class="table table-sm">
           <thead>
             <tr>
@@ -70,13 +70,13 @@
             <% for( let i=0; i < ordenesConRetiroListas.length; i++ ) { %>
             <tr>
               <td>
-                <form action="/orders/<%= ordenesConRetiroListas[i].id %>/retirado?_method=PUT" method="POST">
-                  <button class="btn-order" type="submit"><i class="fa-solid fa-check"></i></button>
+                <form  action="/orders/<%= ordenesConRetiroListas[i].id %>/retirado?_method=PUT" method="POST">
+                  <button class="btn-order bnt-order-ok" type="submit"><i class="fa-solid fa-check"></i></button>
                 </form>
               </td>
               <td>
                 <form action="/orders/<%= ordenesConRetiroListas[i].id %>/vueltaAtras?_method=PUT" method="POST">
-                  <button class="btn-order" type="submit"><i class="fa-solid fa-arrow-left"></i></button>
+                  <button class="btn-order btn-order-danger" type="submit"><i class="fa-solid fa-arrow-left"></i></button>
                 </form>
               </td>
               <td><%= ordenesConRetiroListas[i].id %></td>
@@ -90,7 +90,7 @@
         </table>
       </section>
       <section  class="order-sections">
-        <h2>Ordenes retiradas</h2>
+        <h2>Órdenes retiradas</h2>
         <table class="table table-sm">
           <thead>
             <tr>
@@ -107,7 +107,7 @@
             <tr>
               <td>
                 <form action="/orders/<%= ordenesConRetiroRetiradas[i].id %>/delete?_method=DELETE" method="POST">
-                  <button class="btn-order" type="submit"><i class="fa-solid fa-trash"></i></button>
+                  <button class="btn-order btn-order-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
                 </form>
               </td>
               <td><%= ordenesConRetiroRetiradas[i].id %></td>
