@@ -31,9 +31,9 @@
           </thead>
           <tbody>
             <% for( let i=0; i < ordenesConRetiro.length; i++ ) { %>
-            <tr>
+            <tr class="enPreparacionTr" id="enPreparacionTr<%= ordenesConRetiro[i].id %> " draggable="true">
               <td>
-                <form action="/orders/<%= ordenesConRetiro[i].id %>/listo?_method=PUT" method="POST">
+                <form action="/orders/<%= ordenesConRetiro[i].id %>/listo?_method=PUT" method="POST" id="ordenListaForm">
                   <button class="btn-order bnt-order-ok" type="submit"><i class="fa-solid fa-check"></i></button>
                 </form>
               </td>
@@ -52,7 +52,7 @@
           </tbody>
         </table>
       </section>
-      <section  class="order-sections">
+      <section  class="order-sections" id="ordenesListasSection">
         <h2>Órdenes listas</h2>
         <table class="table table-sm">
           <thead>
@@ -126,5 +126,6 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/ordersTakeAway.js"></script>
   </body>
 </html>

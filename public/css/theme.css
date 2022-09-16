@@ -995,6 +995,15 @@ footer p {
 
 /* ORDENES */
 
+.enPreparacionTr {
+  cursor: move;
+  background-color: #fff;
+}
+
+.trShadow {
+  background-color: lightgrey;
+}
+
 .order-sections {
   border: solid 0.5px lightgray;
   padding: 10px;
