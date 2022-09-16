@@ -149,11 +149,14 @@ const controller = {
         let productsList = []
         try{
             productsList = await Products.findAll({
-            where: {name: {[Op.like]: `%${searched}%` }}
-            });
+            where: {
+                name: {[Op.like]: `%${searched}%` }
+            }})
         }catch(error){
             return res.render("notFound")
         }
+
+        console.log(productsList)
 
         //lastAdded:
         if(req.session.addedProductId 

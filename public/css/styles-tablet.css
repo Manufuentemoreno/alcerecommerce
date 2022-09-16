@@ -58,10 +58,6 @@
     animation: categoryBar 400ms forwards;
   }
 
-  .li-burger{
-    margin:auto
-  }
-
   /* ******* FIN DE TOPBAR ********  */
 
   .main{
@@ -103,6 +99,10 @@
 
   .detail-image{
     width: 60%;
+  }
+
+  .detail-product-box{
+    padding: 20px 80px;
   }
 
   /* FIN PRODUCT DETAIL */

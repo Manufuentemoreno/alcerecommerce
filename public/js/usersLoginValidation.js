@@ -13,6 +13,7 @@ window.onload = function() {
     };
 
     // Email:
+    let errorEmail = ''
     mail.addEventListener("blur",(e)=>{
         const email = mail.value;
         
@@ -24,12 +25,7 @@ window.onload = function() {
               );
           };
 
-        if(!email){
-          emailField.classList.add("danger");
-          errores.email = 1;
-          return
-        }
-        else if (email && !validateEmail(email)) {
+        if (email && !validateEmail(email)) {
             if (!errorEmail){
                 emailField.insertAdjacentHTML("afterend",
                 "<div id=errorEmail class=danger-text><p>* Dirección de mail inválida</p></div>")
@@ -45,6 +41,7 @@ window.onload = function() {
         }
 
         emailField.classList.remove("danger");
+        errorEmail.style.display = 'none'
         errores.email = 0;
         
     });
@@ -74,6 +71,16 @@ window.onload = function() {
 
     button.addEventListener("click", (e)=>{
       e.preventDefault();
+
+      if(!mail.value){
+        emailField.classList.add("danger");
+        errores.email = 1;
+      }
+
+      if(!inputPassword.value){
+        passwordField.classList.add("danger");
+        errores.password = 1;
+      }
 
       if ( errores.password == 0 && errores.email == 0 ){
         form.submit();
