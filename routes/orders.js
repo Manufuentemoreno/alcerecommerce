@@ -15,5 +15,6 @@ router.put('/:id/listo', ordersController.updateListo);
 router.put("/:id/retirado", ordersController.updateRetirado);
 router.put("/:id/vueltaAtras", ordersController.updateBackToProcess);
 router.get('/detail/:id', ordersController.detail);
+router.delete('/:id/delete', ordersController.orderDelete);
 
 module.exports = router;

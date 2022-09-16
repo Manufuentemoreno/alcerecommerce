@@ -14,7 +14,7 @@
   <body>
     <%- include("partials/topBar") %>
     <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15">
-      <h1>Listado de ordenes</h1>
+      <h1>Listado de ordenes a retirar</h1>
       <section class="order-sections">
         <h2>Ordenes en preparación</h2>
         <table class="table table-sm">
@@ -106,7 +106,7 @@
             <% for( let i=0; i < ordenesConRetiroRetiradas.length; i++ ) { %>
             <tr>
               <td>
-                <form action="/orders/<%= ordenesConRetiroRetiradas[i].id %>/retirado?_method=PUT" method="POST">
+                <form action="/orders/<%= ordenesConRetiroRetiradas[i].id %>/delete?_method=DELETE" method="POST">
                   <button class="btn-order" type="submit"><i class="fa-solid fa-trash"></i></button>
                 </form>
               </td>
