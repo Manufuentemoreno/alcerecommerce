@@ -21,10 +21,10 @@ window.onload = function () {
     })
 
     function dragStart () {
-        this.classList.add("trShadow", "fade-out");
+        this.classList.add("trShadow", "fade-out-dd");
         selectedForm = this.querySelector("form");
     }
     function dragEnd () {
-        this.classList.remove("trShadow", "fade-out");
+        this.classList.remove("trShadow", "fade-out-dd");
     }
 }

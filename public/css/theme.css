@@ -881,22 +881,54 @@ body {
  * ----------------------------------------
  */
 
-.fade-out {
-	-webkit-animation: fade-out 0.7s ease-out both;
-	        animation: fade-out 0.7s ease-out both;
+.fade-out-dd {
+	-webkit-animation: fade-out-dd 0.7s ease-out both;
+	        animation: fade-out-dd 0.7s ease-out both;
 }
 
-@-webkit-keyframes fade-out {
+@-webkit-keyframes fade-out-dd {
   0% {
     opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
   }
   100% {
     opacity: 0;
   }
 }
-@keyframes fade-out {
+@keyframes fade-out-dd {
   0% {
     opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
   }
   100% {
     opacity: 0;
