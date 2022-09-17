@@ -63,7 +63,7 @@
                     <a class="d-flex justify-content-center" href="/orders/takeAway">
                         <i class="topbar-icon font-light-blue fa-solid fa-clipboard-list"></i>
                     </a>
-                    <a class="nav-link icon-topbar-text" href="/orders/takeAway">Ordenes</a>
+                    <a class="nav-link icon-topbar-text" href="/orders/takeAway">Órdenes</a>
                 </li>
             <% } %> 
             <% } else { %>
@@ -100,8 +100,9 @@
     <%- include('./lastAddedPop') %>
 <% } %>
 <div class="login-container-topbar" id="back-login">
-<form action="/login" class="formulario login-topbar fade-in" id="loginFormTop" method="POST">
-    <a href="#" class="leave-form" id="leave-form">X</a>
+<div class="back-login-blur"></div>
+<form action="/login" class="formulario login-topbar" id="loginFormTop" method="POST">
+    <button type="button" class="leave-form" id="leave-button">X</button>
     <div class="grupo-titulo-form">
       <div class="titulo-form-fondo mb-15 ml">
         <h1 class="titulo-form-texto">Ingresar</h1>
@@ -129,10 +130,6 @@
       />
     </div>
     <div class="error-password errores"><ul></ul></div>
-    <% if (locals.errors && errors.email) { %>
-    <!--Si en locals tengo errores y si en los errores vino un email-->
-    <p class="mensaje-error"><%= errors.email.msg %></p>
-    <% } %>
     <div class="grupo-botones-formulario mt-15">
       <button class="button button-submit" type="submit" id="buttonSubmit">Ingresar</button>
       <button class="button" type="reset">Borrar</button>
