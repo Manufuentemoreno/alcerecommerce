@@ -31,7 +31,7 @@
           </thead>
           <tbody>
             <% for( let i=0; i < ordenesConRetiro.length; i++ ) { %>
-            <tr class="enPreparacionTr" id="enPreparacionTr<%= ordenesConRetiro[i].id %>" draggable="true">
+            <tr class="OrdersTr" id="enPreparacionTr<%= ordenesConRetiro[i].id %>" draggable="true">
               <td>
                 <form action="/orders/<%= ordenesConRetiro[i].id %>/listo?_method=PUT" method="POST" id="ordenEnPrepForm">
                   <button class="btn-order bnt-order-ok" type="submit"><i class="fa-solid fa-check"></i></button>
@@ -68,7 +68,7 @@
           </thead>
           <tbody>
             <% for( let i=0; i < ordenesConRetiroListas.length; i++ ) { %>
-            <tr draggable="true">
+            <tr class="OrdersTr" draggable="true">
               <td>
                 <form  action="/orders/<%= ordenesConRetiroListas[i].id %>/retirado?_method=PUT" method="POST" id="ordenListaFormCheck">
                   <button class="btn-order bnt-order-ok" type="submit"><i class="fa-solid fa-check"></i></button>
@@ -105,7 +105,7 @@
           </thead>
           <tbody>
             <% for( let i=0; i < ordenesConRetiroRetiradas.length; i++ ) { %>
-            <tr draggable="true">
+            <tr class="OrdersTr" draggable="true">
               <td>
                 <form action="/orders/<%= ordenesConRetiroRetiradas[i].id %>/delete?_method=DELETE" method="POST">
                   <button class="btn-order btn-order-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
