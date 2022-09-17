@@ -98,9 +98,23 @@ module.exports = {
   },
 
   updateBackToProcess: async (req, res) => {
-    let esto = await db.Orders.update(
+    await db.Orders.update(
       {
         order_status: "enProceso",
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    res.redirect("back");
+  },
+
+  updateBackToReady: async (req, res) => {
+    await db.Orders.update(
+      {
+        order_status: "lista",
       },
       {
         where: {
