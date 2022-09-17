@@ -9,8 +9,9 @@
 }
 
 @media (min-width: 992px) {
-  .header{
-    padding: 1%;
+  header{
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.005);
+    position: relative;
   }
 
   /* *********** TOPBAR ***********  */
@@ -221,8 +222,12 @@
     flex-basis: min-content;
   }
 
+  .section-cart{
+    top: 10px
+  }
+
   .products{
-    justify-content: flex-start;
+    justify-content: auto;
     margin-left: 40px;
   }
 
