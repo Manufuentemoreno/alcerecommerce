@@ -2,16 +2,20 @@ const db = require("../database/models");
 const dayjs = require("dayjs");
 
 module.exports = {
-  ordersTakeAway: async (req, res) => {
-    let ordenesConRetiroRaw = await db.Orders.findAll({
+  filter: async (req, res) => {
+    res.render('ordersFilter');
+  },
+  
+  list: async (req, res) => {
+    let ordenesEnProcesoRaw = await db.Orders.findAll({
       include: ["orders_details"],
       where: {
         order_status: "enProceso",
-        delivery_method: "retiro",
+        delivery_method: req.query.delivery_method,
       },
     });
 
-    let ordenesConRetiro = ordenesConRetiroRaw.map((item) => {
+    let ordenesEnProceso = ordenesEnProcesoRaw.map((item) => {
       let result = {
         id: item.id,
         order_date: dayjs(item.order_date).format("DD/MM/YYYY hh:mm:ss"),
@@ -22,15 +26,15 @@ module.exports = {
       return result;
     });
 
-    let ordenesConRetiroListasRaw = await db.Orders.findAll({
+    let ordenesListasRaw = await db.Orders.findAll({
       include: ["orders_details"],
       where: {
         order_status: "lista",
-        delivery_method: "retiro",
+        delivery_method: req.query.delivery_method,
       },
     });
 
-    let ordenesConRetiroListas = ordenesConRetiroListasRaw.map((item) => {
+    let ordenesListas = ordenesListasRaw.map((item) => {
       let result = {
         id: item.id,
         order_date: dayjs(item.order_date).format("DD/MM/YYYY"),
@@ -42,15 +46,15 @@ module.exports = {
       return result;
     });
 
-    let ordenesConRetiroRetiradasRaw = await db.Orders.findAll({
+    let ordenesRetiradasRaw = await db.Orders.findAll({
       include: ["orders_details"],
       where: {
         order_status: "retirada",
-        delivery_method: "retiro",
+        delivery_method: req.query.delivery_method,
       },
     });
 
-    let ordenesConRetiroRetiradas = ordenesConRetiroRetiradasRaw.map((item) => {
+    let ordenesRetiradas = ordenesRetiradasRaw.map((item) => {
       let result = {
         id: item.id,
         order_date: dayjs(item.order_date).format("DD/MM/YYYY"),
@@ -62,10 +66,10 @@ module.exports = {
       return result;
     });
 
-    res.render("orderstakeAway", {
-      ordenesConRetiro,
-      ordenesConRetiroListas,
-      ordenesConRetiroRetiradas,
+    res.render("ordersList", {
+      ordenesEnProceso,
+      ordenesListas,
+      ordenesRetiradas,
     });
   },
 

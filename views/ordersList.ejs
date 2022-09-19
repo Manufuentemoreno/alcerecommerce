@@ -30,23 +30,23 @@
             </tr>
           </thead>
           <tbody>
-            <% for( let i=0; i < ordenesConRetiro.length; i++ ) { %>
-            <tr class="OrdersTr" id="enPreparacionTr<%= ordenesConRetiro[i].id %>" draggable="true">
+            <% for( let i=0; i < ordenesEnProceso.length; i++ ) { %>
+            <tr class="OrdersTr" id="enPreparacionTr<%= ordenesEnProceso[i].id %>" draggable="true">
               <td>
-                <form action="/orders/<%= ordenesConRetiro[i].id %>/listo?_method=PUT" method="POST" id="ordenEnPrepForm">
+                <form action="/orders/<%= ordenesEnProceso[i].id %>/listo?_method=PUT" method="POST" id="ordenEnPrepForm">
                   <button class="btn-order bnt-order-ok" type="submit"><i class="fa-solid fa-check"></i></button>
                 </form>
               </td>
               <td>
-                <form action="/orders/detail/<%= ordenesConRetiro[i].id %>/" method="GET">
+                <form action="/orders/detail/<%= ordenesEnProceso[i].id %>/" method="GET">
                   <button class="btn-order btn-order-warning" type="submit"><i class="fa-solid fa-info"></i></button>
                 </form>
               </td>
-              <td><%= ordenesConRetiro[i].id %></td>
-              <td><%= ordenesConRetiro[i].order_status %></td>
-              <td><%= ordenesConRetiro[i].delivery_method %></td>
-              <td><%= ordenesConRetiro[i].payment_method %></td>
-              <td><%= ordenesConRetiro[i].order_date %></td>
+              <td><%= ordenesEnProceso[i].id %></td>
+              <td><%= ordenesEnProceso[i].order_status %></td>
+              <td><%= ordenesEnProceso[i].delivery_method %></td>
+              <td><%= ordenesEnProceso[i].payment_method %></td>
+              <td><%= ordenesEnProceso[i].order_date %></td>
             </tr>
             <% } %>
           </tbody>
@@ -67,23 +67,23 @@
             </tr>
           </thead>
           <tbody>
-            <% for( let i=0; i < ordenesConRetiroListas.length; i++ ) { %>
+            <% for( let i=0; i < ordenesListas.length; i++ ) { %>
             <tr class="OrdersTr" draggable="true">
               <td>
-                <form  action="/orders/<%= ordenesConRetiroListas[i].id %>/retirado?_method=PUT" method="POST" id="ordenListaFormCheck">
+                <form  action="/orders/<%= ordenesListas[i].id %>/retirado?_method=PUT" method="POST" id="ordenListaFormCheck">
                   <button class="btn-order bnt-order-ok" type="submit"><i class="fa-solid fa-check"></i></button>
                 </form>
               </td>
               <td>
-                <form action="/orders/<%= ordenesConRetiroListas[i].id %>/vueltaAtras?_method=PUT" method="POST" id="ordenListaForm">
+                <form action="/orders/<%= ordenesListas[i].id %>/vueltaAtras?_method=PUT" method="POST" id="ordenListaForm">
                   <button class="btn-order btn-order-danger" type="submit"><i class="fa-solid fa-arrow-left"></i></button>
                 </form>
               </td>
-              <td><%= ordenesConRetiroListas[i].id %></td>
-              <td><%= ordenesConRetiroListas[i].order_status %></td>
-              <td><%= ordenesConRetiroListas[i].delivery_method %></td>
-              <td><%= ordenesConRetiroListas[i].payment_method %></td>
-              <td><%= ordenesConRetiroListas[i].updatedAt %></td>
+              <td><%= ordenesListas[i].id %></td>
+              <td><%= ordenesListas[i].order_status %></td>
+              <td><%= ordenesListas[i].delivery_method %></td>
+              <td><%= ordenesListas[i].payment_method %></td>
+              <td><%= ordenesListas[i].updatedAt %></td>
             </tr>
             <% } %>
           </tbody>
@@ -104,23 +104,23 @@
             </tr>
           </thead>
           <tbody>
-            <% for( let i=0; i < ordenesConRetiroRetiradas.length; i++ ) { %>
+            <% for( let i=0; i < ordenesRetiradas.length; i++ ) { %>
             <tr class="OrdersTr" draggable="true">
               <td>
-                <form action="/orders/<%= ordenesConRetiroRetiradas[i].id %>/delete?_method=DELETE" method="POST">
+                <form action="/orders/<%= ordenesRetiradas[i].id %>/delete?_method=DELETE" method="POST">
                   <button class="btn-order btn-order-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
                 </form>
               </td>
               <td>
-                <form action="/orders/<%= ordenesConRetiroRetiradas[i].id %>/vueltaAListas?_method=PUT" method="POST" id="ordenRetiradaForm">
+                <form action="/orders/<%= ordenesRetiradas[i].id %>/vueltaAListas?_method=PUT" method="POST" id="ordenRetiradaForm">
                   <button class="btn-order btn-order-danger" type="submit"><i class="fa-solid fa-arrow-left"></i></button>
                 </form>
               </td>
-              <td><%= ordenesConRetiroRetiradas[i].id %></td>
-              <td><%= ordenesConRetiroRetiradas[i].order_status %></td>
-              <td><%= ordenesConRetiroRetiradas[i].delivery_method %></td>
-              <td><%= ordenesConRetiroRetiradas[i].payment_method %></td>
-              <td><%= ordenesConRetiroRetiradas[i].updatedAt %></td>
+              <td><%= ordenesRetiradas[i].id %></td>
+              <td><%= ordenesRetiradas[i].order_status %></td>
+              <td><%= ordenesRetiradas[i].delivery_method %></td>
+              <td><%= ordenesRetiradas[i].payment_method %></td>
+              <td><%= ordenesRetiradas[i].updatedAt %></td>
             </tr>
             <% } %>
           </tbody>

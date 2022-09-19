@@ -10,7 +10,8 @@ const checkAdmin = require("../middlewares/checkAdmin");
 // File upload Img
 const fileUpload = require("../middlewares/multer-save-userImages");
 
-router.get('/takeAway', checkUser, checkAdmin, ordersController.ordersTakeAway);
+router.get('/', checkUser, checkAdmin, ordersController.filter);
+router.get('/list', checkUser, checkAdmin, ordersController.list);
 router.get('/detail/:id', ordersController.detail);
 router.put('/:id/listo', ordersController.updateListo);
 router.put("/:id/retirado", ordersController.updateRetirado);
