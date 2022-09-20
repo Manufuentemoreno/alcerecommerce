@@ -7,9 +7,10 @@ window.onload = function () {
     const trsListas = document.querySelectorAll('#ordenesListasSection tr');
     const trsRetiradas = document.querySelectorAll("#ordenesRetiradasSection tr");
 
-    let selectedForm
-    let selectedForm2
-    let selectedForm3
+    let enPrepCheck
+    let listasCheck
+    let listasBack
+    let retiradasBack
 
     // --- Sections ---
 
@@ -18,7 +19,12 @@ window.onload = function () {
     });
     ordenesEnPreparacionSection.addEventListener("drop", (e) => {
       console.log("drop");
-      selectedForm.submit();
+
+      if(enPrepCheck) {
+        enPrepCheck = ''
+      }
+
+      listasBack.submit();
     });
     
     ordenesListasSection.addEventListener('dragover', (e) => {
@@ -27,11 +33,18 @@ window.onload = function () {
     ordenesListasSection.addEventListener('drop', (e) => {
         console.log('drop')
         
-        if(selectedForm) {
-            selectedForm.submit();
+        if(enPrepCheck) {
+          enPrepCheck.submit();
         }
-        if(selectedForm3) {
-            selectedForm3.submit();
+        if(retiradasBack) {
+          retiradasBack.submit();
+        }
+
+        if(listasBack) {
+          listasBack = ''
+        }
+        if(listasCheck) {
+          listasCheck = ''
         }
     })
 
@@ -40,7 +53,12 @@ window.onload = function () {
     });
     ordenesRetiradasSection.addEventListener("drop", (e) => {
       console.log("drop");
-      selectedForm2.submit();
+
+      if(retiradasBack) {
+        retiradasBack = ''
+      }
+      
+      listasCheck.submit();
     });
 
     // --- TRs ---
@@ -70,16 +88,16 @@ window.onload = function () {
 
     function dragStart1 () {
         this.classList.add("trShadow", "fade-out-dd");
-        selectedForm = this.querySelector("#ordenEnPrepForm");
+        enPrepCheck = this.querySelector("#ordenEnPrepForm");
     }
     function dragStart2() {
       this.classList.add("trShadow", "fade-out-dd");
-      selectedForm = this.querySelector("#ordenListaForm");
-      selectedForm2 = this.querySelector("#ordenListaFormCheck");
+      listasBack = this.querySelector("#ordenListaForm");
+      listasCheck = this.querySelector("#ordenListaFormCheck");
     }
     function dragStart3() {
       this.classList.add("trShadow", "fade-out-dd");
-      selectedForm3 = this.querySelector("#ordenRetiradaForm");
+      retiradasBack = this.querySelector("#ordenRetiradaForm");
     }
     function dragEnd () {
         this.classList.remove("trShadow", "fade-out-dd");

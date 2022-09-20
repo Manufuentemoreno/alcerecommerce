@@ -19,7 +19,7 @@
       <h4 style="color: #1259c3">Seleccioná el tipo de órdenes:</h4>
       <form action="/orders/list" method="GET" class="order-delivery-form">
         <select name="delivery_method" id="delivery_method" class="order-delivery-select">
-            <option <%= !locals.optionSelected ? "selected" : null %> disabled >Método de Entrega</option>
+            <option <%= !locals.optionSelected ? "selected" : null %> disabled >Método de entrega</option>
             <option value="retiro" <%= locals.optionSelected && optionSelected=="retiro" ? "selected" : null %> >Retira en local</option>
             <option value="envio" <%= locals.optionSelected && optionSelected=="envio" ? "selected" : null %>>Envío a domicilio</option>
         </select>
@@ -145,6 +145,6 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
-    <script src="/js/ordersTakeAway.js"></script>
+    <script src="/js/ordersList.js"></script>
   </body>
 </html>
