@@ -149,9 +149,21 @@ const controller = {
         let productsList = []
         try{
             productsList = await Products.findAll({
-            where: {
-                name: {[Op.like]: `%${searched}%` }
-            }})
+              where: {
+                [Op.or]: [
+                  {
+                    name: {
+                      [Op.like]: `%${searched}%`
+                    }
+                  },
+                  {
+                    description: {
+                        [Op.like]: `%${searched}`
+                    }
+                  }
+                ],
+              },
+            });
         }catch(error){
             return res.render("notFound")
         }
