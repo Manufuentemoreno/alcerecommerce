@@ -36,13 +36,10 @@
             
 
             <select class="input-style" name="category_id" id="category_id">
-                <option value="" disabled selected>Elegí una Categoría</option>
-                <option value="1">Bebidas</option>
-                <option value="2">Golosinas</option>
-                <option value="3">Limpieza</option>
-                <option value="6">Lacteos</option>
-                <option value="4">Carnicería</option>
-                <option value="5">Almacén</option>
+              <option value="" disabled selected>Elegí una Categoría</option>
+              <% let count = 1; categories.forEach(category => { %>
+                <option value=<%=count%>><%= category %></option>
+              <% count++ }) %>
             </select>
             <% if (locals.errors && errors.category) { %>
                 <div class="danger-text">

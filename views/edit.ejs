@@ -34,13 +34,9 @@
             <% } %>
 
             <select class="input-style" name="category" id="category">
-                <option value="1" <%= product.category_id == 1 ? "selected" : null%> >Bebidas</option>
-                <option value="2" <%=product.category_id == 2 ? "selected" : null%> >Golosinas</option>
-                <option value="3" <%=product.category_id == 3 ? "selected" : null%> >Limpieza</option>
-                <option value="4" <%=product.category_id == 4 ? "selected" : null%> >Carnicería</option>
-                <option value="5" <%=product.category_id == 5 ? "selected" : null%> >Almacén</option>
-                <option value="6" <%= product.category_id == 6 ? "selected" : null%> >Lacteos</option>
-                
+              <% let count = 1; categories.forEach(category => { %>
+                <option value=<%=count%> <%= product.category_id == count ? "selected" : null%> ><%= category %></option>
+              <% count++ }) %>
             </select>
             <% if (locals.errors && errors.category) { %>
                 <div class="danger-text">

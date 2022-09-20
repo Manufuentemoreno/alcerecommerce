@@ -58,7 +58,15 @@
     animation: categoryBar 400ms forwards;
   }
 
+  .category-dropdown{
+    display: none !important;
+  }
+
   /* ******* FIN DE TOPBAR ********  */
+
+  .cart-info-container{
+    margin: 0% 15%;
+  }
 
   .main{
     justify-content: space-between;

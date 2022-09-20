@@ -7,7 +7,7 @@ const { Op } = require("sequelize");
 const Products = db.Products;
 const Category = db.Products_categories;
 const categoryList = require('../modules/productCategoryTopBar');
-const cartProducts = require("../modules/cartProductSide")
+const cartProducts = require("../modules/cartProductSide");
 
 // Validations-express validator
 const { validationResult } = require("express-validator");
@@ -78,8 +78,9 @@ const controller = {
         res.render("products", {products, categories, title: `Productos en ${catSelected}`, detalles, lastAdded});
     },
     
-    create: (req, res) => {
-        res.render("create");
+    create: async(req, res) => {
+        let categories = await categoryList();
+        res.render("create", {categories});
     },
 
     store: async (req, res) => {
@@ -104,12 +105,11 @@ const controller = {
         res.redirect("/products");
     },
 
-    edit: (req, res) =>{
-        Products.findByPk(req.params.id)
-            .then(productToEdit => {
-                res.render("edit", { product: productToEdit })
-            })
-            .catch(error => res.send(error))
+    edit: async(req, res) =>{
+        const product = await Products.findByPk(req.params.id)
+        let categories = await categoryList();
+
+        res.render("edit", { product, categories });
     },
 
     update: async(req, res) => {

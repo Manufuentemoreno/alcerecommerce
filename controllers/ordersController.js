@@ -3,15 +3,17 @@ const dayjs = require("dayjs");
 
 module.exports = {
   filter: async (req, res) => {
-    res.render('ordersFilter');
+    res.render('ordersList');
   },
   
   list: async (req, res) => {
+    let deliveryMethodSelected = req.query.delivery_method
+
     let ordenesEnProcesoRaw = await db.Orders.findAll({
       include: ["orders_details"],
       where: {
         order_status: "enProceso",
-        delivery_method: req.query.delivery_method,
+        delivery_method: deliveryMethodSelected,
       },
     });
 
@@ -30,7 +32,7 @@ module.exports = {
       include: ["orders_details"],
       where: {
         order_status: "lista",
-        delivery_method: req.query.delivery_method,
+        delivery_method: deliveryMethodSelected,
       },
     });
 
@@ -50,7 +52,7 @@ module.exports = {
       include: ["orders_details"],
       where: {
         order_status: "retirada",
-        delivery_method: req.query.delivery_method,
+        delivery_method: deliveryMethodSelected,
       },
     });
 
@@ -67,6 +69,7 @@ module.exports = {
     });
 
     res.render("ordersList", {
+      optionSelected: deliveryMethodSelected,
       ordenesEnProceso,
       ordenesListas,
       ordenesRetiradas,

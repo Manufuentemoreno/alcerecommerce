@@ -15,6 +15,18 @@
     <%- include("partials/topBar") %>
     <main class="bg-lightgrey p-8 w-90 m-center mt-15 mb-15 order-main">
       <h1>Listado de órdenes a retirar</h1>
+
+      <h4 style="color: #1259c3">Seleccioná el tipo de órdenes:</h4>
+      <form action="/orders/list" method="GET" class="order-delivery-form">
+        <select name="delivery_method" id="delivery_method" class="order-delivery-select">
+            <option <%= !locals.optionSelected ? "selected" : null %> disabled >Método de Entrega</option>
+            <option value="retiro" <%= locals.optionSelected && optionSelected=="retiro" ? "selected" : null %> >Retira en local</option>
+            <option value="envio" <%= locals.optionSelected && optionSelected=="envio" ? "selected" : null %>>Envío a domicilio</option>
+        </select>
+        <button type="submit" class="button order-delivery-button">Ver</button>
+      </form>
+
+      <% if(locals.ordenesEnProceso) {%> 
       <section class="order-sections" id="ordenesenPreparacionSection">
         <h2>Órdenes en preparación</h2>
         <table class="table table-sm">
@@ -126,6 +138,7 @@
           </tbody>
         </table>
       </section>
+      <% } %> 
     </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

@@ -1,0 +1,41 @@
+<div class="login-container-topbar" id="back-login">
+    <div class="back-login-blur"></div>
+    <form action="/login" class="formulario login-topbar" id="loginFormTop" method="POST">
+        <button type="button" class="leave-form" id="leave-button">X</button>
+        <div class="grupo-titulo-form">
+          <div class="titulo-form-fondo mb-15 ml">
+            <h1 class="titulo-form-texto">Ingresar</h1>
+          </div>
+        </div>
+        <div class="input-icon-container" id="emailField">
+          <i class="fa-solid fa-envelope"></i>
+          <input
+            class="input-with-icon"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Ingrese su email"
+          />
+        </div>
+        <div class="error-email errores"><ul></ul></div>
+        <div class="input-icon-container" id="passwordField">
+          <i class="fa-solid fa-lock"></i>
+          <input
+            class="input-with-icon"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Contraseña"
+          />
+        </div>
+        <div class="error-password errores"><ul></ul></div>
+        <div class="grupo-botones-formulario mt-15">
+          <button class="button button-submit" type="submit" id="buttonSubmit">Ingresar</button>
+          <button class="button" type="reset">Borrar</button>
+        </div>
+        <div class="grupo-registrate">
+          <h3 class="register-cuenta-pregunta">¿Todavía no tenés una cuenta?</h3>
+          <a class="ml-10" href="/register">Registrate ahora</a>
+        </div>
+      </form>
+    </div>

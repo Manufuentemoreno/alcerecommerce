@@ -21,7 +21,7 @@
                         <img src="/images/profile/<%= locals.loggedUser.profil_photo%> " alt="Foto">
                     </div>
                     <div class="d-flex flex-column">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <%= mensaje.concat(' ', nombre) %>
                         </a>
@@ -65,6 +65,23 @@
                     </a>
                     <a class="nav-link icon-topbar-text" href="/orders">Órdenes</a>
                 </li>
+                <% if(locals.categories) { %>
+                    <li class="nav-item dropdown d-flex li-burger category-dropdown">
+                    <div class="d-flex flex-column">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a href="/products" class="dropdown-item d-flex" >Todos los productos</a></li>
+                            <% categories.forEach(category => { %>
+                                <a href="/products/category/<%=category%>" class="dropdown-item d-flex"><%= category %></a>
+                            <% }) %>
+                        </ul>
+    
+                    </div>
+                    </li>
+                <% } %> 
             <% } %> 
             <% } else { %>
                 <li class="nav-item li-burger">
@@ -99,44 +116,4 @@
 <% if(locals.lastAdded) {%>
     <%- include('./lastAddedPop') %>
 <% } %>
-<div class="login-container-topbar" id="back-login">
-<div class="back-login-blur"></div>
-<form action="/login" class="formulario login-topbar" id="loginFormTop" method="POST">
-    <button type="button" class="leave-form" id="leave-button">X</button>
-    <div class="grupo-titulo-form">
-      <div class="titulo-form-fondo mb-15 ml">
-        <h1 class="titulo-form-texto">Ingresar</h1>
-      </div>
-    </div>
-    <div class="input-icon-container" id="emailField">
-      <i class="fa-solid fa-envelope"></i>
-      <input
-        class="input-with-icon"
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Ingrese su email"
-      />
-    </div>
-    <div class="error-email errores"><ul></ul></div>
-    <div class="input-icon-container" id="passwordField">
-      <i class="fa-solid fa-lock"></i>
-      <input
-        class="input-with-icon"
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Contraseña"
-      />
-    </div>
-    <div class="error-password errores"><ul></ul></div>
-    <div class="grupo-botones-formulario mt-15">
-      <button class="button button-submit" type="submit" id="buttonSubmit">Ingresar</button>
-      <button class="button" type="reset">Borrar</button>
-    </div>
-    <div class="grupo-registrate">
-      <h3 class="register-cuenta-pregunta">¿Todavía no tenés una cuenta?</h3>
-      <a class="ml-10" href="/register">Registrate ahora</a>
-    </div>
-  </form>
-</div>
+<%- include("./loginModal")  %> 

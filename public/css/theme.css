@@ -1275,3 +1275,30 @@ footer p {
 .order-main {
   flex-direction: column;
 }
+
+.order-delivery-form{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.order-delivery-select{
+  border: 1px solid #9E9E9E;
+  display: flex;
+  width: fit-content;
+  background-color: white;
+  border-radius: 10px;
+  overflow: clip;
+  padding: 5px;
+  padding-left: 20px;
+}
+
+.order-delivery-button{
+  margin-left: 20px;
+  padding: 5px 15px;
+  height: auto;
+  width: auto;
+}
+
+/* FIN ORDENES */
