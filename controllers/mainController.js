@@ -13,34 +13,55 @@ let lastAdded = ""
 
 module.exports = {
     home : async (req, res)=>{
-        let productList = {};
-        try {
-            productList = await Products.findAll({limit:6})
-        }catch(error){
-            return res.render("notFound")
-        }
+      let productList = {};
+      try {
+        productList = await Products.findAll({ limit: 6 });
+      } catch (error) {
+        return res.render("notFound");
+      }
 
-        let categories = await categoryList();
+      let categories = await categoryList();
 
-        // cart section:
-        let detalles = await cartProducts(req, res);
+      // cart section:
+      let detalles = await cartProducts(req, res);
 
-        //lastAdded:
-        if(req.session.addedProductId 
-            && lastAdded == req.session.addedProductId){
-                lastAdded = "" 
-        }else{
-            lastAdded = req.session.addedProductId;
-        }
-        
-        req.session.addedProductId = "";
-        res.render("home",{
-            "products": productList,
-            categories,
-            lastAdded,
-            detalles
-        });
-        return lastAdded        
+      //lastAdded:
+      if (
+        req.session.addedProductId &&
+        lastAdded == req.session.addedProductId
+      ) {
+        lastAdded = "";
+      } else {
+        lastAdded = req.session.addedProductId;
+      }
+
+      //lastAdded:
+      if (
+        req.session.addedProductId &&
+        lastAdded == req.session.addedProductId
+      ) {
+        lastAdded = "";
+      } else {
+        lastAdded = req.session.addedProductId;
+      }
+
+      //promotedProducts
+      let pproducts = await Products.findAll({
+        include: ["products_categories"],
+        where: {
+          special_offer: 1,
+        },
+      });
+
+      req.session.addedProductId = "";
+      res.render("home", {
+        products: productList,
+        categories,
+        lastAdded,
+        detalles,
+        pproducts
+      });
+      return lastAdded;
     },
 
     cart : async(req,res) =>{
