@@ -7,6 +7,9 @@ const Products = require("../database/models/Product");
 const sequelize = db.sequelize;
 const Op = sequelize.Op;
 
+// Modelo de Categoías:
+const categoryList = require('../modules/productCategoryTopBar');
+
 // Integración de Mercado Pago
 
 // SDK de Mercado Pago
@@ -102,6 +105,8 @@ module.exports = {
   },
 
   list: async (req, res) => {
+    let categories = await categoryList();
+
     let ordenEnCarrito = await db.Orders.findOne({
       where: {
         user_id: req.session.loggedUser.id,
@@ -122,7 +127,7 @@ module.exports = {
           order_id: ordenEnCarrito.id,
         },
       });
-      res.render("productCart", { detalles });
+      res.render("productCart", { detalles, categories });
     } else {
       res.redirect("/");
     }

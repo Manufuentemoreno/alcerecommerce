@@ -146,6 +146,9 @@ const controller = {
         let categories = await categoryList();
         let searched = req.query.producto;
 
+        // cart section:
+        let detalles = await cartProducts(req, res);
+
         let productsList = []
         try{
             productsList = await Products.findAll({
@@ -168,8 +171,6 @@ const controller = {
             return res.render("notFound")
         }
 
-        console.log(productsList)
-
         //lastAdded:
         if(req.session.addedProductId 
             && lastAdded == req.session.addedProductId){
@@ -179,7 +180,7 @@ const controller = {
         }
         
         req.session.addedProductId = "";
-        res.render("search", { products: productsList, searched: searched, categories, lastAdded})
+        res.render("search", { products: productsList, searched, categories, lastAdded, detalles})
     },
 
     notFound: async(req,res) =>{

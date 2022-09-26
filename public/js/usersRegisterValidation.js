@@ -1,18 +1,19 @@
 window.onload = function(){
     const form = document.querySelector("#register-form");
 
-    const emailField =  document.querySelector("#emailField");
-    const mail = document.querySelector("#email");
+    
+    const mail = document.querySelector("#input-mail");
+    const emailField = document.querySelector("#email-field");
 
-    const passwordField = document.querySelector("#passwordField")
-    const password = document.querySelector("#password")
+    const passwordField = document.querySelector("#password-field")
+    const password = document.querySelector("#input-pass")
 
     const rePasswordField = document.querySelector("#rePasswordField");
     const rePassword = document.querySelector("#confirmPassword");
 
-    const name =  document.querySelector("#name");
-    const lName =  document.querySelector("#last_name");
-    const bDate =  document.querySelector("#birth_date"); 
+    const name = document.querySelector("#name");
+    const lName = document.querySelector("#last_name");
+    const bDate = document.querySelector("#birth_date"); 
     const photo = document.querySelector("#profil_photo");
     const formButtons = document.querySelector("#formButtons")
 
@@ -28,8 +29,8 @@ window.onload = function(){
 
     // Email:
     let errorEmail = "";
-    mail.addEventListener("blur",(e)=>{
-        const email = mail.value;
+    mail.addEventListener("blur",()=>{
+        const email =  mail.value;
         
         const validateEmail = (input) => {
             return String(input)
@@ -64,6 +65,31 @@ window.onload = function(){
 
     // Password:
     let errorPass = "";
+    password.addEventListener("keypress",()=>{
+        userPass = password.value;
+
+        if(userPass.length < 8){
+            if(!errorPass){
+                passwordField.insertAdjacentHTML("afterend",
+                "<div id=errorPass class=danger-text><p>* La contraseña debe tener más de 8 caracteres</p></div>")
+                errorPass = document.getElementById("errorPass");
+                passwordField.classList.add("danger");
+                errors.password = 1;
+                return errorPass;
+            }
+            errorPass.style.display = "block";
+            passwordField.classList.remove("acepted");
+            passwordField.classList.add("danger");
+            errors.password = 1;
+            return
+        }
+
+        errorPass ? errorPass.style.display = "none" : null;
+        passwordField.classList.remove("danger");
+        passwordField.classList.add("acepted");
+        errors.password = 0;
+    });
+
     password.addEventListener("blur",()=>{
         userPass = password.value;
 

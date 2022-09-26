@@ -216,6 +216,10 @@ background-color: #981212;
 
 /* *********** FIN DE TOPBAR ***********  */
 
+.carousel{
+  margin-top: 15px;
+}
+
 .fa-bars {
   align-items: center;
 }
@@ -659,6 +663,8 @@ body {
 
 .cart-main {
   justify-content: center;
+  padding: 20px;
+  min-height: 400px;
 }
 
 .cart-page {

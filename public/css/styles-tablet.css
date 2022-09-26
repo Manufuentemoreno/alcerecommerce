@@ -31,7 +31,6 @@
   .search-bar input::placeholder {
     font-size: medium;
   }
- 
 
   .categories-bar{
     position: initial;
@@ -42,6 +41,7 @@
     align-items: center;
     height: 2em;
     padding: 0px 5px;
+    margin: 0;
   }
 
   .category-list{
@@ -63,6 +63,10 @@
   }
 
   /* ******* FIN DE TOPBAR ********  */
+
+  .carousel{
+    margin-top: 20px;
+  }
 
   .cart-info-container{
     margin: 0% 15%;
@@ -204,6 +208,10 @@
 
 .cart-page-product-name{
   width: 120px;
+}
+
+.cart-main{
+  padding: 30px;
 }
 
   /* FORMULARIOS */

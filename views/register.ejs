@@ -39,14 +39,13 @@
                     <% } %>
                 </div>
             <% } %>
-            <div class="input-icon-container input-style" id="emailField">
+            <div class="input-icon-container input-style" id="email-field">
                 <i class="fa-solid fa-envelope"></i>
-                <input class="input-with-icon" type="text" name="email" id="email" placeholder="E-mail"
-                value="<%= locals.oldData && oldData.email ? oldData.email : ''%>"> <!--Trae los datos que había ingresado el usuario-->
+                <input class="input-with-icon" type="text" name="email" id="input-mail" placeholder="E-mail" value="<%= locals.oldData && oldData.email ? oldData.email : null %>"> <!--Trae los datos que había ingresado el usuario-->
             </div>
-            <div class="input-icon-container  input-style" id="passwordField">
+            <div class="input-icon-container  input-style" id="password-field">
                 <i class="fa-solid fa-lock"></i>
-                <input class="input-with-icon" type="password" name="password" id="password" placeholder="Contraseña">
+                <input class="input-with-icon" type="password" name="password" id="input-pass" placeholder="Contraseña">
             </div>
             <div class="input-icon-container  input-style" id="rePasswordField">
                 <i class="fa-solid fa-lock"></i>

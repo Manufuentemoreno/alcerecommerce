@@ -42,6 +42,23 @@
                         <a class="nav-link icon-topbar-text li-burger" href="/cart">Carrito</a>
                     
                 </li>
+                <% if(locals.categories) { %>
+                    <li class="nav-item dropdown d-flex li-burger category-dropdown">
+                    <div class="d-flex flex-column">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a href="/products" class="dropdown-item d-flex" >Todos los productos</a></li>
+                            <% categories.forEach(category => { %>
+                                <a href="/products/category/<%=category%>" class="dropdown-item d-flex"><%= category %></a>
+                            <% }) %>
+                        </ul>
+    
+                    </div>
+                    </li>
+                <% } %> 
             <% if (locals.loggedUser.category == 'adminUser') {%> 
                 <li class="nav-item li-burger">
                     
@@ -65,23 +82,6 @@
                     </a>
                     <a class="nav-link icon-topbar-text" href="/orders">Órdenes</a>
                 </li>
-                <% if(locals.categories) { %>
-                    <li class="nav-item dropdown d-flex li-burger category-dropdown">
-                    <div class="d-flex flex-column">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Productos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a href="/products" class="dropdown-item d-flex" >Todos los productos</a></li>
-                            <% categories.forEach(category => { %>
-                                <a href="/products/category/<%=category%>" class="dropdown-item d-flex"><%= category %></a>
-                            <% }) %>
-                        </ul>
-    
-                    </div>
-                    </li>
-                <% } %> 
             <% } %> 
             <% } else { %>
                 <li class="nav-item li-burger">
@@ -100,7 +100,23 @@
                         <a class="nav-link icon-topbar-text" href="/login">Ingresar</a>
                     
                 </li>
-            <% } %>
+                <% if(locals.categories) { %>
+                    <li class="nav-item dropdown d-flex li-burger category-dropdown">
+                    <div class="d-flex flex-column">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a href="/products" class="dropdown-item d-flex" >Todos los productos</a></li>
+                            <% categories.forEach(category => { %>
+                                <a href="/products/category/<%=category%>" class="dropdown-item d-flex"><%= category %></a>
+                            <% }) %>
+                        </ul>
+    
+                    </div>
+                    </li>
+            <% }} %>
         </ul>
     </div>
   </div>
