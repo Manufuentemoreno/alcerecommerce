@@ -85,10 +85,10 @@ const controller = {
 
     store: async (req, res) => {
         const errors = validationResult(req);
-        
+        let categories = await categoryList();
         
         if (!errors.isEmpty()){
-            res.render("create", { "errors" : errors.mapped(), "oldData" : req.body });
+            res.render("create", { "errors" : errors.mapped(), "oldData" : req.body, categories });
             return 
         }
         
