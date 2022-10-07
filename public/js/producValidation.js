@@ -89,6 +89,7 @@ window.onload = function(){
         errores.productPrice = 0;
         eprice ? eprice.style.display = "none":null;
     });
+
     price.addEventListener("blur",()=>{
         if(!price.value){
             price.classList.remove("acepted");
@@ -97,7 +98,11 @@ window.onload = function(){
             return
         }
         errores.productPrice = 0;
-
+        
+        if( price.value.indexOf(".") ==-1 &&
+         price.value.indexOf(",") ==-1 ){
+            price.value=`${price.value}.00`
+        }
     })
 
     // Category
@@ -297,6 +302,8 @@ window.onload = function(){
         for(const key in errores){
             errores[key]!=0 ? rtado.push(key) : null;
         }
+
+
 
         !rtado.length ? form.submit() : null;
     })

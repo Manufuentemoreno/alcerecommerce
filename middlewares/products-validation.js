@@ -5,7 +5,7 @@ const validations = [
     body("name").notEmpty().withMessage("* Campo Obligatorio").bail()
         .isLength( {min:5} ).withMessage("* El nombre debe tener al menos 5 caracteres"), 
     body("price").notEmpty().withMessage("* Campo Obligatorio")
-        .isNumeric({no_symbols: true}).withMessage("* Valor no válido"),
+        .isFloat({min:0}).withMessage("* Valor no válido"),
     body("category_id").notEmpty().withMessage("* Se necesita seleccionar una categoría"),
     body("stock").notEmpty().withMessage("* Campo obligatorio").bail()
         .isInt({min:0}).withMessage("* Ingresá un valor válido"),
