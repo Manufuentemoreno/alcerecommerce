@@ -33,5 +33,5 @@ app.use(userAuth);
 
 app.use("/", routes);
 
-const PORT = require("./modules/Port");
-app.listen(PORT, () => console.log("Servidor ejecutándose en el puerto ", PORT));
+const PortLocal = require("./modules/Port");
+app.listen(process.env.PORT || PortLocal, () => console.log("Servidor ejecutándose en el puerto ", process.env.PORT || PortLocal));
