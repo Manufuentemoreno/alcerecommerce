@@ -101,11 +101,10 @@
 
   .productos-destacados-list{
     display: flex;
-    overflow: unset;
-    height: auto;
-    width: auto;
-    justify-content: center;
-
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0;
+    align-self: center;
   }
 
   .categorias{
