@@ -864,6 +864,7 @@ body {
   border-radius: 20px;
   padding: 20px;
   background: white;
+  width: 100%;
   max-width: 1000px;
 }
 
