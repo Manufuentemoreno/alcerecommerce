@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+#Local configuration of database
+database local config.txt
+git restore.txt
